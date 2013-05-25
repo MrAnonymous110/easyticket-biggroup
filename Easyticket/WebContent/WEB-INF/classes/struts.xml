@@ -20,4 +20,21 @@
             <result name="success">/welcome.jsp</result>
       </action>
    </package>
+   
+      
+   <package name="admin" extends="struts-default" namespace="/admin">
+        
+        <action name="">
+            <result>/WEB-INF/pages/admin/index.jsp</result>
+        </action>
+   
+        <action name="index">
+            <result>/WEB-INF/pages/admin/index.jsp</result>
+        </action>
+        
+        <action name="login" class="com.controller.AdminController" method="Login">
+            <result name="input">/WEB-INF/pages/admin/login.jsp</result>
+            <result name="success" type="redirectAction">index</result>
+        </action>
+   </package>
 </struts>

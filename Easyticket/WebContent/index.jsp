@@ -10,10 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <form action="login" method="post">
-         UserName: <input name="username" /> <br/>
-         Password: <input name="password" type="password" /> <br/>
-         <input type="submit" value="Login" />
-    </form>
+      
 </body>
 </html>
