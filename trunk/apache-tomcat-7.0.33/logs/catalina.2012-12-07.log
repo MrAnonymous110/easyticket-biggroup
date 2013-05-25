@@ -1,0 +1,152 @@
+Dec 07, 2012 5:54:13 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: Loaded APR based Apache Tomcat Native library 1.1.24 using APR version 1.4.6.
+Dec 07, 2012 5:54:13 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+Dec 07, 2012 5:54:14 PM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFO: OpenSSL successfully initialized (OpenSSL 1.0.1c 10 May 2012)
+Dec 07, 2012 5:54:15 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-apr-8080"]
+Dec 07, 2012 5:54:15 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-apr-8009"]
+Dec 07, 2012 5:54:15 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2603 ms
+Dec 07, 2012 5:54:15 PM org.apache.catalina.users.MemoryUserDatabase createRole
+WARNING: Null or zero length role name specified. The role will be ignored.
+Dec 07, 2012 5:54:15 PM org.apache.tomcat.util.digester.FactoryCreateRule begin
+INFO: [FactoryCreateRule] Create exception ignored: Null or zero length role name specified. The role will be ignored.
+Dec 07, 2012 5:54:15 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Dec 07, 2012 5:54:15 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.33
+Dec 07, 2012 5:54:15 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor F:\apache-tomcat-7.0.33\conf\Catalina\localhost\jsp_2.xml
+Dec 07, 2012 5:54:16 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor F:\apache-tomcat-7.0.33\conf\Catalina\localhost\jsp_3.xml
+Dec 07, 2012 5:54:16 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory F:\apache-tomcat-7.0.33\webapps\docs
+Dec 07, 2012 5:54:16 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory F:\apache-tomcat-7.0.33\webapps\examples
+Dec 07, 2012 5:54:17 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory F:\apache-tomcat-7.0.33\webapps\host-manager
+Dec 07, 2012 5:54:17 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory F:\apache-tomcat-7.0.33\webapps\manager
+Dec 07, 2012 5:54:17 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory F:\apache-tomcat-7.0.33\webapps\ROOT
+Dec 07, 2012 5:54:17 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-apr-8080"]
+Dec 07, 2012 5:54:17 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-apr-8009"]
+Dec 07, 2012 5:54:17 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1811 ms
+Dec 07, 2012 5:54:17 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor F:\apache-tomcat-7.0.33\conf\Catalina\localhost\jsp_4.xml
+Dec 07, 2012 5:54:17 PM org.apache.catalina.util.LifecycleBase start
+INFO: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/jsp_4]] after start() had already been called. The second call will be ignored.
+Dec 07, 2012 5:55:27 PM org.apache.catalina.startup.HostConfig checkResources
+INFO: Reloading context [/jsp_4]
+Dec 07, 2012 5:55:27 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 5:55:27 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 5:56:27 PM org.apache.catalina.startup.HostConfig checkResources
+INFO: Reloading context [/jsp_4]
+Dec 07, 2012 5:56:28 PM org.apache.catalina.util.LifecycleBase start
+INFO: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/jsp_4]] after start() had already been called. The second call will be ignored.
+Dec 07, 2012 7:03:45 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:03:45 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:03:49 PM org.apache.catalina.startup.HostConfig checkResources
+INFO: Reloading context [/jsp_4]
+Dec 07, 2012 7:03:49 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:03:50 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:12:48 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:12:48 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:12:48 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:12:48 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:15:36 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:15:36 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:15:37 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:15:37 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:20:25 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:20:26 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:22:13 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:22:13 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:22:17 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:22:18 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:22:18 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:22:18 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:22:22 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:22:22 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:23:10 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:23:10 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:23:16 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:23:16 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:23:16 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:23:17 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:23:35 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:23:36 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:23:52 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:23:52 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:29:14 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:29:15 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:33:02 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:33:02 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:33:24 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:33:25 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:35:16 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] has started
+Dec 07, 2012 7:35:17 PM org.apache.catalina.core.StandardContext reload
+INFO: Reloading Context with name [/jsp_4] is completed
+Dec 07, 2012 7:35:59 PM org.apache.catalina.core.StandardServer await
+INFO: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+Dec 07, 2012 7:35:59 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-apr-8080"]
+Dec 07, 2012 7:36:00 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-apr-8009"]
+Dec 07, 2012 7:36:00 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Dec 07, 2012 7:36:00 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-apr-8080"]
+Dec 07, 2012 7:36:00 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-apr-8009"]
+Dec 07, 2012 7:36:00 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-apr-8080"]
+Dec 07, 2012 7:36:00 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-apr-8009"]

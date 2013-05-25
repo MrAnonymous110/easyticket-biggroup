@@ -1,0 +1,32 @@
+Nov 29, 2012 9:12:26 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+Nov 29, 2012 9:12:26 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Global resources are available
+Nov 29, 2012 9:12:26 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Nov 29, 2012 9:12:26 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Nov 29, 2012 9:12:26 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: undeploy: Undeploying web application at '/jsp_2'
+Nov 29, 2012 9:12:27 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context50285974165004117.xml'
+Nov 29, 2012 9:13:40 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Nov 29, 2012 9:13:40 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/jsp_2'
+Nov 29, 2012 9:13:41 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_2'
+Nov 29, 2012 9:13:41 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Nov 29, 2012 9:13:41 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/jsp_2'
+Nov 29, 2012 9:13:41 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_2'
+Nov 29, 2012 9:13:45 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Nov 29, 2012 9:13:45 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Nov 29, 2012 9:13:45 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/jsp_2'
+Nov 29, 2012 9:13:46 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_2'

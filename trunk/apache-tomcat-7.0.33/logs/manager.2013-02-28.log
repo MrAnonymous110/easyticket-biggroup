@@ -1,0 +1,18 @@
+Feb 28, 2013 6:34:36 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+Feb 28, 2013 6:34:36 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Global resources are available
+Feb 28, 2013 6:34:36 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 28, 2013 6:34:36 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 28, 2013 6:34:36 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: undeploy: Undeploying web application at '/struts_5'
+Feb 28, 2013 6:34:38 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context6353038334388223363.xml'
+Feb 28, 2013 6:34:39 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/struts_5'
+Feb 28, 2013 6:35:05 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 28, 2013 6:35:05 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'

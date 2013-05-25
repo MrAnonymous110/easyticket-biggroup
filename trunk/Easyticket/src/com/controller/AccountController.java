@@ -16,18 +16,7 @@ public class AccountController {
 	
 	public String login()
 	{
-		 if(username !=null && password !=null){
-			 if(username.equals(password)){
-				 
-				RolesDaoImpl dao = new RolesDaoImpl();
-				roles = dao.getRoles();
-				if(roles !=null)
-				   count = roles.size();
-				else
-				   count= 100;
-			    return "success";
-			 }
-		 }
+		 
 		 return "input";
 	}
 	

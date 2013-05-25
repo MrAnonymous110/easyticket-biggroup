@@ -1,0 +1,114 @@
+Mar 22, 2013 11:59:26 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: Loaded APR based Apache Tomcat Native library 1.1.24 using APR version 1.4.6.
+Mar 22, 2013 11:59:26 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+Mar 22, 2013 11:59:28 PM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFO: OpenSSL successfully initialized (OpenSSL 1.0.1c 10 May 2012)
+Mar 22, 2013 11:59:28 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-apr-8080"]
+Mar 22, 2013 11:59:28 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-apr-8009"]
+Mar 22, 2013 11:59:28 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2674 ms
+Mar 22, 2013 11:59:28 PM org.apache.catalina.users.MemoryUserDatabase createRole
+WARNING: Null or zero length role name specified. The role will be ignored.
+Mar 22, 2013 11:59:28 PM org.apache.tomcat.util.digester.FactoryCreateRule begin
+INFO: [FactoryCreateRule] Create exception ignored: Null or zero length role name specified. The role will be ignored.
+Mar 22, 2013 11:59:28 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Mar 22, 2013 11:59:28 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.33
+Mar 22, 2013 11:59:28 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor F:\apache-tomcat-7.0.33\conf\Catalina\localhost\hibernate_struts1.xml
+Mar 22, 2013 11:59:32 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://struts.apache.org/tags-tiles is already defined
+Mar 22, 2013 11:59:32 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://struts.apache.org/tags-html is already defined
+Mar 22, 2013 11:59:32 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://struts.apache.org/tags-bean is already defined
+Mar 22, 2013 11:59:32 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://struts.apache.org/tags-nested is already defined
+Mar 22, 2013 11:59:32 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://struts.apache.org/tags-logic is already defined
+Mar 22, 2013 11:59:32 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://struts.apache.org/tags-bean is already defined
+Mar 22, 2013 11:59:32 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://struts.apache.org/tags-html is already defined
+Mar 22, 2013 11:59:32 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://struts.apache.org/tags-logic is already defined
+Mar 22, 2013 11:59:32 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://struts.apache.org/tags-nested is already defined
+Mar 22, 2013 11:59:32 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://struts.apache.org/tags-tiles is already defined
+Mar 22, 2013 11:59:32 PM org.apache.struts.action.ActionServlet initChain
+INFO: Loading chain catalog from jar:file:/C:/Users/tavan_000/Documents/NetBeansProjects/hibernate_struts1/build/web/WEB-INF/lib/struts-core-1.3.10.jar!/org/apache/struts/chain/chain-config.xml
+Mar 22, 2013 11:59:33 PM org.apache.struts.tiles.TilesPlugin initDefinitionsFactory
+INFO: Tiles definition factory loaded for module ''.
+Mar 22, 2013 11:59:33 PM org.apache.struts.validator.ValidatorPlugIn initResources
+INFO: Loading validation rules file from '/WEB-INF/validator-rules.xml'
+Mar 22, 2013 11:59:33 PM org.apache.struts.validator.ValidatorPlugIn initResources
+INFO: Loading validation rules file from '/WEB-INF/validation.xml'
+Mar 22, 2013 11:59:33 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor F:\apache-tomcat-7.0.33\conf\Catalina\localhost\JSF_A6.xml
+Mar 22, 2013 11:59:35 PM com.sun.faces.config.ConfigureListener contextInitialized
+INFO: Initializing Mojarra 2.1.1 (FCS 20110408) for context '/JSF_A6'
+Mar 22, 2013 11:59:36 PM com.sun.faces.spi.InjectionProviderFactory createInstance
+INFO: JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+Mar 22, 2013 11:59:37 PM com.sun.faces.config.ConfigureListener$WebConfigResourceMonitor$Monitor <init>
+INFO: Monitoring jndi:/localhost/JSF_A6/WEB-INF/faces-config.xml for modifications
+Mar 22, 2013 11:59:37 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor F:\apache-tomcat-7.0.33\conf\Catalina\localhost\jsp_2.xml
+Mar 22, 2013 11:59:38 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor F:\apache-tomcat-7.0.33\conf\Catalina\localhost\jsp_3.xml
+Mar 22, 2013 11:59:38 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor F:\apache-tomcat-7.0.33\conf\Catalina\localhost\jsp_4.xml
+Mar 22, 2013 11:59:39 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor F:\apache-tomcat-7.0.33\conf\Catalina\localhost\jsp_7.xml
+Mar 22, 2013 11:59:39 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor F:\apache-tomcat-7.0.33\conf\Catalina\localhost\struts_5.xml
+Mar 22, 2013 11:59:41 PM org.apache.struts.action.ActionServlet initChain
+INFO: Loading chain catalog from jar:file:/C:/Users/tavan_000/Documents/NetBeansProjects/struts_5/build/web/WEB-INF/lib/struts-core-1.3.10.jar!/org/apache/struts/chain/chain-config.xml
+Mar 22, 2013 11:59:41 PM org.apache.struts.tiles.TilesPlugin initDefinitionsFactory
+INFO: Tiles definition factory loaded for module ''.
+Mar 22, 2013 11:59:41 PM org.apache.struts.validator.ValidatorPlugIn initResources
+INFO: Loading validation rules file from '/WEB-INF/validator-rules.xml'
+Mar 22, 2013 11:59:41 PM org.apache.struts.validator.ValidatorPlugIn initResources
+INFO: Loading validation rules file from '/WEB-INF/validation.xml'
+Mar 22, 2013 11:59:41 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor F:\apache-tomcat-7.0.33\conf\Catalina\localhost\TestJdbcHomeland.xml
+Mar 22, 2013 11:59:42 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory F:\apache-tomcat-7.0.33\webapps\docs
+Mar 22, 2013 11:59:42 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory F:\apache-tomcat-7.0.33\webapps\examples
+Mar 22, 2013 11:59:42 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory F:\apache-tomcat-7.0.33\webapps\host-manager
+Mar 22, 2013 11:59:42 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory F:\apache-tomcat-7.0.33\webapps\manager
+Mar 22, 2013 11:59:42 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory F:\apache-tomcat-7.0.33\webapps\ROOT
+Mar 22, 2013 11:59:42 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-apr-8080"]
+Mar 22, 2013 11:59:42 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-apr-8009"]
+Mar 22, 2013 11:59:42 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 14265 ms
+Mar 22, 2013 11:59:46 PM org.apache.catalina.startup.HostConfig deleteRedeployResources
+INFO: Undeploying context [/struts_5]
+Mar 22, 2013 11:59:46 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor F:\apache-tomcat-7.0.33\conf\Catalina\localhost\struts_5.xml
+Mar 22, 2013 11:59:47 PM org.apache.struts.action.ActionServlet initChain
+INFO: Loading chain catalog from jar:file:/C:/Users/tavan_000/Documents/NetBeansProjects/struts_5/build/web/WEB-INF/lib/struts-core-1.3.10.jar!/org/apache/struts/chain/chain-config.xml
+Mar 22, 2013 11:59:48 PM org.apache.struts.tiles.TilesPlugin initDefinitionsFactory
+INFO: Tiles definition factory loaded for module ''.
+Mar 22, 2013 11:59:48 PM org.apache.struts.validator.ValidatorPlugIn initResources
+INFO: Loading validation rules file from '/WEB-INF/validator-rules.xml'
+Mar 22, 2013 11:59:48 PM org.apache.struts.validator.ValidatorPlugIn initResources
+INFO: Loading validation rules file from '/WEB-INF/validation.xml'
+Mar 22, 2013 11:59:48 PM org.apache.catalina.util.LifecycleBase start
+INFO: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/struts_5]] after start() had already been called. The second call will be ignored.
+Mar 22, 2013 11:59:53 PM org.apache.struts.tiles.TilesRequestProcessor initDefinitionsMapping
+INFO: Tiles definition factory found for request processor ''.
+Mar 22, 2013 11:59:53 PM org.apache.jasper.compiler.TldLocationsCache tldScanJar
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Mar 22, 2013 11:59:54 PM org.apache.struts.util.PropertyMessageResources loadLocale
+WARNING:   Resource com/myapp/struts/ApplicationResource_vi_VN.properties Not Found.

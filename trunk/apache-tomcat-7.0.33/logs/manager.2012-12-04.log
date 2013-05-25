@@ -1,0 +1,250 @@
+Dec 04, 2012 6:34:21 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+Dec 04, 2012 6:34:21 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Global resources are available
+Dec 04, 2012 6:34:21 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:34:21 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:34:21 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context4861779541799969965.xml'
+Dec 04, 2012 6:34:22 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 6:44:03 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:44:03 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 6:44:58 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:44:58 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:44:58 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 6:46:43 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:46:43 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 6:47:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+Dec 04, 2012 6:47:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Global resources are available
+Dec 04, 2012 6:47:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:47:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:47:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 6:48:43 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:48:43 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 6:49:43 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:49:43 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/jsp_3'
+Dec 04, 2012 6:49:44 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 6:49:49 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:49:49 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:49:50 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/jsp_3'
+Dec 04, 2012 6:49:50 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 6:50:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:50:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 6:50:37 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:50:37 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/jsp_3'
+Dec 04, 2012 6:50:38 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 6:50:38 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:50:38 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 6:55:03 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:55:03 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 6:55:21 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:55:21 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/jsp_3'
+Dec 04, 2012 6:55:22 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 6:55:22 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:55:22 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 6:55:41 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:55:41 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:55:41 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/jsp_3'
+Dec 04, 2012 6:55:41 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 6:56:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+Dec 04, 2012 6:56:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Global resources are available
+Dec 04, 2012 6:56:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:56:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:56:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: undeploy: Undeploying web application at '/jsp_3'
+Dec 04, 2012 6:56:17 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context5181619866669203269.xml'
+Dec 04, 2012 6:56:17 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 6:56:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:56:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 6:57:02 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:57:02 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:57:02 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 6:58:17 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:58:17 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 6:58:24 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:58:24 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 6:58:24 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 7:02:20 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:02:20 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 7:02:32 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:02:32 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 7:02:55 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:02:55 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 7:03:27 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:08:53 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:09:18 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:09:18 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/jsp_3'
+Dec 04, 2012 7:09:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 7:09:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:09:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 7:12:07 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:12:07 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 7:13:20 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:14:17 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:14:23 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:14:23 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:14:23 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/jsp_3'
+Dec 04, 2012 7:14:24 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 7:16:34 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:16:34 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:16:34 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: undeploy: Undeploying web application at '/jsp_3'
+Dec 04, 2012 7:16:35 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context2087737431733530399.xml'
+Dec 04, 2012 7:16:35 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 7:17:51 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:17:51 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 7:17:56 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:17:56 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:17:56 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: undeploy: Undeploying web application at '/jsp_3'
+Dec 04, 2012 7:17:57 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context1854584951281262789.xml'
+Dec 04, 2012 7:17:57 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 7:21:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:21:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:21:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: undeploy: Undeploying web application at '/jsp_3'
+Dec 04, 2012 7:21:20 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context8709259459064701089.xml'
+Dec 04, 2012 7:21:20 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 7:24:24 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:24:24 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:24:24 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: undeploy: Undeploying web application at '/jsp_3'
+Dec 04, 2012 7:24:25 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context4516435133969035075.xml'
+Dec 04, 2012 7:24:25 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 7:24:28 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:24:28 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:24:28 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: undeploy: Undeploying web application at '/jsp_3'
+Dec 04, 2012 7:24:29 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context1868930858632081944.xml'
+Dec 04, 2012 7:24:29 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/jsp_3'
+Dec 04, 2012 7:26:54 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:26:54 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 7:28:13 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:28:13 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 7:28:27 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:28:27 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 7:28:31 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:28:31 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:28:31 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 7:29:27 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:29:27 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 7:30:47 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:30:47 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'
+Dec 04, 2012 7:31:53 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Dec 04, 2012 7:31:53 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/jsp_3'

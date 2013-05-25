@@ -1,0 +1,12 @@
+Jan 08, 2013 1:25:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+Jan 08, 2013 1:25:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Global resources are available
+Jan 08, 2013 1:25:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Jan 08, 2013 1:25:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Jan 08, 2013 1:25:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context3088484648357897241.xml'
+Jan 08, 2013 1:25:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/TestJdbcHomeland'
