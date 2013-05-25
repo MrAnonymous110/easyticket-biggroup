@@ -1,0 +1,200 @@
+Feb 26, 2013 6:05:40 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+Feb 26, 2013 6:05:40 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Global resources are available
+Feb 26, 2013 6:05:40 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:05:40 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:05:40 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context3207982841618134283.xml'
+Feb 26, 2013 6:05:44 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:05:45 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:05:45 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:08:03 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:08:03 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/JSF_A6'
+Feb 26, 2013 6:08:04 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:10:00 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:10:01 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/JSF_A6'
+Feb 26, 2013 6:10:04 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:10:04 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/JSF_A6'
+Feb 26, 2013 6:10:52 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:10:52 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/JSF_A6'
+Feb 26, 2013 6:11:50 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:11:50 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/JSF_A6'
+Feb 26, 2013 6:11:51 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:11:53 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:11:53 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/JSF_A6'
+Feb 26, 2013 6:12:40 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:12:40 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/JSF_A6'
+Feb 26, 2013 6:14:06 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:14:07 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:16:50 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:18:12 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:18:12 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/JSF_A6'
+Feb 26, 2013 6:18:13 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:22:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:22:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/JSF_A6'
+Feb 26, 2013 6:22:43 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:22:55 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:22:55 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:22:55 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: undeploy: Undeploying web application at '/JSF_A6'
+Feb 26, 2013 6:22:57 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context4448216360627992238.xml'
+Feb 26, 2013 6:22:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:24:27 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:24:43 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:24:43 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:26:05 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:26:05 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/JSF_A6'
+Feb 26, 2013 6:26:06 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:26:38 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:26:38 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:26:38 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/JSF_A6'
+Feb 26, 2013 6:26:39 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:27:42 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:27:42 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/JSF_A6'
+Feb 26, 2013 6:27:43 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:27:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:27:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/JSF_A6'
+Feb 26, 2013 6:28:00 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:28:25 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:29:05 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:29:05 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/JSF_A6'
+Feb 26, 2013 6:29:47 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:29:47 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/JSF_A6'
+Feb 26, 2013 6:29:48 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:30:00 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:30:00 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/JSF_A6'
+Feb 26, 2013 6:30:01 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:30:57 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:30:57 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/JSF_A6'
+Feb 26, 2013 6:30:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:31:40 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:31:40 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/JSF_A6'
+Feb 26, 2013 6:31:41 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:32:10 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:32:10 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/JSF_A6'
+Feb 26, 2013 6:32:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:32:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/JSF_A6'
+Feb 26, 2013 6:32:50 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:32:57 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:34:34 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:35:04 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:35:04 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/JSF_A6'
+Feb 26, 2013 6:35:11 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:35:58 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:36:06 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:36:06 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:36:06 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/JSF_A6'
+Feb 26, 2013 6:36:07 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'
+Feb 26, 2013 6:37:18 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:37:22 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:37:33 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:42:21 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:42:21 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/JSF_A6'
+Feb 26, 2013 6:42:51 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:42:55 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:44:56 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:45:14 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:45:55 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:45:55 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/JSF_A6'
+Feb 26, 2013 6:45:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:45:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/JSF_A6'
+Feb 26, 2013 6:46:23 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Feb 26, 2013 6:46:23 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/JSF_A6'
+Feb 26, 2013 6:46:24 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/JSF_A6'

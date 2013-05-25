@@ -1,0 +1,154 @@
+Mar 01, 2013 6:58:38 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+Mar 01, 2013 6:58:38 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: init: Global resources are available
+Mar 01, 2013 6:58:38 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 6:58:38 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 6:58:38 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context5012164442627565139.xml'
+Mar 01, 2013 6:58:39 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/hibernate_struts1'
+Mar 01, 2013 6:58:45 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 6:58:45 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 6:59:15 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 6:59:15 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/hibernate_struts1'
+Mar 01, 2013 6:59:16 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/hibernate_struts1'
+Mar 01, 2013 6:59:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 6:59:59 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:00:02 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:00:02 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:07:06 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:07:06 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:11:47 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:12:53 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:12:53 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:12:55 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:12:55 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:14:03 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:14:03 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:14:06 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:14:06 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: stop: Stopping web application '/hibernate_struts1'
+Mar 01, 2013 7:14:07 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/hibernate_struts1'
+Mar 01, 2013 7:16:32 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:16:32 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:17:30 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:17:30 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:20:30 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:20:30 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:21:58 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:21:58 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:23:08 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:23:08 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:23:52 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:23:52 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:24:47 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:24:47 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:25:09 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:25:09 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:26:02 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:26:02 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:26:09 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:26:09 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:26:58 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:26:58 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:27:25 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:27:25 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:27:46 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:27:46 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:28:53 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:28:53 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:29:00 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:29:00 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:29:47 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:31:19 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:31:25 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:32:55 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:33:11 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:33:11 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:33:11 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: undeploy: Undeploying web application at '/hibernate_struts1'
+Mar 01, 2013 7:33:12 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: install: Installing context configuration at 'file:/C:/Users/TAVAN_~1/AppData/Local/Temp/context1617949158277227227.xml'
+Mar 01, 2013 7:33:13 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: start: Starting web application '/hibernate_struts1'
+Mar 01, 2013 7:34:56 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:34:56 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:34:58 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:34:58 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:35:25 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:35:25 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:35:25 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'
+Mar 01, 2013 7:36:06 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:40:44 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:42:44 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: list: Listing contexts for virtual host 'localhost'
+Mar 01, 2013 7:42:44 PM org.apache.catalina.core.ApplicationContext log
+INFO: Manager: restart: Reloading web application '/hibernate_struts1'

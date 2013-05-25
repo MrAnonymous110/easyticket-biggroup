@@ -1,0 +1,13 @@
+127.0.0.1 - - [08/Jan/2013:13:25:19 +0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [08/Jan/2013:13:25:19 +0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [08/Jan/2013:13:25:19 +0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [08/Jan/2013:13:25:19 +0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - tomcat [08/Jan/2013:13:25:19 +0700] "GET /manager/text/list HTTP/1.1" 200 521
+127.0.0.1 - tomcat [08/Jan/2013:13:25:19 +0700] "GET /manager/text/list HTTP/1.1" 200 521
+127.0.0.1 - tomcat [08/Jan/2013:13:25:19 +0700] "GET /manager/text/deploy?config=file%3A%2FC%3A%2FUsers%2FTAVAN_%7E1%2FAppData%2FLocal%2FTemp%2Fcontext3088484648357897241.xml&path=/TestJdbcHomeland HTTP/1.1" 200 72
+127.0.0.1 - tomcat [08/Jan/2013:13:25:19 +0700] "GET /manager/text/start?path=/TestJdbcHomeland HTTP/1.1" 200 71
+127.0.0.1 - - [08/Jan/2013:13:25:20 +0700] "GET /TestJdbcHomeland HTTP/1.1" 302 -
+127.0.0.1 - - [08/Jan/2013:13:25:22 +0700] "GET /TestJdbcHomeland/ HTTP/1.1" 200 5202290
+127.0.0.1 - - [08/Jan/2013:13:27:09 +0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [08/Jan/2013:13:27:09 +0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [08/Jan/2013:13:27:09 +0700] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
