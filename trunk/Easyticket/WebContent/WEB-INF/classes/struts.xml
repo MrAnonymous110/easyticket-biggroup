@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+   <package name="account" extends="struts-default">
+      <action name="index">
+           <result>/index.jsp</result>
+      </action>
+     
+      <action name="login" 
+            class="com.controller.AccountController" 
+            method="login">
+            <result name="success">/welcome.jsp</result>
+            <result name="input">/index.jsp</result>
+      </action>
+      
+      <action name="deleteRole" class="com.controller.AccountController" method="deleteRole">
+            <result name="success">/welcome.jsp</result>
+      </action>
+   </package>
+</struts>
