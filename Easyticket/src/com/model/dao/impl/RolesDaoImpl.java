@@ -11,24 +11,27 @@ import com.model.util.HibernateUtil;
 
 public class RolesDaoImpl implements RolesDao {
   
-	  public RolesDaoImpl(){}
+	  public RolesDaoImpl(){
+		  HibernateUtil.getSessionFactory();
+	  }
 	  
 	  @Override
 	  public boolean insert(Roles role)
 	  {
-		  try
-		  {
-			  Session session = HibernateUtil.getSessionFactory().openSession();
-			  Transaction transaction = session.beginTransaction();
-			  session.save(role);
-			  transaction.commit();
-			  session.close();	
-			  return true;
-		  }
-		  catch(Exception e){
-               e.printStackTrace();
-               return false;
-		  }
+//		  try
+//		  {
+//			  Session session = HibernateUtil.getSessionFactory().openSession();
+//			  Transaction transaction = session.beginTransaction();
+//			  session.save(role);
+//			  transaction.commit();
+//			  session.close();	
+//			  return true;
+//		  }
+//		  catch(Exception e){
+//               e.printStackTrace();
+//               return false;
+//		  }
+		  return true;
 	  }
    
 	  @Override
