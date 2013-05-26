@@ -1,9 +1,10 @@
 package com.test;
 
-import com.model.entity.Users;
-import com.model.logic.UsersManager;
-import com.model.logic.impl.UsersManagerImpl;
-import com.process.StringFormat;
+import java.util.List;
+
+import com.model.dao.CityDao;
+import com.model.dao.impl.CityDaoImpl;
+import com.model.entity.City;
 
 public class Test {
 
@@ -12,14 +13,7 @@ public class Test {
 	 */
 	public static void main(String[] args) {
        
-	    UsersManager mng = new UsersManagerImpl();
-		Users u = mng.getUser("admin", StringFormat.encryptMD5("customer"));
-		if(u!=null)
 		  System.out.println("ok");
-		else
-			System.out.println("fail");
-
-        
 	}
 
 }
