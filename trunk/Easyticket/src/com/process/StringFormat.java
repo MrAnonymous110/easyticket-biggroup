@@ -21,6 +21,28 @@ public class StringFormat {
 	        }
 	 }
 	
-	 
+	  
+	 public static String SimpleFormat(String input)
+	 {
+		 try{
+			 String txt = input.trim();
+			 String[] arr = txt.split(" +");
+			 StringBuilder str = new StringBuilder("");
+			 for(String item : arr)
+			 {
+				 item = item.toLowerCase();
+				 char[] a = item.toCharArray();
+				 a[0] = Character.toUpperCase(a[0]);
+				 str.append(new String(a));
+				 str.append(" ");
+			 }
+			 
+			 return str.toString().trim();
+		 }
+		 catch(Exception e){
+			 throw new RuntimeException(e);
+		 }
+		 
+	 }
 	 
 }
