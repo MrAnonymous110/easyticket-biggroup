@@ -20,6 +20,8 @@
 					<input id="pass" name="password" type="password" class="text" />
 					<div class="sep"></div>
 					<button type="submit" class="ok">Login</button> <a class="button" href="">Forgotten password?</a>
+					
+					<p style="color: red"><s:property value="error" /> </p>
 				</form>
 			</div>
 			<div class="footer">&raquo; <a href="index.jsp">Go to home page</a> | Admin Panel</div>

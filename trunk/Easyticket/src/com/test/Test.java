@@ -1,7 +1,9 @@
 package com.test;
 
-import com.model.dao.impl.RolesDaoImpl;
-import com.model.entity.Roles;
+import com.model.entity.Users;
+import com.model.logic.UsersManager;
+import com.model.logic.impl.UsersManagerImpl;
+import com.process.StringFormat;
 
 public class Test {
 
@@ -10,10 +12,13 @@ public class Test {
 	 */
 	public static void main(String[] args) {
        
-		RolesDaoImpl dao = new RolesDaoImpl();
-	    Roles r = dao.getRole(1);
-	    System.out.println("Role name: "+r.getName());
-	    System.out.println("Users count: "+r.getUsers().size());
+	    UsersManager mng = new UsersManagerImpl();
+		Users u = mng.getUser("admin", StringFormat.encryptMD5("customer"));
+		if(u!=null)
+		  System.out.println("ok");
+		else
+			System.out.println("fail");
+
         
 	}
 

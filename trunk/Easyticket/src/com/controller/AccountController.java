@@ -14,20 +14,6 @@ public class AccountController {
 	private int count;
 	private int id;
 	
-	public String login()
-	{
-		 
-		 return "input";
-	}
-	
-	public String deleteRole()
-	{
-	    RolesDao dao = new RolesDaoImpl();
-		dao.delete(id);
-		return "success";
-	}
-	
-
 	public String getUsername() {
 		return username;
 	}
