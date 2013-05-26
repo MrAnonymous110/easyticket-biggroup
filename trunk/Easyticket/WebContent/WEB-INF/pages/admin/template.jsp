@@ -61,7 +61,7 @@
 	
 	<section id="secondary_bar">
 		<div class="user">
-			<p> <c:out value="${sessionScope.user.userName}"></c:out>   (<a href="#">3 Messages</a>)</p>
+			<p> <c:out value="${sessionScope.user.fullName}"></c:out>   (<a href="#">3 Messages</a>)</p>
 		    <a class="logout_user" href=" <s:url value="logout" /> " title="Logout">Logout</a>
 		</div>
 		<div class="breadcrumbs_container">
@@ -74,19 +74,19 @@
 			<input type="text" value="Quick Search" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
 		</form>
 		<hr/>
-		<h3>Event</h3>
-		<ul class="toggle">
-			<li class="icn_new_article"><a href="#">New Article</a></li>
-			<li class="icn_edit_article"><a href="#">Edit Articles</a></li>
-			<li class="icn_categories"><a href="#">Categories</a></li>
-			<li class="icn_tags"><a href="#">Tags</a></li>
-		</ul>
 		<h3>Users</h3>
 		<ul class="toggle">
 			<li class="icn_add_user"><a href="#">Add New User</a></li>
 			<li class="icn_view_users"><a href="#">View Users</a></li>
 			<li class="icn_profile"><a href="#">Your Profile</a></li>
 		</ul>
+		<h3>Event</h3>
+		<ul class="toggle">
+			<li class="icn_new_article"><a href="#">New Article</a></li>
+			<li class="icn_edit_article"><a href="#">Edit Articles</a></li>
+			<li class="icn_categories"><a href="#">Categories</a></li>
+			<li class="icn_tags"><a href="#">Tags</a></li>
+		</ul>		
 		<h3>Media</h3>
 		<ul class="toggle">
 			<li class="icn_folder"><a href="#">File Manager</a></li>

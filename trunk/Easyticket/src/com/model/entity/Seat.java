@@ -19,6 +19,9 @@ public class Seat {
     @Column(name="Price")
     private double price;
     
+    @Column(name="Discount")
+    private double discount;
+    
     @Column(name="AmountTicket")
     private int amountTicket;
     
@@ -75,6 +78,14 @@ public class Seat {
 
 	public void setEvent(Event event) {
 		this.event = event;
+	}
+
+	public double getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(double discount) {
+		this.discount = discount;
 	}
     
     

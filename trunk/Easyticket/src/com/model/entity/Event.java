@@ -42,9 +42,6 @@ public class Event {
 	@Column(name="ImgSrc", length = 100)
 	private String ImgSrc;
 	
-	@Column(name="Information", length = 100)
-	private String information;
-	
     @ManyToOne
     @JoinColumn(name="CityId")
     private City city;
@@ -123,14 +120,6 @@ public class Event {
 
 	public void setImgSrc(String imgSrc) {
 		ImgSrc = imgSrc;
-	}
-
-	public String getInformation() {
-		return information;
-	}
-
-	public void setInformation(String information) {
-		this.information = information;
 	}
 
 	public City getCity() {
