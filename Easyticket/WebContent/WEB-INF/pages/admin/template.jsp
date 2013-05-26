@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@taglib uri="/struts-tags" prefix="s" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="/common/taglibs.jsp" %>
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -55,18 +54,18 @@
    
      <header id="header">
 		<hgroup>
-			<h1 class="site_title"><a href="index.html">Website Admin</a></h1>
-			<h2 class="section_title">Dashboard</h2><div class="btn_view_site"><a href="http://www.medialoot.com">View Site</a></div>
+			<h1 class="site_title"><a href="index">Website Admin</a></h1>
+			<h2 class="section_title">Dashboard</h2><div class="btn_view_site"><a href="${ctx}/index">View Site</a></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
 	
 	<section id="secondary_bar">
 		<div class="user">
-			<p>John Doe (<a href="#">3 Messages</a>)</p>
-			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
+			<p> <c:out value="${sessionScope.user.userName}"></c:out>   (<a href="#">3 Messages</a>)</p>
+		    <a class="logout_user" href=" <s:url value="logout" /> " title="Logout">Logout</a>
 		</div>
 		<div class="breadcrumbs_container">
-			<article class="breadcrumbs"><a href="index.html">Website Admin</a> <div class="breadcrumb_divider"></div> <a class="current">Dashboard</a></article>
+			<article class="breadcrumbs"><a href=" <s:url value="index" /> ">Website Admin</a> <div class="breadcrumb_divider"></div> <a class="current">Dashboard</a></article>
 		</div>
 	</section><!-- end of secondary bar --> 
 	
@@ -75,7 +74,7 @@
 			<input type="text" value="Quick Search" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
 		</form>
 		<hr/>
-		<h3>Content</h3>
+		<h3>Event</h3>
 		<ul class="toggle">
 			<li class="icn_new_article"><a href="#">New Article</a></li>
 			<li class="icn_edit_article"><a href="#">Edit Articles</a></li>
@@ -99,13 +98,13 @@
 		<ul class="toggle">
 			<li class="icn_settings"><a href="#">Options</a></li>
 			<li class="icn_security"><a href="#">Security</a></li>
-			<li class="icn_jump_back"><a href="#">Logout</a></li>
+			<li class="icn_jump_back"><a href="<s:url value="logout" />" >Logout</a></li>
 		</ul>
 		
 		<footer>
 			<hr />
-			<p><strong>Copyright &copy; 2011 Website Admin</strong></p>
-			<p>Theme by <a href="http://www.medialoot.com">MediaLoot</a></p>
+			<p><strong>Copyright &copy; 2013 Website Admin</strong></p>
+			<p>Theme by <a href="${ctx}/about">group</a></p>
 		</footer>
 	</aside><!-- end of sidebar -->
 	

@@ -4,37 +4,27 @@
    "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
 <constant name="struts.devMode" value="true" />
-   <package name="account" extends="struts-default">
+   <package name="home" extends="struts-default" namespace="/">
       <action name="index">
            <result>/index.jsp</result>
-      </action>
-     
-      <action name="login" 
-            class="com.controller.AccountController" 
-            method="login">
-            <result name="success">/welcome.jsp</result>
-            <result name="input">/index.jsp</result>
-      </action>
-      
-      <action name="deleteRole" class="com.controller.AccountController" method="deleteRole">
-            <result name="success">/welcome.jsp</result>
       </action>
    </package>
    
       
    <package name="admin" extends="struts-default" namespace="/admin">
-        
-        <action name="">
-            <result>/WEB-INF/pages/admin/index.jsp</result>
-        </action>
    
-        <action name="index">
-            <result>/WEB-INF/pages/admin/index.jsp</result>
+        <action name="index" class="com.controller.AdminController" method="Index">
+            <result name="success">/WEB-INF/pages/admin/index.jsp</result>
+            <result name="input">/WEB-INF/pages/admin/login.jsp</result>
         </action>
         
         <action name="login" class="com.controller.AdminController" method="Login">
             <result name="input">/WEB-INF/pages/admin/login.jsp</result>
             <result name="success" type="redirectAction">index</result>
+        </action>
+        
+        <action name="logout" class="com.controller.AdminController" method="Logout">
+            <result name="success" type="redirectAction">login</result>
         </action>
    </package>
 </struts>
