@@ -2,6 +2,7 @@ package com.model.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -11,6 +12,8 @@ import com.model.util.HibernateUtil;
 
 public class EventDaoImpl implements EventDao {
 
+	public EventDaoImpl(){}
+	
 	@Override
 	public List<Event> getEvents() {
 		try
@@ -101,6 +104,39 @@ public class EventDaoImpl implements EventDao {
 			  session.beginTransaction();
 			  Event e  =  (Event) session.get(Event.class, id);
 			  return e;
+		  }
+		  catch(Exception e){
+	           e.printStackTrace();
+	           return null;
+		  }
+	}
+
+	@Override
+	public List<Event> findAll(String query) {
+		try
+		  {
+			  Session session = HibernateUtil.getSessionFactory().openSession();
+			  session.beginTransaction();
+			  List<Event> list = session.createQuery(query).list();
+			  return list;
+		  }
+		  catch(Exception e){
+	           e.printStackTrace();
+	           return null;
+		  }
+	}
+
+	@Override
+	public List<Event> findRange(String query, int start, int count) {
+		try
+		  {
+			  Session session = HibernateUtil.getSessionFactory().openSession();
+			  session.beginTransaction();
+			  Query q  = session.createQuery(query);
+			  q.setFirstResult(start);
+			  q.setMaxResults(count);
+			  List<Event> list =   q.list();
+			  return list;
 		  }
 		  catch(Exception e){
 	           e.printStackTrace();

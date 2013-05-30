@@ -10,4 +10,6 @@ public interface EventDao {
 	public boolean update(Event event);
 	public boolean delete(int id);
 	public Event getEvent(int id);
+	public List<Event> findAll(String query);
+	public List<Event> findRange(String query,int start, int count);
 }
