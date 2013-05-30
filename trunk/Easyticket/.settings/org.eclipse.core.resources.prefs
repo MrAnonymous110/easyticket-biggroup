@@ -1,2 +1,8 @@
 eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/pages/cart.jsp=UTF-8
+encoding//WebContent/WEB-INF/pages/contact.jsp=UTF-8
+encoding//WebContent/WEB-INF/pages/details.jsp=UTF-8
+encoding//WebContent/common/footer.jsp=UTF-8
+encoding//WebContent/common/header.jsp=UTF-8
+encoding//WebContent/index.jsp=UTF-8
 encoding//WebContent/login.jsp=UTF-8

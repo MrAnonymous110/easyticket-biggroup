@@ -8,6 +8,14 @@
         <action name="index">
             <result>/index.jsp</result>
         </action>
+        
+        <action name="cart">
+            <result>/WEB-INF/pages/cart.jsp</result>
+        </action>
+      
+        <action name="contact">
+            <result>/WEB-INF/pages/contact.jsp</result>
+        </action>
       
         <action name="login" class="com.controller.HomeController" method="Login">
             <result name="input">/login.jsp</result>
