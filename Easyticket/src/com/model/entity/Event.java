@@ -48,7 +48,7 @@ public class Event {
     
     @ManyToOne
     @JoinColumn(name="EventTypeId")
-    private EventType evenType;
+    private EventType eventType;
 
 	public Integer getId() {
 		return id;
@@ -130,12 +130,12 @@ public class Event {
 		this.city = city;
 	}
 
-	public EventType getEvenType() {
-		return evenType;
+	public EventType getEventType() {
+		return eventType;
 	}
 
-	public void setEvenType(EventType evenType) {
-		this.evenType = evenType;
+	public void setEventType(EventType eventType) {
+		this.eventType = eventType;
 	}
     
     

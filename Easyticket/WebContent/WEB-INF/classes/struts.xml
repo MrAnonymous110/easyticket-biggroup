@@ -42,5 +42,86 @@
         <action name="logout" class="com.controller.AdminController" method="Logout">
             <result name="success" type="redirectAction">login</result>
         </action>
+        
+        <action name="createEvent" class="com.controller.AdminController" method="createEvent">
+             <interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+				<param name="allowedTypes">
+				image/png,image/gif,image/jpeg,image/pjpeg
+				</param>
+	    	</interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+		     <result name="input">/WEB-INF/pages/admin/index.jsp</result>
+		     <result name="success" type="redirectAction">listEvent</result>
+		     <result name="login" type="redirectAction">login</result>
+        </action>
+        
+         <action name="newEvent" class="com.controller.AdminController" method="newEvent">        
+		     <result name="success">/WEB-INF/pages/admin/newEvent.jsp</result>
+             <result name="input">/error.jsp</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="editEvent" class="com.controller.AdminController" method="editEvent">
+             <result name="success">/WEB-INF/pages/admin/editEvent.jsp</result>
+             <result name="input">/error.jsp</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="updateEvent" class ="com.controller.AdminController" method = "updateEvent">
+              <interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+				<param name="allowedTypes">
+				image/png,image/gif,image/jpeg,image/pjpeg
+				</param>
+	    	</interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+              <result name="success" type="redirectAction">listEvent</result>
+              <result name="input">/WEB-INF/pages/admin/editEvent.jsp</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="deleteEvent" class ="com.controller.AdminController" method = "deleteEvent">
+              <result name="success" type="redirectAction">listEvent</result>
+              <result name="input">/error.jsp</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="listEvent" class ="com.controller.AdminController" method = "listEvent">
+              <result name="success">/WEB-INF/pages/admin/listEvent.jsp</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="listUsers" class="com.controller.AccountController" method="listUsers">
+              <result name="success">/WEB-INF/pages/admin/listUsers.jsp</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="newUser" class="com.controller.AccountController" method="newUser">
+              <result name="success">/WEB-INF/pages/admin/newUser.jsp</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="createUser" class="com.controller.AccountController" method="createUser">
+              <result name="success" type="redirectAction">listUsers</result>
+              <result name="input">/WEB-INF/pages/admin/newUser.jsp</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="editUser" class="com.controller.AccountController" method="editUser">
+              <result name="success">/WEB-INF/pages/admin/editUser.jsp</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="updateUser" class="com.controller.AccountController" method="updateUser">
+              <result name="success" type="redirectAction">listUsers</result>
+              <result name="input">/WEB-INF/pages/admin/editUser.jsp</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="deleteUser" class="com.controller.AccountController" method="deleteUser">
+              <result name="success" type="redirectAction">listUsers</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>
    </package>
 </struts>
