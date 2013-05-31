@@ -3,6 +3,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@include file="/common/taglibs.jsp" %>
 <html>
+<c:if test="${sessionScope.user == null}">
+      <c:redirect url="/admin/login"></c:redirect>
+</c:if>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Dashboard I Admin Panel</title>
@@ -70,34 +73,34 @@
 	</section><!-- end of secondary bar --> 
 	
 	<aside id="sidebar" class="column">
-		<form class="quick_search">
-			<input type="text" value="Quick Search" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+		<form class="quick_search" action="https://google.com.vn/search">
+			<input type="text" value="Google Search" name="q" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
 		</form>
 		<hr/>
 		<h3>Users</h3>
 		<ul class="toggle">
-			<li class="icn_add_user"><a href="#">Add New User</a></li>
-			<li class="icn_view_users"><a href="#">View Users</a></li>
-			<li class="icn_profile"><a href="#">Your Profile</a></li>
+			<li class="icn_add_user"><a href="newUser">Add New User</a></li>
+			<li class="icn_view_users"><a href="listUsers">View Users</a></li>
+			<li class="icn_security"><a href="roles">Roles</a></li>
+			<li class="icn_profile"><a href="profile">Your Profile</a></li>
 		</ul>
-		<h3>Event</h3>
+		<h3>Event Manager</h3>
 		<ul class="toggle">
-			<li class="icn_new_article"><a href="#">New Article</a></li>
-			<li class="icn_edit_article"><a href="#">Edit Articles</a></li>
-			<li class="icn_categories"><a href="#">Categories</a></li>
-			<li class="icn_tags"><a href="#">Tags</a></li>
+			<li class="icn_new_article"><a href="newEvent">New Event</a></li>
+			<li class="icn_categories"><a href="listEvent">View Events</a></li>
+			<li class="icn_categories"><a href="listTypes">Event Types</a></li>
+			<li class="icn_tags"><a href="seats">Seats</a></li>
 		</ul>		
-		<h3>Media</h3>
+		<h3>System</h3>
 		<ul class="toggle">
-			<li class="icn_folder"><a href="#">File Manager</a></li>
-			<li class="icn_photo"><a href="#">Gallery</a></li>
-			<li class="icn_audio"><a href="#">Audio</a></li>
-			<li class="icn_video"><a href="#">Video</a></li>
+			<li class="icn_folder"><a href="booking">Booking</a></li>
+			<li class="icn_categories"><a href="payment">Payment</a></li>
+			<li class="icn_categories"><a href="city">City</a></li>
+			<li class="icn_categories"><a href="contact">Contact</a></li>
+			<li class="icn_categories"><a href="faq">FAQ</a></li>
 		</ul>
-		<h3>Admin</h3>
+		<h3>Orther</h3>
 		<ul class="toggle">
-			<li class="icn_settings"><a href="#">Options</a></li>
-			<li class="icn_security"><a href="#">Security</a></li>
 			<li class="icn_jump_back"><a href="<s:url value="logout" />" >Logout</a></li>
 		</ul>
 		

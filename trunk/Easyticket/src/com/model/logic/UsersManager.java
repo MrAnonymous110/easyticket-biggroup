@@ -2,7 +2,6 @@ package com.model.logic;
 
 import java.util.List;
 
-import com.model.entity.Roles;
 import com.model.entity.Users;
 
 public interface UsersManager {

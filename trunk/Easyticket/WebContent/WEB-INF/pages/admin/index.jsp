@@ -1,5 +1,5 @@
 <%@ include file="template.jsp" %>
-
+<%@include file="/common/taglibs.jsp" %>
 <section id="main" class="column">
 		
 		<h4 class="alert_info">Welcome to the Admin panel!</h4>
@@ -57,32 +57,39 @@
     				<th>Title</th> 
     				<th>Artist</th>
     				<th>Content</th> 
+    				<th>City</th>
     				<th>Address</th> 
     				<th>Start time</th>
     				<th>End time</th>
+    				<th>Image</th>
     				<th>Actions</th>
 				</tr> 
 			</thead> 
 			<tbody> 
-				<tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>Tho san phu thuy</td> 
-    				<td>Phim my</td> 
-    				<td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
-    				<td>Rap chieu dan chu</td>
-    				<td>12/10/2013  09:30AM</td>
-    				<td>12/10/2013  11:00AM</td>
+			    <s:iterator value="events">
+			      <tr> 
+   					<td><input type="checkbox" name="eventIds"></td> 
+    				<td><s:property value="title"/> </td> 
+    				<td><s:property value="artist"/></td> 
+    				<td><s:property value="content"/></td>
+    				<td><s:property value="city.name"/></td>
+    				<td><s:property value="address"/></td>
+    				<td><s:property value="startTime"/></td>
+    				<td><s:property value="endTime"/></td>
     				<td>
-    				   <a href="editEvent"><input type="image" src="<s:url value="/images/icn_edit.png" /> " title="Edit"></a>
-    				   <a href="deletEevent"> <input type="image" src="<s:url value="/images/icn_trash.png" /> " title="Trash"></a> 
+    				    <img src="<s:url value="%{imgSrc}" />"  style="height: 50px"   />
+    				</td>
+    				<td>
+    				   <a href="editEvent?eventId=<s:property value="id"/>"><input type="image" src="<s:url value="/images/icn_edit.png" /> " title="Edit"></a>
+    				   <a href="deleteEvent?eventId=<s:property value="id"/>"> <input type="image" src="<s:url value="/images/icn_trash.png" /> " title="Trash"></a> 
     				</td> 
 				</tr> 
-				
+			    </s:iterator>		
 			</tbody> 
 			</table>
 			<footer>
 				<div class="submit_link">
-					<input type="submit" value="View All" class="alt_btn">
+					<a href="listEvent"><input type="submit" value="View All" class="alt_btn"></a> 
 					<input type="submit" value="Delele Selected">
 				</div>
 			</footer>
@@ -135,7 +142,7 @@
 		
 		<article class="module width_full">
 			<header><h3>Create Event</h3></header>
-			<form action="createEvent" method="post">
+			<form action="createEvent" method="post" enctype="multipart/form-data">
 				<div class="module_content">
 						<fieldset style="width:48%; float:left; margin-right: 3%;">
 							<label>Title</label>
@@ -152,9 +159,9 @@
 						<fieldset style="width:48%; float:left; ">
 							<label>City</label>
 							<select style="width:92%;" name="cityId">
-								<option>Ha Noi</option>
-								<option>Da Nang</option>
-								<option>Hai Phong</option>
+								<s:iterator value="cities">
+								    <option value='<s:property value="id" />'><s:property value="name"/> </option>
+								 </s:iterator>
 							</select>
 						</fieldset><div class="clear"></div>
 						<fieldset>
@@ -163,11 +170,10 @@
 						</fieldset>
 						<fieldset style="width:31%; float:left; margin-right: 3%;"> 
 							<label>Event Type</label>
-							<select style="width:92%;" name="eventId">
-								<option value="1">Sport</option>
-								<option>Movie</option>
-								<option>Music</option>
-								<option>Drama</option>
+							<select style="width:92%;" name="eventTypeId">
+								<s:iterator value="eventTypes">
+								    <option value='<s:property value="id" />'><s:property value="name"/> </option>
+								 </s:iterator>
 							</select>
 						</fieldset>
 						<fieldset style="width:31%; float:left; margin-right: 3%;"> 
@@ -180,14 +186,17 @@
 						</fieldset><div class="clear"></div>
 						<fieldset>
 							<label>Image</label>
-							<input type="file" name="imgSrc" />
+							<input type="file" name="image" />
 						</fieldset>
 				</div>
 				
 			<footer>
+                <s:if test="error != ''">
+                    <font color="red" style="float:left; margin-left: 3%; padding: 5px 0"><s:property value="error"/></font>
+                </s:if>   
 				<div class="submit_link">
 					<input type="submit" value="Create" class="alt_btn">
-					<input type="submit" value="Reset">
+					<input type="reset" value="Reset">
 				</div>
 			</footer>
 		  </form>
