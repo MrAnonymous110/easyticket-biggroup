@@ -17,6 +17,38 @@
             <result>/WEB-INF/pages/contact.jsp</result>
         </action>
       
+        <action name="booking">
+            <result>/WEB-INF/pages/booking.jsp</result>
+        </action>
+        
+        <action name="details">
+            <result>/WEB-INF/pages/details.jsp</result>
+        </action>
+        
+        <action name="search">
+            <result>/WEB-INF/pages/search.jsp</result>
+        </action>
+        
+        <action name="movie">
+            <result>/WEB-INF/pages/movie.jsp</result>
+        </action>
+        
+        <action name="music">
+            <result>/WEB-INF/pages/music.jsp</result>
+        </action>
+      
+        <action name="sport">
+            <result>/WEB-INF/pages/sport.jsp</result>
+        </action>
+        
+        <action name="drama">
+            <result>/WEB-INF/pages/drama.jsp</result>
+        </action>
+      
+        <action name="register">
+            <result name="success">/index.jsp</result>
+        </action>
+      
         <action name="login" class="com.controller.HomeController" method="Login">
             <result name="input">/login.jsp</result>
             <result name="success" type="redirectAction">index</result>
@@ -121,6 +153,11 @@
         
         <action name="deleteUser" class="com.controller.AccountController" method="deleteUser">
               <result name="success" type="redirectAction">listUsers</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="roles" class="com.controller.AccountController" method="roles">
+              <result name="success" type="">/WEB-INF/pages/admin/roles.jsp</result>
               <result name="login" type="redirectAction">login</result>
         </action>
    </package>
