@@ -9,6 +9,79 @@
 	<link href="css/style.css" rel="stylesheet" media="screen" />
 	<link rel="stylesheet" href="css/jquery.jqzoom.css" type="text/css" />
 	<link rel="stylesheet" href="css/jquery.countdown.css" type="text/css" />
+	
+	
+  
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/mosaic.1.0.1.min.js"></script>
+	<script src="js/jquery.nouislider.js"></script>
+	<script src="js/jquery.jqzoom-core.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+	<script type="text/javascript" src="js/jquery.countdown-vi.js"></script>
+	<script type="text/javascript" src="js/googlemap.js"></script>
+	
+	<script type="text/javascript">
+	$(function() {
+	$('.dropdown-menu input').click(function(e) {
+	e.stopPropagation();
+	});
+		function DropDown(el) {
+					this.dd = el;
+					this.initEvents();
+				}
+				DropDown.prototype = {
+					initEvents : function() {
+						var obj = this;
+	
+						obj.dd.on('click', function(event){
+							$(this).toggleClass('active');
+							event.stopPropagation();
+						});	
+					}
+				}
+	
+				$(function() {
+	
+					var dd = new DropDown( $('#dd') );
+	
+					$(document).click(function() {
+						// all dropdowns
+						$('.menu-drop').removeClass('active');
+					});
+	
+				});
+				$(".noUiSlider").noUiSlider({
+	    range: [0, 100]
+	   ,start: [20, 50]
+	   ,handles: 2
+	   ,serialization: {
+	      to: [$("#exTO"),$("#exFR")]
+		  ,resolution : 1
+	   }
+	});
+	});
+	$(document).ready(function() {
+		  $('.jqzoom').jqzoom({
+		          zoomType: 'standard',
+		          lens:true,
+		          preloadImages: true,
+		          alwaysOn:false,
+		           zoomWidth: 400,
+		          //zoomWindow  default width
+		          zoomHeight: 400
+		          //zoomWindow  default height
+		      });
+		  
+		});
+	$(function () {
+		  var austDay = new Date();
+		  austDay = new Date(austDay.getFullYear(), 5 - 1, 25, 17, 30, 0, 0 );
+		  $('#defaultCountdown').countdown({until: austDay});
+		  $('#year').text(austDay.getFullYear());
+		});	
+	</script>  
+  
 </head>
 
 <body>

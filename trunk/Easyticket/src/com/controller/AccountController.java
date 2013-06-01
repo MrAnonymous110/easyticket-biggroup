@@ -89,6 +89,44 @@ public class AccountController extends ActionSupport {
 		return "login";
 	}
 
+	public String register()
+	{
+		if (isValid()) {
+			if ("".equals(password)) {
+				error = "password is invalid!";
+				return "input";
+			}
+			if (!password.equals(confirmPassword)) {
+				error = "confirm password is not match!";
+				return "input";
+			}
+			try {
+			    user = new Users();
+				user.setUserName(userName);
+				user.setPassword(StringFormat.encryptMD5(password));
+				user.setFullName(fullName);
+				user.setAddress(address);
+				user.setEmail(email);
+				Roles role = roleMng.getRole(roleId);
+				user.setRole(role);
+				user.setPhone(phone);
+				user.setBirthDay(new SimpleDateFormat("dd/MM/yyyy")
+						.parse(birthDay));
+				user.setCreateDate(new Date());
+				userMng.insert(user);
+				
+				session = ActionContext.getContext().getSession();
+				session.put("user", user);
+				session.put("viewtime", new Date());
+				return "success";
+			} catch (Exception e) {
+				return "input";
+			}
+
+		}
+		return "input";
+	}
+	
 	public String createUser() {
 		if (isAuthorize()) {
 			if (isValid()) {
@@ -173,6 +211,15 @@ public class AccountController extends ActionSupport {
 		return "login";
 	}
 	
+	public String roles()
+	{
+		if (isAuthorize()) {
+			   roles = roleMng.getRoles();
+			   return "success";
+			}
+			return "login";
+	}
+	
 	private boolean isValid() {
 		if ("".equals(userName)) {
 			error = "User Name is invalid!";
@@ -217,6 +264,7 @@ public class AccountController extends ActionSupport {
 
 	}
 
+	
 	public String getPassword() {
 		return password;
 	}
