@@ -46,16 +46,17 @@
         </action>
       
         <action name="register">
-            <result name="success">/index.jsp</result>
+            <result name="input">/register.jsp</result>
+            <result name="success">/index.html</result>
         </action>
       
         <action name="login" class="com.controller.HomeController" method="Login">
             <result name="input">/login.jsp</result>
-            <result name="success" type="redirectAction">index</result>
+            <result name="success" type="redirect">/index.html</result>
         </action>
         
          <action name="logout" class="com.controller.AdminController" method="Logout">
-            <result name="success" type="redirectAction">login</result>
+            <result name="success" type="redirect">/login.html</result>
         </action>
    </package>
       
