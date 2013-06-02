@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 25, 2013 at 04:51 AM
+-- Generation Time: Jun 02, 2013 at 12:44 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.4.3
 
@@ -49,7 +49,18 @@ CREATE TABLE IF NOT EXISTS `city` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `city`
+--
+
+INSERT INTO `city` (`Id`, `Name`) VALUES
+(1, 'Ho Chi Minh'),
+(2, 'Da Nang'),
+(3, 'Hai Phong'),
+(4, 'Ha Noi'),
+(5, 'Ha Dong');
 
 -- --------------------------------------------------------
 
@@ -82,7 +93,6 @@ CREATE TABLE IF NOT EXISTS `event` (
   `Content` longtext,
   `CreateTime` datetime DEFAULT NULL,
   `EndTime` datetime DEFAULT NULL,
-  `Information` varchar(100) DEFAULT NULL,
   `StartTime` datetime DEFAULT NULL,
   `Title` varchar(100) DEFAULT NULL,
   `CityId` int(11) DEFAULT NULL,
@@ -90,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `event` (
   PRIMARY KEY (`Id`),
   KEY `FK403827AB37964AA` (`EventTypeId`),
   KEY `FK403827A889AB20A` (`CityId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -102,7 +112,17 @@ CREATE TABLE IF NOT EXISTS `eventtype` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `eventtype`
+--
+
+INSERT INTO `eventtype` (`Id`, `Name`) VALUES
+(1, 'Sport'),
+(2, 'Movie'),
+(3, 'Music'),
+(4, 'Drama');
 
 -- --------------------------------------------------------
 
@@ -129,7 +149,15 @@ CREATE TABLE IF NOT EXISTS `payment` (
   `Description` varchar(100) DEFAULT NULL,
   `Name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`Id`, `Description`, `Name`) VALUES
+(1, NULL, 'Debitcard'),
+(2, NULL, 'Bank''s credit');
 
 -- --------------------------------------------------------
 
@@ -142,7 +170,15 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `description` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `description`, `name`) VALUES
+(1, 'admin', 'admin'),
+(2, 'customer', 'customer');
 
 -- --------------------------------------------------------
 
@@ -157,6 +193,7 @@ CREATE TABLE IF NOT EXISTS `seat` (
   `Price` double DEFAULT NULL,
   `Seat` varchar(255) DEFAULT NULL,
   `EventId` int(11) DEFAULT NULL,
+  `Discount` double DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `FK274225A00AE16` (`EventId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -180,7 +217,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `RoleId` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK4E39DE82597D115` (`RoleId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `Address`, `BirthDay`, `CreateDate`, `Email`, `FullName`, `Password`, `Phone`, `UserName`, `RoleId`) VALUES
+(1, 'Ha Noi', '1992-10-10', '2012-10-10', 'mytest310113@gmail.com', 'Admin', '21232f297a57a5a743894a0e4a801fc3', '01665834906', 'admin', 1),
+(2, 'Ha Noi', '2000-11-07', '2012-10-10', 'mytest310113@gmail.com', 'Customer', '91ec1f9324753048c0096d036a694f86', '0123456789', 'customer', 2);
 
 --
 -- Constraints for dumped tables
@@ -190,9 +235,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
-  ADD CONSTRAINT `FK6713A039A8A48C2E` FOREIGN KEY (`PaymentId`) REFERENCES `payment` (`Id`),
   ADD CONSTRAINT `FK6713A0392B17BA75` FOREIGN KEY (`UserId`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `FK6713A039A3AE5CBE` FOREIGN KEY (`SeatId`) REFERENCES `seat` (`Id`);
+  ADD CONSTRAINT `FK6713A039A3AE5CBE` FOREIGN KEY (`SeatId`) REFERENCES `seat` (`Id`),
+  ADD CONSTRAINT `FK6713A039A8A48C2E` FOREIGN KEY (`PaymentId`) REFERENCES `payment` (`Id`);
 
 --
 -- Constraints for table `contact`
