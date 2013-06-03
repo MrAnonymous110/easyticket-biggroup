@@ -165,7 +165,7 @@ public class AdminController extends ActionSupport implements
 		}
 		return "login";
 	}
-
+	
 	public String updateEvent() {
 		if (isAuthorize()) {
 			try {
