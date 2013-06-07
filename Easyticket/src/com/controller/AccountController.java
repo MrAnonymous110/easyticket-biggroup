@@ -23,7 +23,7 @@ public class AccountController extends ActionSupport {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	// property
+	// property user
 	private int id;
 	private String userName;
 	private String password;
@@ -33,8 +33,12 @@ public class AccountController extends ActionSupport {
 	private String email;
 	private String phone;
 	private String birthDay;
-	private int roleId;
 
+	private int roleId;
+	//property role
+	private String roleName;
+	private String roleDescription;
+	
 	// error message
 	private String error;
 
@@ -216,6 +220,45 @@ public class AccountController extends ActionSupport {
 			return "login";
 	}
 	
+	public String createRole()
+	{
+		if(isAuthorize())
+		{
+			Roles r = new Roles();
+			r.setName(roleName);
+			r.setDescription(roleDescription);
+			roleMng.insert(r);
+			return "success";
+		}
+		return "login";
+		
+	}
+	
+	public String deleteRole()
+	{
+		if(isAuthorize())
+		{
+			roleMng.delete(roleId);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String updateRole()
+	{
+		if(isAuthorize())
+		{
+			Roles r = new Roles();
+			r.setId(roleId);
+			r.setName(roleName);
+			r.setDescription(roleDescription);
+			roleMng.update(r);
+			return "success";
+		}
+		return "login";
+	}
+	
+	
 	private boolean isValid() {
 		if ("".equals(userName)) {
 			error = "User Name is invalid!";
@@ -247,6 +290,58 @@ public class AccountController extends ActionSupport {
 
 	}
 
+	public String profile()
+	{
+		if(isAuthorize()){
+		    session = ActionContext.getContext().getSession();
+		    user = (Users)session.get("user");
+		    user = userMng.getUser(user.getId());
+		    return "success";
+		}
+		return "login";
+		
+	}
+	
+	public String saveProfile()
+	{
+		if(isAuthorize())
+		{
+            if (isValid()) {			
+				try {
+				    user = userMng.getUser(id);
+					
+					if (!"".equals(password)){
+						if(!password.equals(confirmPassword)) {
+							error = "confirm password is not match!";
+							return "input";
+					    }
+						
+						user.setPassword(StringFormat.encryptMD5(password));
+					}
+				
+					user.setUserName(userName);
+					user.setFullName(fullName);
+					user.setAddress(address);
+					user.setEmail(email);
+					Roles role = roleMng.getRole(roleId);
+					user.setRole(role);
+					user.setPhone(phone);
+					user.setBirthDay(new SimpleDateFormat("dd/MM/yyyy")
+							.parse(birthDay));
+
+					userMng.update(user);
+					return "success";
+				} catch (Exception e) {
+					return "input";
+				}
+
+			}
+			return "input";
+			
+		}
+		return "login";
+	}
+	
 	private boolean isAuthorize() {
 		session = ActionContext.getContext().getSession();
 		if (session != null && session.get("user") != null) {
@@ -395,6 +490,22 @@ public class AccountController extends ActionSupport {
 
 	public void setError(String error) {
 		this.error = error;
+	}
+
+	public String getRoleName() {
+		return roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+
+	public String getRoleDescription() {
+		return roleDescription;
+	}
+
+	public void setRoleDescription(String roleDescription) {
+		this.roleDescription = roleDescription;
 	}
 
 }
