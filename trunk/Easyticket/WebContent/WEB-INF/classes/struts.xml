@@ -161,5 +161,31 @@
               <result name="success" type="">/WEB-INF/pages/admin/roles.jsp</result>
               <result name="login" type="redirectAction">login</result>
         </action>
+        
+        <action name="createRole" class="com.controller.AccountController" method="createRole">
+              <result name="success" type="redirectAction">roles</result>
+              <result name="login" type="redirectAction">login</result>
+        </action> 
+        
+        <action name="deleteRole" class="com.controller.AccountController" method="deleteRole">
+              <result name="success" type="redirectAction">roles</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>  
+        
+        <action name="updateRole" class="com.controller.AccountController" method="updateRole">
+              <result name="success" type="redirectAction">roles</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>  
+        
+        <action name="profile" class="com.controller.AccountController" method="profile">
+              <result name="success">/WEB-INF/pages/admin/profile.jsp</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>  
+        
+        <action name="saveProfile" class="com.controller.AccountController" method="saveProfile">
+              <result name="success" type="redirectAction">profile</result>
+              <result name="input">/WEB-INF/pages/admin/profile.jsp</result>
+              <result name="login" type="redirectAction">login</result>
+        </action>
    </package>
 </struts>
