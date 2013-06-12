@@ -3,189 +3,218 @@
    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
    "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-<constant name="struts.devMode" value="true" />
-   <package name="home" extends="struts-default" namespace="/">
-        <action name="index">
-            <result>/index.jsp</result>
-        </action>
-        
-        <action name="cart">
-            <result>/WEB-INF/pages/cart.jsp</result>
-        </action>
-      
-        <action name="contact">
-            <result>/WEB-INF/pages/contact.jsp</result>
-        </action>
-      
-        <action name="booking">
-            <result>/WEB-INF/pages/booking.jsp</result>
-        </action>
-        
-        <action name="details">
-            <result>/WEB-INF/pages/details.jsp</result>
-        </action>
-        
-        <action name="search">
-            <result>/WEB-INF/pages/search.jsp</result>
-        </action>
-        
-        <action name="movie">
-            <result>/WEB-INF/pages/movie.jsp</result>
-        </action>
-        
-        <action name="music">
-            <result>/WEB-INF/pages/music.jsp</result>
-        </action>
-      
-        <action name="sport">
-            <result>/WEB-INF/pages/sport.jsp</result>
-        </action>
-        
-        <action name="drama">
-            <result>/WEB-INF/pages/drama.jsp</result>
-        </action>
-      
-        <action name="register">
-            <result name="input">/register.jsp</result>
-            <result name="success">/index.html</result>
-        </action>
-      
-        <action name="login" class="com.controller.HomeController" method="Login">
-            <result name="input">/login.jsp</result>
-            <result name="success" type="redirect">/index.html</result>
-        </action>
-        
-         <action name="logout" class="com.controller.AdminController" method="Logout">
-            <result name="success" type="redirect">/login.html</result>
-        </action>
-   </package>
-      
-   <package name="admin" extends="struts-default" namespace="/admin">
-   
-        <action name="index" class="com.controller.AdminController" method="Index">
-            <result name="success">/WEB-INF/pages/admin/index.jsp</result>
-            <result name="input" type="redirectAction">login</result>
-        </action>
-        
-        <action name="login" class="com.controller.AdminController" method="Login">
-            <result name="input">/login.jsp</result>
-            <result name="success" type="redirectAction">index</result>
-        </action>
-        
-        <action name="logout" class="com.controller.AdminController" method="Logout">
-            <result name="success" type="redirectAction">login</result>
-        </action>
-        
-        <action name="createEvent" class="com.controller.AdminController" method="createEvent">
-             <interceptor-ref name="fileUpload">
+	<constant name="struts.devMode" value="true" />
+	<package name="home" extends="struts-default" namespace="/">
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
+
+		<action name="cart">
+			<result>/WEB-INF/pages/cart.jsp</result>
+		</action>
+
+		<action name="contact">
+			<result>/WEB-INF/pages/contact.jsp</result>
+		</action>
+
+		<action name="booking">
+			<result>/WEB-INF/pages/booking.jsp</result>
+		</action>
+
+		<action name="details">
+			<result>/WEB-INF/pages/details.jsp</result>
+		</action>
+
+		<action name="search">
+			<result>/WEB-INF/pages/search.jsp</result>
+		</action>
+
+		<action name="movie">
+			<result>/WEB-INF/pages/movie.jsp</result>
+		</action>
+
+		<action name="music">
+			<result>/WEB-INF/pages/music.jsp</result>
+		</action>
+
+		<action name="sport">
+			<result>/WEB-INF/pages/sport.jsp</result>
+		</action>
+
+		<action name="drama">
+			<result>/WEB-INF/pages/drama.jsp</result>
+		</action>
+
+		<action name="register">
+			<result name="input">/register.jsp</result>
+			<result name="success">/index.html</result>
+		</action>
+
+		<action name="login" class="com.controller.HomeController"
+			method="Login">
+			<result name="input">/login.jsp</result>
+			<result name="success" type="redirect">/index.html</result>
+		</action>
+
+		<action name="logout" class="com.controller.AdminController"
+			method="Logout">
+			<result name="success" type="redirect">/login.html</result>
+		</action>
+	</package>
+
+	<package name="admin" extends="struts-default" namespace="/admin">
+
+		<action name="index" class="com.controller.AdminController"
+			method="Index">
+			<result name="success">/WEB-INF/pages/admin/index.jsp</result>
+			<result name="input" type="redirectAction">login</result>
+		</action>
+
+		<action name="login" class="com.controller.AdminController"
+			method="Login">
+			<result name="input">/login.jsp</result>
+			<result name="success" type="redirectAction">index</result>
+		</action>
+
+		<action name="logout" class="com.controller.AdminController"
+			method="Logout">
+			<result name="success" type="redirectAction">login</result>
+		</action>
+
+		<action name="createEvent" class="com.controller.AdminController"
+			method="createEvent">
+			<interceptor-ref name="fileUpload">
 				<param name="maximumSize">2097152</param>
 				<param name="allowedTypes">
-				image/png,image/gif,image/jpeg,image/pjpeg
+					image/png,image/gif,image/jpeg,image/pjpeg
 				</param>
-	    	</interceptor-ref>
-            <interceptor-ref name="defaultStack"></interceptor-ref>
-		     <result name="input">/WEB-INF/pages/admin/index.jsp</result>
-		     <result name="success" type="redirectAction">listEvent</result>
-		     <result name="login" type="redirectAction">login</result>
-        </action>
-        
-         <action name="newEvent" class="com.controller.AdminController" method="newEvent">        
-		     <result name="success">/WEB-INF/pages/admin/newEvent.jsp</result>
-             <result name="input">/error.jsp</result>
-             <result name="login" type="redirectAction">login</result>
-        </action>
-        
-        <action name="editEvent" class="com.controller.AdminController" method="editEvent">
-             <result name="success">/WEB-INF/pages/admin/editEvent.jsp</result>
-             <result name="input">/error.jsp</result>
-             <result name="login" type="redirectAction">login</result>
-        </action>
-        
-        <action name="updateEvent" class ="com.controller.AdminController" method = "updateEvent">
-              <interceptor-ref name="fileUpload">
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="input">/WEB-INF/pages/admin/index.jsp</result>
+			<result name="success" type="redirectAction">listEvent</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="newEvent" class="com.controller.AdminController"
+			method="newEvent">
+			<result name="success">/WEB-INF/pages/admin/newEvent.jsp</result>
+			<result name="input">/error.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="editEvent" class="com.controller.AdminController"
+			method="editEvent">
+			<result name="success">/WEB-INF/pages/admin/editEvent.jsp</result>
+			<result name="input">/error.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="updateEvent" class="com.controller.AdminController"
+			method="updateEvent">
+			<interceptor-ref name="fileUpload">
 				<param name="maximumSize">2097152</param>
 				<param name="allowedTypes">
-				image/png,image/gif,image/jpeg,image/pjpeg
+					image/png,image/gif,image/jpeg,image/pjpeg
 				</param>
-	    	</interceptor-ref>
-            <interceptor-ref name="defaultStack"></interceptor-ref>
-              <result name="success" type="redirectAction">listEvent</result>
-              <result name="input">/WEB-INF/pages/admin/editEvent.jsp</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>
-        
-        <action name="deleteEvent" class ="com.controller.AdminController" method = "deleteEvent">
-              <result name="success" type="redirectAction">listEvent</result>
-              <result name="input">/error.jsp</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>
-        
-        <action name="listEvent" class ="com.controller.AdminController" method = "listEvent">
-              <result name="success">/WEB-INF/pages/admin/listEvent.jsp</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>
-        
-        <action name="listUsers" class="com.controller.AccountController" method="listUsers">
-              <result name="success">/WEB-INF/pages/admin/listUsers.jsp</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>
-        
-        <action name="newUser" class="com.controller.AccountController" method="newUser">
-              <result name="success">/WEB-INF/pages/admin/newUser.jsp</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>
-        
-        <action name="createUser" class="com.controller.AccountController" method="createUser">
-              <result name="success" type="redirectAction">listUsers</result>
-              <result name="input">/WEB-INF/pages/admin/newUser.jsp</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>
-        
-        <action name="editUser" class="com.controller.AccountController" method="editUser">
-              <result name="success">/WEB-INF/pages/admin/editUser.jsp</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>
-        
-        <action name="updateUser" class="com.controller.AccountController" method="updateUser">
-              <result name="success" type="redirectAction">listUsers</result>
-              <result name="input">/WEB-INF/pages/admin/editUser.jsp</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>
-        
-        <action name="deleteUser" class="com.controller.AccountController" method="deleteUser">
-              <result name="success" type="redirectAction">listUsers</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>
-        
-        <action name="roles" class="com.controller.AccountController" method="roles">
-              <result name="success" type="">/WEB-INF/pages/admin/roles.jsp</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>
-        
-        <action name="createRole" class="com.controller.AccountController" method="createRole">
-              <result name="success" type="redirectAction">roles</result>
-              <result name="login" type="redirectAction">login</result>
-        </action> 
-        
-        <action name="deleteRole" class="com.controller.AccountController" method="deleteRole">
-              <result name="success" type="redirectAction">roles</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>  
-        
-        <action name="updateRole" class="com.controller.AccountController" method="updateRole">
-              <result name="success" type="redirectAction">roles</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>  
-        
-        <action name="profile" class="com.controller.AccountController" method="profile">
-              <result name="success">/WEB-INF/pages/admin/profile.jsp</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>  
-        
-        <action name="saveProfile" class="com.controller.AccountController" method="saveProfile">
-              <result name="success" type="redirectAction">profile</result>
-              <result name="input">/WEB-INF/pages/admin/profile.jsp</result>
-              <result name="login" type="redirectAction">login</result>
-        </action>
-   </package>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="redirectAction">listEvent</result>
+			<result name="input">/WEB-INF/pages/admin/editEvent.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="deleteEvent" class="com.controller.AdminController"
+			method="deleteEvent">
+			<result name="success" type="redirectAction">listEvent</result>
+			<result name="input">/error.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="listEvent" class="com.controller.AdminController"
+			method="listEvent">
+			<result name="success">/WEB-INF/pages/admin/listEvent.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="listUsers" class="com.controller.AccountController"
+			method="listUsers">
+			<result name="success">/WEB-INF/pages/admin/listUsers.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="newUser" class="com.controller.AccountController"
+			method="newUser">
+			<result name="success">/WEB-INF/pages/admin/newUser.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="createUser" class="com.controller.AccountController"
+			method="createUser">
+			<result name="success" type="redirectAction">listUsers</result>
+			<result name="input">/WEB-INF/pages/admin/newUser.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="editUser" class="com.controller.AccountController"
+			method="editUser">
+			<result name="success">/WEB-INF/pages/admin/editUser.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="updateUser" class="com.controller.AccountController"
+			method="updateUser">
+			<result name="success" type="redirectAction">listUsers</result>
+			<result name="input">/WEB-INF/pages/admin/editUser.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="deleteUser" class="com.controller.AccountController"
+			method="deleteUser">
+			<result name="success" type="redirectAction">listUsers</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="roles" class="com.controller.AccountController"
+			method="roles">
+			<result name="success" type="">/WEB-INF/pages/admin/roles.jsp
+			</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="createRole" class="com.controller.AccountController"
+			method="createRole">
+			<result name="success" type="redirectAction">roles</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="deleteRole" class="com.controller.AccountController"
+			method="deleteRole">
+			<result name="success" type="redirectAction">roles</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="updateRole" class="com.controller.AccountController"
+			method="updateRole">
+			<result name="success" type="redirectAction">roles</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="profile" class="com.controller.AccountController"
+			method="profile">
+			<result name="success">/WEB-INF/pages/admin/profile.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="saveProfile" class="com.controller.AccountController"
+			method="saveProfile">
+			<result name="success" type="redirectAction">profile</result>
+			<result name="input">/WEB-INF/pages/admin/profile.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+		
+		<action name="seats" class="com.controller.SeatsController" method="listSeat">
+			<result name="success" >/WEB-INF/pages/admin/listSeats.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+	</package>
 </struts>
