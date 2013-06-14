@@ -45,4 +45,10 @@ public class SeatManagerImpl implements SeatsManager {
 	public void setDao(SeatDao dao) {
 		this.dao = dao;
 	}
+
+	@Override
+	public List<Seat> getSeatsByEvent(int eventId) {
+		// TODO Auto-generated method stub
+		return dao.getSeatsByEvent(eventId);
+	}
 }

@@ -88,7 +88,7 @@
 		<ul class="toggle">
 			<li class="icn_new_article"><a href="newEvent">New Event</a></li>
 			<li class="icn_categories"><a href="listEvent">View Events</a></li>
-			<li class="icn_categories"><a href="listTypes">Event Types</a></li>
+			<li class="icn_categories"><a href="types">Event Types</a></li>
 			<li class="icn_tags"><a href="seats">Seats</a></li>
 		</ul>		
 		<h3>System</h3>

@@ -3,6 +3,7 @@ package com.controller;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -14,12 +15,18 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 
 import com.model.entity.*;
 import com.model.logic.CityManager;
+import com.model.logic.ContactManager;
 import com.model.logic.EventManager;
 import com.model.logic.EventTypeManager;
+import com.model.logic.FAQManager;
+import com.model.logic.PayManager;
 import com.model.logic.UsersManager;
 import com.model.logic.impl.CityManagerImpl;
+import com.model.logic.impl.ContactManagerImpl;
 import com.model.logic.impl.EventManagerImpl;
 import com.model.logic.impl.EventTypeManagerImpl;
+import com.model.logic.impl.FAQManagerImpl;
+import com.model.logic.impl.PayManagerImpl;
 import com.model.logic.impl.UsersManagerImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -38,6 +45,9 @@ public class AdminController extends ActionSupport implements
 	private EventManager eventMng;
 	private EventTypeManager eventTypeMng;
 	private CityManager cityMng;
+	private PayManager payMng;
+	private ContactManager contactMng;
+	private FAQManager faqMng;
 
 	// login property
 	private String username;
@@ -59,6 +69,10 @@ public class AdminController extends ActionSupport implements
 	private Seat seat;
 	private Booking booking;
 	private EventType eventType;
+	private City city;
+	private Payment pay;
+	private Contact contact;
+	private FAQ faq;
 
 	// list model
 	private List<Event> events;
@@ -66,7 +80,10 @@ public class AdminController extends ActionSupport implements
 	private List<Seat> seats;
 	private List<Booking> bookings;
 	private List<EventType> eventTypes;
-
+	private List<Payment> pays;
+    private List<Contact> contacts;
+    private List<FAQ> faqs;
+	
 	// event property
 	private int eventId;
 	private String title;
@@ -79,6 +96,10 @@ public class AdminController extends ActionSupport implements
 	private String endTime;
 	private String imgSrc;
 	private String createTime;
+	
+	// event type property
+	private int typeId;
+	private String typeName;
 
 	// upload file
 	private File image;
@@ -87,13 +108,29 @@ public class AdminController extends ActionSupport implements
 	private HttpServletRequest servletRequest;
 	private Map<String, Object> session;
 
+	//pay property
+	private int payId;
+	
+	//contact property
+	private int contactId;
+	private String isReply;
+	private String contactReply;
+
+	//faq property
+	private int faqId;
+	private String faqQuestion;
+	private String faqAnswer;
+	
 	public AdminController() {
 		userMng = new UsersManagerImpl();
 		eventMng = new EventManagerImpl();
 		eventTypeMng = new EventTypeManagerImpl();
 		cityMng = new CityManagerImpl();
+		payMng = new PayManagerImpl();
+		contactMng = new ContactManagerImpl();
+		faqMng = new FAQManagerImpl();
 
-		events = eventMng.findRange("", 0, 0, "", 0, 5);
+		events = eventMng.findRange("", "", 0, "", 0, 5);
 		cities = cityMng.getCities();
 		eventTypes = eventTypeMng.getEventTypes();
 	}
@@ -274,6 +311,207 @@ public class AdminController extends ActionSupport implements
 
 	}
 
+	public String listTypes()
+	{
+		if(isAuthorize())
+		{
+			eventTypes =  eventTypeMng.getEventTypes();
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String deleteType()
+	{
+		if(isAuthorize())
+		{
+			eventTypeMng.delete(typeId);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String updateType()
+	{
+		if(isAuthorize())
+		{
+			eventTypeMng.update(eventType);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String insertType()
+	{
+
+		if(isAuthorize())
+		{
+			eventTypeMng.insert(eventType);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String listCity()
+	{
+		if(isAuthorize())
+		{
+			cities = cityMng.getCities();
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String insertCity()
+	{
+		if(isAuthorize())
+		{
+			cityMng.insert(city);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String updateCity()
+	{
+		if(isAuthorize())
+		{
+		    cityMng.update(city);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String deleteCity()
+	{
+		if(isAuthorize())
+		{
+			cityMng.delete(cityId);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String payment()
+	{
+		if(isAuthorize())
+		{
+			pays = payMng.getPayments();
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String insertPay()
+	{
+		if(isAuthorize())
+		{
+			payMng.insert(pay);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String updatePay()
+	{
+		if(isAuthorize())
+		{
+			payMng.update(pay);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String deletePay()
+	{
+		if(isAuthorize())
+		{
+			payMng.delete(payId);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String listContact()
+	{
+		if(isAuthorize())
+		{
+		    contacts = contactMng.getContacts(isReply);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String deleteContact()
+	{
+		if(isAuthorize())
+		{
+		    contactMng.delete(contactId);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String replyContact()
+	{
+		if(isAuthorize())
+		{
+			// code send mail to here
+			contact = contactMng.getContact(contactId);
+			contact.setAnswer(contactReply);
+		    contactMng.update(contact);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String listFaq()
+	{
+		if(isAuthorize())
+		{
+			faqs = faqMng.getFAQs();
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String insertFaq()
+	{
+		if(isAuthorize())
+		{
+			FAQ item = new FAQ();
+			item.setAnswer(faqAnswer);
+			item.setQuestion(faqQuestion);
+			item.setCreateTime(new Date());
+			faqMng.insert(item);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String updateFaq()
+	{
+		if(isAuthorize())
+		{
+			FAQ item = faqMng.getFAQ(faqId);
+			item.setAnswer(faqAnswer);
+			item.setQuestion(faqQuestion);
+			faqMng.update(item);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String deleteFaq()
+	{
+		if(isAuthorize())
+		{
+			faqMng.delete(faqId);
+			return "success";
+		}
+		return "login";
+	}
+	
 	public String getUsername() {
 		return username;
 	}
@@ -556,4 +794,157 @@ public class AdminController extends ActionSupport implements
 
 	}
 
+	public int getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(int typeId) {
+		this.typeId = typeId;
+	}
+
+	public String getTypeName() {
+		return typeName;
+	}
+
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
+	}
+
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
+	}
+
+	public PayManager getPayMng() {
+		return payMng;
+	}
+
+	public void setPayMng(PayManager payMng) {
+		this.payMng = payMng;
+	}
+
+	public Payment getPay() {
+		return pay;
+	}
+
+	public void setPay(Payment pay) {
+		this.pay = pay;
+	}
+
+	public List<Payment> getPays() {
+		return pays;
+	}
+
+	public void setPays(List<Payment> pays) {
+		this.pays = pays;
+	}
+
+	public int getPayId() {
+		return payId;
+	}
+
+	public void setPayId(int payId) {
+		this.payId = payId;
+	}
+
+	public List<Contact> getContacts() {
+		return contacts;
+	}
+
+	public void setContacts(List<Contact> contacts) {
+		this.contacts = contacts;
+	}
+
+	public Contact getContact() {
+		return contact;
+	}
+
+	public void setContact(Contact contact) {
+		this.contact = contact;
+	}
+
+	public int getContactId() {
+		return contactId;
+	}
+
+	public void setContactId(int contactId) {
+		this.contactId = contactId;
+	}
+
+	public ContactManager getContactMng() {
+		return contactMng;
+	}
+
+	public void setContactMng(ContactManager contactMng) {
+		this.contactMng = contactMng;
+	}
+
+	public String isReply() {
+		return isReply;
+	}
+
+	public void setReply(String isReply) {
+		this.isReply = isReply;
+	}
+
+	public String getContactReply() {
+		return contactReply;
+	}
+
+	public void setContactReply(String contactReply) {
+		this.contactReply = contactReply;
+	}
+
+	public FAQManager getFaqMng() {
+		return faqMng;
+	}
+
+	public void setFaqMng(FAQManager faqMng) {
+		this.faqMng = faqMng;
+	}
+
+	public FAQ getFaq() {
+		return faq;
+	}
+
+	public void setFaq(FAQ faq) {
+		this.faq = faq;
+	}
+
+	public int getFaqId() {
+		return faqId;
+	}
+
+	public void setFaqId(int faqId) {
+		this.faqId = faqId;
+	}
+
+	public String getFaqQuestion() {
+		return faqQuestion;
+	}
+
+	public void setFaqQuestion(String faqQuestion) {
+		this.faqQuestion = faqQuestion;
+	}
+
+	public String getFaqAnswer() {
+		return faqAnswer;
+	}
+
+	public void setFaqAnswer(String faqAnswer) {
+		this.faqAnswer = faqAnswer;
+	}
+
+	public List<FAQ> getFaqs() {
+		return faqs;
+	}
+
+	public void setFaqs(List<FAQ> faqs) {
+		this.faqs = faqs;
+	}
+
+	
 }

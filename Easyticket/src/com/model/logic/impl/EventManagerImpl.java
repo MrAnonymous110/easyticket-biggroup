@@ -37,13 +37,13 @@ public class EventManagerImpl implements EventManager {
 	}
 
 	@Override
-	public List<Event> findAll(String search, int cityId, int type, String orderBy) {
+	public List<Event> findAll(String search,String cityId, int type, String orderBy) {
 		String query = buildStringQuery(search, cityId,type, orderBy);
 		return dao.findAll(query);
 	}
 
 	@Override
-	public List<Event> findRange(String search, int cityId, int type, String orderBy, int start, int count) {
+	public List<Event> findRange(String search, String cityId, int type, String orderBy, int start, int count) {
 		String query = buildStringQuery(search, cityId,type, orderBy);
 		return dao.findRange(query, start, count);
 	}
@@ -55,20 +55,20 @@ public class EventManagerImpl implements EventManager {
 	}
 	
 	
-	public String buildStringQuery(String search,int cityId, int type, String orderBy)
+	public String buildStringQuery(String search,String cityId, int type, String orderBy)
 	{
 		 String query ="";
 		 query = "from Event event where 1=1 ";
-		 if(!"".equals(search)){
-			 query += " and event.title like '%"+search+"%' ";
-			 query += " and event.content like '%"+search+"%' ";
+		 if(search !=null){
+			 query += " and (event.title like '%"+search+"%' ";
+			 query += " or event.content like '%"+search+"%') ";
 		 }
-		 if(cityId > 0)
+		 if(cityId != null && !cityId.equals(""))
 		 {
-			 query += " and event.city.id="+cityId;
+			 query += " and event.city.id = "+cityId;
 		 }
 		 if(type > 0){
-			 query += "and event.evenType.id="+type;
+			 query += " and event.eventType.id = "+type;
 		 }
 		 if(!"".equals(orderBy)){
 			 query += " order by "+ orderBy;

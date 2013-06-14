@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
  <%@include file="/common/header.jsp" %>
- <%@include file="/common/taglibs.jsp" %>
+  <%@include file="/common/taglibs.jsp" %>
     
 <!--content-->
 <div class="container">
@@ -11,12 +11,12 @@
 <div class="span3">
 <!--col left-->
 <div class="filter-product">
-<h3><s:property value="itemCount"/> Event</h3>
+<h3><s:property value="itemCount"/>Event</h3>
 Filter By
 </div>
 	<div class="colleft-box">
 	<h3>City</h3>
-	<form action="index" method="post" id="frmCity">
+	<form action="${ctx}/<s:property value='actionUrl' /> " method="post" id="frmCity">
 	   <input type="hidden" name="cityId" />
 	   <p>
 	       <s:if test="cityId == ''"> 
@@ -43,7 +43,7 @@ Filter By
 	</div>
 	<div class="colleft-box">
 	<h3>Create Time</h3>
-	<form action="index" method="post" id="frmOrderBy">
+	<form action="${ctx}/<s:property value='actionUrl' /> " method="post" id="frmOrderBy">
 	    <input type="hidden" name="o" />
 		<p>
 		    <s:if test="o == 1">
@@ -80,7 +80,7 @@ Filter By
 			<div class="span3">
 				<!--boxproduct3-->
 					<div class="box-product3">
-						<div class="img-product"> <img src="images/product2.png" alt="" /> <span class="saletab"><s:property value="discount" />%</span> </div>
+						<div class="img-product"> <img src="${ctx}/images/product2.png" alt="" /> <span class="saletab"><s:property value="discount" />%</span> </div>
 							<div class="box-product3-content">
 							<h3><s:property value="title" /></h3>
 						</div>
@@ -98,17 +98,17 @@ Filter By
 
 <div class="page">
   <ul>
-    <li><a href="index?p=<s:property value='prevPage' />" >Prev</a></li>
+    <li><a href="${ctx}/event/<s:property value='type' />?p=<s:property value='prevPage' />" >Prev</a></li>
     <s:set id="pcount" value="pcount" />
     <s:iterator begin="1" end="#pcount" var="i">
         <s:if test="p == #i">
-             <li><a href="index?p=<s:property value='#i' />" style="background:#F47955; color: white; " ><s:property value='#i' /></a></li>
+             <li><a href="${ctx}/event/<s:property value='type' />?p=<s:property value='#i' />" style="background:#F47955; color: white; " ><s:property value='#i' /></a></li>
         </s:if>
         <s:else>
-              <li><a href="index?p=<s:property value='#i' />" ><s:property value='#i' /></a></li>
+              <li><a href="${ctx}/event/<s:property value='type' />?p=<s:property value='#i' />" ><s:property value='#i' /></a></li>
         </s:else>
      </s:iterator>
-    <li><a href="index?p=<s:property value='nextPage' />" >Next</a></li>
+    <li><a href="${ctx}/event/<s:property value='type' />?p=<s:property value='nextPage' />" >Next</a></li>
   </ul>
 </div>
 

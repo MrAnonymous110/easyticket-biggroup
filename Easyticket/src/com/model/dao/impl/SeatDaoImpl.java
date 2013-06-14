@@ -108,4 +108,19 @@ public class SeatDaoImpl implements SeatDao{
 		  }
 	}
 
+	@Override
+	public List<Seat> getSeatsByEvent(int eventId) {
+		try
+		  {
+			  Session session = HibernateUtil.getSessionFactory().openSession();
+			  session.beginTransaction();
+			  List<Seat> list = session.createQuery("from Seat s where s.event.id = "+eventId).list();
+			  return list;
+		  }
+		  catch(Exception e){
+	           e.printStackTrace();
+	           return null;
+		  }
+	}
+
 }

@@ -10,4 +10,5 @@ public interface SeatDao {
 	public boolean update(Seat seat);
 	public boolean delete(int id);
 	public Seat getSeat(int id);
+	public List<Seat> getSeatsByEvent(int eventId);
 }

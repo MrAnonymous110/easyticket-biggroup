@@ -49,6 +49,10 @@ public class Event {
     @ManyToOne
     @JoinColumn(name="EventTypeId")
     private EventType eventType;
+    
+    private String startTimeBuild;
+    
+    private double discount;
 
 	public Integer getId() {
 		return id;
@@ -137,7 +141,29 @@ public class Event {
 	public void setEventType(EventType eventType) {
 		this.eventType = eventType;
 	}
-    
+
+	public String getStartTimeBuild() {
+		return startTimeBuild;
+	}
+
+	public void setStartTimeBuild(String startTimeBuild) {
+		this.startTimeBuild = startTimeBuild;
+	}
+
+	/**
+	 * @return the discount
+	 */
+	public double getDiscount() {
+		return discount;
+	}
+
+	/**
+	 * @param discount the discount to set
+	 */
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
+
     
     
     
