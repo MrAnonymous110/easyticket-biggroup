@@ -5,44 +5,34 @@
 <struts>
 	<constant name="struts.devMode" value="true" />
 	<package name="home" extends="struts-default" namespace="/">
-		<action name="index">
+		<action name="index" class="com.controller.HomeController" method="index">
 			<result>/index.jsp</result>
 		</action>
 
+        <action name="about" class="com.controller.HomeController" method="about">
+			<result>/WEB-INF/pages/about.jsp</result>
+		</action>
+
 		<action name="cart">
-			<result>/WEB-INF/pages/cart.jsp</result>
+			<result name="success">/WEB-INF/pages/cart.jsp</result>
+			<result name="login" type="redirectAction">login</result>
 		</action>
 
 		<action name="contact">
 			<result>/WEB-INF/pages/contact.jsp</result>
 		</action>
 
-		<action name="booking">
-			<result>/WEB-INF/pages/booking.jsp</result>
-		</action>
-
 		<action name="details">
 			<result>/WEB-INF/pages/details.jsp</result>
 		</action>
 
-		<action name="search">
-			<result>/WEB-INF/pages/search.jsp</result>
+		<action name="event" class="com.controller.HomeController" method="event">
+			<result>/WEB-INF/pages/event.jsp</result>
 		</action>
 
-		<action name="movie">
-			<result>/WEB-INF/pages/movie.jsp</result>
-		</action>
-
-		<action name="music">
-			<result>/WEB-INF/pages/music.jsp</result>
-		</action>
-
-		<action name="sport">
-			<result>/WEB-INF/pages/sport.jsp</result>
-		</action>
-
-		<action name="drama">
-			<result>/WEB-INF/pages/drama.jsp</result>
+		<action name="profile">
+		    <result name="success">/WEB-INF/pages/profile.jsp</result>
+		    <result name="login" type="redirectAction">login</result>
 		</action>
 
 		<action name="register">
@@ -60,6 +50,7 @@
 			method="Logout">
 			<result name="success" type="redirect">/login.html</result>
 		</action>
+		
 	</package>
 
 	<package name="admin" extends="struts-default" namespace="/admin">
@@ -211,10 +202,134 @@
 			<result name="input">/WEB-INF/pages/admin/profile.jsp</result>
 			<result name="login" type="redirectAction">login</result>
 		</action>
-		
-		<action name="seats" class="com.controller.SeatsController" method="listSeat">
-			<result name="success" >/WEB-INF/pages/admin/listSeats.jsp</result>
+
+		<action name="seats" class="com.controller.SeatsController"
+			method="listSeat">
+			<result name="success">/WEB-INF/pages/admin/listSeats.jsp
+			</result>
 			<result name="login" type="redirectAction">login</result>
 		</action>
+
+		<action name="createSeat" class="com.controller.SeatsController"
+			method="createSeat">
+			<result name="input">/WEB-INF/pages/admin/listSeats.jsp
+			</result>
+			<result name="success" type="redirectAction">seats</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="deleteSeat" class="com.controller.SeatsController"
+			method="deleteSeat">
+			<result name="success" type="redirectAction">seats</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+		<action name="updateSeat" class="com.controller.SeatsController"
+			method="updateSeat">
+			<result name="success" type="redirectAction">seats</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+
+        <action name="types" class="com.controller.AdminController" method = "listTypes">
+             <result name="success">/WEB-INF/pages/admin/eventType.jsp</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="insertType" class="com.controller.AdminController" method = "insertType">
+             <result name="input">/WEB-INF/pages/admin/eventType.jsp</result>
+             <result name="success" type="redirectAction">types</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="updateType" class="com.controller.AdminController" method = "updateType">
+             <result name="input">/WEB-INF/pages/admin/eventType.jsp</result>
+             <result name="success" type="redirectAction">types</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="deleteType" class="com.controller.AdminController" method = "deleteType">
+             <result name="success" type="redirectAction">types</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="city" class="com.controller.AdminController" method = "listCity">
+             <result name="success">/WEB-INF/pages/admin/city.jsp</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="insertCity" class="com.controller.AdminController" method = "insertCity">
+             <result name="input">/WEB-INF/pages/admin/city.jsp</result>
+             <result name="success" type="redirectAction">city</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="updateCity" class="com.controller.AdminController" method = "updateCity">
+             <result name="input">/WEB-INF/pages/admin/city.jsp</result>
+             <result name="success" type="redirectAction">city</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="deleteCity" class="com.controller.AdminController" method = "deleteCity">
+             <result name="success" type="redirectAction">city</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+         <action name="payment" class="com.controller.AdminController" method = "payment">
+             <result name="success">/WEB-INF/pages/admin/pay.jsp</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="createPay" class="com.controller.AdminController" method = "insertPay">
+             <result name="input">/WEB-INF/pages/admin/pay.jsp</result>
+             <result name="success" type="redirectAction">payment</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="updatePay" class="com.controller.AdminController" method = "updatePay">
+             <result name="input">/WEB-INF/pages/admin/pay.jsp</result>
+             <result name="success" type="redirectAction">payment</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="deletePay" class="com.controller.AdminController" method = "deletePay">
+             <result name="success" type="redirectAction">payment</result>
+             <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="contact" class="com.controller.AdminController" method = "listContact"> 
+            <result name="success">/WEB-INF/pages/admin/contact.jsp</result>
+            <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="deleteContact" class="com.controller.AdminController" method = "deleteContact"> 
+            <result name="success" type="redirectAction">contact</result>
+            <result name="login" type="redirectAction">login</result>
+        </action>
+        
+         <action name="replyContact" class="com.controller.AdminController" method = "replyContact"> 
+            <result name="success" type="redirectAction">contact</result>
+            <result name="login" type="redirectAction">login</result>
+        </action>
+        
+         <action name="faq" class="com.controller.AdminController" method = "listFaq"> 
+            <result name="success">/WEB-INF/pages/admin/faq.jsp</result>
+            <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="insertFaq" class="com.controller.AdminController" method = "insertFaq"> 
+            <result name="success" type="redirectAction">faq</result>
+            <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="updateFaq" class="com.controller.AdminController" method = "updateFaq"> 
+            <result name="success" type="redirectAction">faq</result>
+            <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="deleteFaq" class="com.controller.AdminController" method = "deleteFaq"> 
+            <result name="success" type="redirectAction">faq</result>
+            <result name="login" type="redirectAction">login</result>
+        </action>
+        
 	</package>
 </struts>

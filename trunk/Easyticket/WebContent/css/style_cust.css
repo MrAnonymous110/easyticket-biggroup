@@ -1,2 +1,17 @@
 /* CSS Document */
-
+.error_show {
+	background:#FFBBC9;
+	color:#9A0110;
+	font-size:14px;
+	text-align:center;
+	margin:0 0 20px;
+	padding:8px 0;
+}
+.success_show {
+	background:#DAFA98;
+	color:#5C8507;
+	font-size:14px;
+	text-align:center;
+	margin:0 0 20px;
+	padding:8px 0;
+}

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@include file="/common/header.jsp" %>
 
+<!--content-->
 <div class="container">
 <div class="row">
 <div class="span12">
@@ -46,12 +47,7 @@
   </tr>
     <tr>
     <td colspan="5">
-    <form class="form-coupon">
-    <small>Nhập <strong>Coupon</strong> giảm giá</small><br />
-  <input type="text" class="input-xlarge" placeholder="Nhập mã Coupon">
-  <input type="button" value="Xác nhận">
-</form>
-    <span class="thanhtoan"><a href="#">Thanh toán</a></span>
+	    <span class="thanhtoan"><a href="#">Thanh toán</a></span>
     </td>
   </tr>
 </table>
@@ -61,7 +57,6 @@
 </div>
 </div>
 <!--end content--> 
-
 
 <%@include file="/common/footer.jsp" %>
 

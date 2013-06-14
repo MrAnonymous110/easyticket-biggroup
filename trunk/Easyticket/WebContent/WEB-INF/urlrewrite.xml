@@ -20,4 +20,31 @@
          <to type="forward">login.action</to>
     </rule>
     
+     <rule>
+         <from>/about.html</from>
+         <to type="forward">about.action</to>
+    </rule> 
+    
+     <rule>
+         <from>/cart.html</from>
+         <to type="forward">cart.action</to>
+    </rule> 
+    
+      <rule>
+         <from>/profile.html</from>
+         <to type="forward">profile.action</to>
+    </rule> 
+    
+    <rule>
+         <from>/event.html</from>
+         <to type="forward">event.action</to>
+    </rule>
+    
+    <rule>
+         <from>/event/([1-9]+)</from>
+         <to type="forward">event.action?type=$1</to>
+    </rule> 
+    
+    
+    
 </urlrewrite>

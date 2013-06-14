@@ -24,16 +24,32 @@ h1, h2, h3, h4, h5, h6 {
 #header2 {
 	background: url(../img/bg.png) center top repeat-x;
 	
-	min-height: 251px;
+	min-height: 400px;
+}
+.logo:visited {
+	color:#fff;
+	text-decoration:none;
+}
+.logo:hover {
+	color:#fff;
+	text-decoration:none;
+	margin-left:10px;
 }
 .logo {
 	background: url(../img/logo.png) 0 0 no-repeat;
-	width: 178px;
-	height: 53px;
+	/*width: 178px;
+	height: 53px;*/
+	font-size:42px;
 	display: inline-block;
-	text-indent: -9999em;
-	margin-top: 27px;
-	margin-bottom: 20px;
+	color:#fff;
+	text-shadow:1px 7px 10px #000;
+	-moz-transition:margin 0.5s;
+	-o-transition:margin 0.5s;
+	-webkit-transition:margin 0.5s;
+	transition:margin 0.5s;
+	/*text-indent: -9999em;*/
+	/*margin-top: 27px;
+	margin-bottom: 20px;*/
 }
 .top-header {
 	/*border-bottom: #4da9f1 1px solid;*/
@@ -83,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 	list-style: none;
 	position: relative;
 	z-index: 150;
-	float: left;
+	float: right;
 }
 .menu-top li {
 	display: inline-block;
@@ -100,10 +116,13 @@ h1, h2, h3, h4, h5, h6 {
 .menu-top li:last-child {
 	background-position: right -129px;
 }
+/*
 .menu-top li:nth-child(4) {
 	background-position: right -301px;
 	padding-right: 75px;
 }
+*/
+
 .menu-top li a {
 	margin: 0;
 	color: #fff;
@@ -125,11 +144,11 @@ h1, h2, h3, h4, h5, h6 {
 .menu-top li:last-child > a:hover, .menu-top li:last-child > a:focus, .menu-top li:last-child > a:active {
 	background: url(../img/bg_menutop.png) right -86px;
 }
-.menu-top li:nth-child(4) > a:hover, .menu-top li:nth-child(4) > a:focus, .menu-top li:nth-child(4) > a:active {
+/*.menu-top li:nth-child(4) > a:hover, .menu-top li:nth-child(4) > a:focus, .menu-top li:nth-child(4) > a:active {
 	background: url(../img/bg_menutop.png) right -258px;
 	padding-right: 75px;
 	margin-right: -75px;
-}
+}*/
 .login {
 	background: url(../img/bg_login.png) right top no-repeat;
 	display: inline-block;
@@ -414,14 +433,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4ec68', end
 	margin-bottom: 15px;
 }
 /*main slide*/
+#main_slide {
+	position:relative;
+	width:940px;
+	height:300px;
+}
 #main_slide .item {
 	border-radius: 8px;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
 	height: 310px;
+	width:941px;
 }
 #main_slide .carousel-indicators {
-	margin-top: 270px
+	position:absolute;
+	right:40px;
+	bottom:0;
 }
 #main_slide .carousel-indicators li {
 	background: url(../img/li_slide.png) 0 -20px no-repeat;
@@ -614,7 +641,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8c708', end
 	line-height: 30px;
 }
 .carousel-inner {
+	width:941px;
 	border-top: #666 2px solid;
+	margin-left:-20px;
 }
 .box-product {
 	width: 100%;

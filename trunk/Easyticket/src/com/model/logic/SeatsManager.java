@@ -12,4 +12,5 @@ public interface SeatsManager {
 	public boolean insert(Seat seat);
 	public boolean update(Seat seat);
 	public boolean delete(int id);
+	public List<Seat> getSeatsByEvent(int eventId);
 }
