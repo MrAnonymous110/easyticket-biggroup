@@ -71,7 +71,10 @@ public class HomeController extends ActionSupport {
 	private String fullName;
 	private String phone;
 	private String confirmPassword;
+
 	private Contact contact;
+	private Users user;
+
 	// manager
 	private UsersManager userMng;
 	private EventManager eventMng;
@@ -230,7 +233,6 @@ public class HomeController extends ActionSupport {
 
 		return "success";
 	}
-		
 	public String contact() {
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		Users u = (Users) session.get("user");
@@ -246,7 +248,6 @@ public class HomeController extends ActionSupport {
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		Users u = (Users) session.get("user");
 		Date currentTime = new Date();
-		
 		try {
 			contact.setUser(u);
 			contact.setSendTime(currentTime);
@@ -257,8 +258,30 @@ public class HomeController extends ActionSupport {
 			message = "Send message fail";
 			return "input";
 		}
-		
-		
+	}
+	public String setProfile() {
+		Map<String, Object> session = ActionContext.getContext().getSession();
+		user = (Users) session.get("user");
+		if(user != null)
+			return "success";
+		else 
+			return "input";
+	}
+	public String updateProfile() {
+		try {
+			Map<String, Object> session = ActionContext.getContext().getSession();
+			Users profile = (Users) session.get("user");
+			user.setId(profile.getId());
+			user.setUserName(profile.getUserName());
+			user.setPassword(profile.getPassword());
+			user.setBirthDay(profile.getBirthDay());
+			user.setCreateDate(profile.getCreateDate());
+			user.setRole(profile.getRole());
+			userMng.update(user);
+			return "success";
+		} catch (Exception e) {
+			return "input";
+		}
 	}
 	private List<Event> buildData(List<Event> list)
 	{
@@ -297,11 +320,12 @@ public class HomeController extends ActionSupport {
 
 		return e;
 	}
-
-	public String event() {
-		Map<String, Object> session = ActionContext.getContext().getSession();
-		if (session != null && session.get("count") == null)
-			session.put("count", 0);
+	
+    public String event()
+    {
+    	Map<String, Object> session = ActionContext.getContext().getSession();
+		if(session != null && session.get("count") == null)
+		    session.put("count", 0);
 		itemCount = 9;
 		if (cityId == null)
 			cityId = "";
@@ -471,7 +495,8 @@ public class HomeController extends ActionSupport {
 		}
 		return false;
 	}
-
+    
+    
 	public String getUsername() {
 		return username;
 	}
@@ -683,6 +708,8 @@ public class HomeController extends ActionSupport {
 	public void setO(int o) {
 		this.o = o;
 	}
+    
+    
 
 	/**
 	 * @return the eventId
@@ -691,49 +718,59 @@ public class HomeController extends ActionSupport {
 		return eventId;
 	}
 
+
 	/**
-	 * @param eventId
-	 *            the eventId to set
+	 * @param eventId the eventId to set
 	 */
 	public void setEventId(int eventId) {
 		this.eventId = eventId;
 	}
 
+
 	public Event getEvent() {
 		return event;
 	}
+ 
 
 	public void setEvent(Event event) {
 		this.event = event;
 	}
 
+
 	public List<Seat> getSeats() {
 		return seats;
 	}
+
 
 	public void setSeats(List<Seat> seats) {
 		this.seats = seats;
 	}
 
+
 	public int getSeatId() {
 		return seatId;
 	}
+
 
 	public void setSeatId(int seatId) {
 		this.seatId = seatId;
 	}
 
+
 	public double getDiscount() {
 		return discount;
 	}
+
 
 	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
 
+
 	public double getPrice() {
 		return price;
 	}
+
 
 	public void setPrice(double price) {
 		this.price = price;
@@ -913,4 +950,12 @@ public class HomeController extends ActionSupport {
 		this.message = message;
 	}
 
+	public Users getUser() {
+		return user;
+	}
+
+	public void setUser(Users user) {
+		this.user = user;
+	}
+	
 }
