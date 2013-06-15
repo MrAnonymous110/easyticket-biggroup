@@ -50,7 +50,7 @@
 		<header>
 			<h3>Create Seats</h3>
 		</header>
-		<form action="createNew" method="post" >
+		<form action="createNew" method="post">
 			<div class="module_content">
 				<input type="hidden" name="id" value='<s:property value="id"/>'>
 				<fieldset style="width: 48%; float: left; margin-right: 3%;">
@@ -104,27 +104,23 @@
 </section>
 
 <script type="text/javascript">
-	$("input[name='editSeat']").click(function() {
+	$("input[name='editNew']").click(function() {
 		var tr = $(this).parent().parent();
 		$.each(tr.children("td"), function(item) {
 			if (item == 0) {
 				$("input[name='id']").val($(this).text());
+			} else if (item == 1) {
+				$("input[name='title']").val($(this).text());
 			} else if (item == 2) {
-				$("input[name='seat']").val($(this).text());
-			}
-
-			else if (item == 3) {
-				$("input[name='price']").val($(this).text());
+				$("input[name='subContent']").val($(this).text());
+			} else if (item == 3) {
+				$("input[name='content']").val($(this).text());
 			} else if (item == 4) {
-				$("input[name='amountTicket']").val($(this).text());
-			} else if (item == 5) {
-				$("input[name='discount']").val($(this).text());
-			} else if (item == 6) {
-				$("textarea[name='description']").val($(this).text());
+				$("input[name='categoryId']").val($(this).text());
 			}
 		});
 
-		$('form').attr('action', "updateSeat");
+		$('form').attr('action', "updateNew");
 		$("input[name='btnSave']").val("Save");
 	});
 </script>
