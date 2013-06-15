@@ -21,7 +21,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<s:iterator value="getNewList">
+						<s:iterator value="NewsList">
 							<tr>
 								<td><s:property value="id" /></td>
 								<td><s:property value="title" /></td>
@@ -50,7 +50,7 @@
 		<header>
 			<h3>Create Seats</h3>
 		</header>
-		<form action="createNew" method="post" enctype="multipart/form-data">
+		<form action="createNew" method="post" >
 			<div class="module_content">
 				<input type="hidden" name="id" value='<s:property value="id"/>'>
 				<fieldset style="width: 48%; float: left; margin-right: 3%;">

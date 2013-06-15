@@ -336,7 +336,7 @@
 			<result name="success">/WEB-INF/pages/admin/new.jsp</result>
 		</action>
 
-		<action name="insertNew" class="com.controller.NewsController"
+		<action name="createNew" class="com.controller.NewsController"
 			method="createNew">
 			<result name="input">/WEB-INF/pages/admin/new.jsp</result>
 			<result name="success" type="redirectAction">new
