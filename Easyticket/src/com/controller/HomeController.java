@@ -10,28 +10,34 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import com.model.entity.Users;
+import com.model.logic.BookingManager;
 import com.model.logic.CityManager;
 import com.model.logic.ContactManager;
 import com.model.logic.EventManager;
 import com.model.logic.EventTypeManager;
+import com.model.logic.PayManager;
 import com.model.logic.RolesManager;
 import com.model.logic.SeatsManager;
 import com.model.logic.UsersManager;
+import com.model.logic.impl.BookingManagerImpl;
 import com.model.logic.impl.CityManagerImpl;
 import com.model.logic.impl.ContactManagerImpl;
 import com.model.logic.impl.EventManagerImpl;
 import com.model.logic.impl.EventTypeManagerImpl;
+import com.model.logic.impl.PayManagerImpl;
 import com.model.logic.impl.RolesManagerImpl;
 import com.model.logic.impl.SeatManagerImpl;
 import com.model.logic.impl.UsersManagerImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.process.StringFormat;
+import com.model.entity.Booking;
 import com.model.entity.Cart;
 import com.model.entity.Contact;
 import com.model.entity.Event;
 import com.model.entity.EventType;
 import com.model.entity.City;
+import com.model.entity.Payment;
 import com.model.entity.Roles;
 import com.model.entity.Seat;
 
@@ -54,6 +60,10 @@ public class HomeController extends ActionSupport {
 	private int seatId;
 	private double discount;
 	private double price;
+	private double totalMoney;
+	private int stt;
+	private int number;
+	private int payId;
 
 	private String email;
 	private String address;
@@ -61,10 +71,7 @@ public class HomeController extends ActionSupport {
 	private String fullName;
 	private String phone;
 	private String confirmPassword;
-
 	private Contact contact;
-	
-
 	// manager
 	private UsersManager userMng;
 	private EventManager eventMng;
@@ -72,6 +79,8 @@ public class HomeController extends ActionSupport {
 	private EventTypeManager typeMng;
 	private SeatsManager seatMng;
 	private RolesManager roleMng;
+	private PayManager payMng;
+	private BookingManager bookingMng;
 	private ContactManager contMng;
 	// search property
 	private int type;
@@ -90,13 +99,17 @@ public class HomeController extends ActionSupport {
 	private List<EventType> types;
 	private List<City> cities;
 	private List<Seat> seats;
+	private List<Cart> carts;
+
+	
+	private List<Payment> pays;
 	// site map
 	private String actionName;
 	private String actionUrl;
 
 	private HttpServletRequest servletRequest;
 	private Map<String, Object> session;
-	
+
 	public HomeController() {
 		userMng = new UsersManagerImpl();
 		eventMng = new EventManagerImpl();
@@ -105,6 +118,8 @@ public class HomeController extends ActionSupport {
 		types = typeMng.getEventTypes();
 		seatMng = new SeatManagerImpl();
 		roleMng = new RolesManagerImpl();
+		payMng = new PayManagerImpl();
+		setBookingMng(new BookingManagerImpl());
 		contMng = new ContactManagerImpl();
 	}
 
@@ -215,6 +230,7 @@ public class HomeController extends ActionSupport {
 
 		return "success";
 	}
+		
 	public String contact() {
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		Users u = (Users) session.get("user");
@@ -263,30 +279,29 @@ public class HomeController extends ActionSupport {
 		}
 		return list;
 	}
-	
-	private Event buildData(Event e)
-	{
-        String starttime = new SimpleDateFormat("dd/MM/yyyy hh:mm").format(e.getStartTime());
-        String endtime = new SimpleDateFormat("dd/MM/yyyy hh:mm").format(e.getEndTime());
-        e.setStartTimeBuild(starttime);
-        e.setEndTimeBuild(endtime);
-        List<Seat> seats =   seatMng.getSeatsByEvent(e.getId());
-        if(seats.size() > 0 )
-             e.setDiscount(seats.get(0).getDiscount());
-        else
-        {
-        	 e.setDiscount(0);
-        }
-        e.setDiscount(0);
-	
-     	return e;
+
+	private Event buildData(Event e) {
+		String starttime = new SimpleDateFormat("dd/MM/yyyy hh:mm").format(e
+				.getStartTime());
+		String endtime = new SimpleDateFormat("dd/MM/yyyy hh:mm").format(e
+				.getEndTime());
+		e.setStartTimeBuild(starttime);
+		e.setEndTimeBuild(endtime);
+		List<Seat> seats = seatMng.getSeatsByEvent(e.getId());
+		if (seats.size() > 0)
+			e.setDiscount(seats.get(0).getDiscount());
+		else {
+			e.setDiscount(0);
+		}
+		e.setDiscount(0);
+
+		return e;
 	}
-	
-    public String event()
-    {
-    	Map<String, Object> session = ActionContext.getContext().getSession();
-		if(session != null && session.get("count") == null)
-		    session.put("count", 0);
+
+	public String event() {
+		Map<String, Object> session = ActionContext.getContext().getSession();
+		if (session != null && session.get("count") == null)
+			session.put("count", 0);
 		itemCount = 9;
 		if (cityId == null)
 			cityId = "";
@@ -321,67 +336,130 @@ public class HomeController extends ActionSupport {
 		return "success";
 	}
 
-    public String detail()
-    {
-    	if(eventId > 0){
-    	    event = eventMng.getEvent(eventId);
-    	    seats = seatMng.getSeatsByEvent(eventId);
-    	    event =  buildData(event);
-    	}
-    	return "success";
-    }
-    
-    public String getPriceSeat()
-    {
-//    	 data =  new LinkedHashMap<String, Double>();
-    	 Seat s = seatMng.getById(seatId);
-//    	 data.put("price", s.getPrice());
-//    	 data.put("priceDiscount",s.getPrice() - s.getPrice()*s.getDiscount()/100);
-    	 
-    	 price = s.getPrice();
-    	 discount =price- price*s.getDiscount()/100;
-    	 return "success";
-    }
-    
-    public String cart()
-    {
-         return "success";
-    }
-    
-    public String booking()
-    {
-    	if(isAuthorize())
-    	{
-    		  Cart cart = new Cart();  	
-    		  if(seatId > 0){
-                  Seat s = seatMng.getById(seatId);
-                  cart.setSeat(s); 
-                  cart.setEvent(s.getEvent());
-                  cart.setPrice(s.getPrice());
-    		  }
-    		  else if(eventId > 0){
-                 Event e = eventMng.getEvent(eventId);
-                 cart.setEvent(e);
-                 cart.setSeat(seatMng.getSeatsByEvent(e.getId()).get(0));
-                 cart.setPrice(cart.getSeat().getPrice());
-    		  }
-    		  cart.setNumber(1);
-    		  
-              session = ActionContext.getContext().getSession();
-              if (session != null && session.get("cart") != null) {
-                  
-              }
-              else
-              {
-            	   List<Cart> list = new ArrayList<Cart>();
-            	   
-            	   session.put("cart", list);
-              }
-              
-    	}
-    	return "login";
-    }
-    
+	public String detail() {
+		if (eventId > 0) {
+			event = eventMng.getEvent(eventId);
+			seats = seatMng.getSeatsByEvent(eventId);
+			event = buildData(event);
+		}
+		return "success";
+	}
+
+	public String getPriceSeat() {
+		Seat s = seatMng.getById(seatId);
+		price = s.getPrice();
+		discount = price - price * s.getDiscount() / 100;
+		return "success";
+	}
+
+	public String cart() {
+		session = ActionContext.getContext().getSession();
+		if (session != null && session.get("cart") != null) {
+			carts = (List<Cart>) session.get("cart");
+			session.put("count", carts.size());
+			totalMoney = 0;
+			for (Cart c : carts) {
+				totalMoney += c.getMoney();
+			}
+			pays = payMng.getPayments();
+		}
+		return "success";
+	}
+
+	public String deleteCart() {
+		if (isAuthorize()) {
+			if (stt >= 1) {
+				session = ActionContext.getContext().getSession();
+				if (session != null && session.get("cart") != null) {
+					carts = (List<Cart>) session.get("cart");
+
+					carts.remove(stt - 1);
+					session.put("cart", carts);
+
+				}
+			}
+		}
+		return "success";
+	}
+
+	public String updateCart() {
+		try {
+			session = ActionContext.getContext().getSession();
+			if (session != null && session.get("cart") != null) {
+				carts = (List<Cart>) session.get("cart");
+                Cart c  =  carts.get(stt - 1);
+                c.setNumber(number);
+                carts.remove(stt -1 );
+                carts.add(c);
+				session.put("cart", carts);
+                
+			}
+			return "success";
+		} catch (Exception e) {
+			return "success";
+		}
+	}
+
+	public String pay()
+	{
+		// input data booking table
+		Payment p = payMng.getPayment(payId);
+		
+		session = ActionContext.getContext().getSession();
+		Users u = (Users) session.get("user");
+		List<Cart> carts = (List<Cart>) session.get("cart");
+		for(Cart c: carts)
+		{
+			Booking b = new Booking();
+			b.setUsers(u);
+			b.setSeat(c.getSeat());
+			b.setPayment(p);
+			b.setPrice(c.getMoney());
+			b.setCount(c.getNumber());
+			bookingMng.insert(b);
+		}
+	
+		return "success";
+	}
+	
+	public String booking() {
+		if (isAuthorize()) {
+			Cart cart = new Cart();
+			if (seatId > 0) {
+				Seat s = seatMng.getById(seatId);
+				cart.setSeat(s);
+				cart.setEvent(s.getEvent());
+			} else if (eventId > 0) {
+				Event e = eventMng.getEvent(eventId);
+				cart.setEvent(e);
+				cart.setSeat(seatMng.getSeatsByEvent(e.getId()).get(0));
+			}
+			cart.setNumber(1);
+
+			session = ActionContext.getContext().getSession();
+			if (session != null && session.get("cart") != null) {
+				List<Cart> list = (List<Cart>) session.get("cart");
+				for (Cart c : list) {
+					if (c.getSeat().getSeat().equals(cart.getSeat().getSeat())) {
+						c.setNumber(c.getNumber() + 1);
+						session.put("cart", list);
+						return "success";
+					}
+				}
+				list.add(cart);
+				session.put("cart", list);
+				return "success";
+			} else {
+				List<Cart> list = new ArrayList<Cart>();
+				list.add(cart);
+				session.put("cart", list);
+				return "success";
+			}
+
+		}
+		return "login";
+	}
+
 	private boolean isAuthorize() {
 		session = ActionContext.getContext().getSession();
 		if (session != null && session.get("user") != null) {
@@ -393,8 +471,7 @@ public class HomeController extends ActionSupport {
 		}
 		return false;
 	}
-    
-    
+
 	public String getUsername() {
 		return username;
 	}
@@ -606,8 +683,6 @@ public class HomeController extends ActionSupport {
 	public void setO(int o) {
 		this.o = o;
 	}
-    
-    
 
 	/**
 	 * @return the eventId
@@ -616,59 +691,49 @@ public class HomeController extends ActionSupport {
 		return eventId;
 	}
 
-
 	/**
-	 * @param eventId the eventId to set
+	 * @param eventId
+	 *            the eventId to set
 	 */
 	public void setEventId(int eventId) {
 		this.eventId = eventId;
 	}
 
-
 	public Event getEvent() {
 		return event;
 	}
- 
 
 	public void setEvent(Event event) {
 		this.event = event;
 	}
 
-
 	public List<Seat> getSeats() {
 		return seats;
 	}
-
 
 	public void setSeats(List<Seat> seats) {
 		this.seats = seats;
 	}
 
-
 	public int getSeatId() {
 		return seatId;
 	}
-
 
 	public void setSeatId(int seatId) {
 		this.seatId = seatId;
 	}
 
-
 	public double getDiscount() {
 		return discount;
 	}
-
 
 	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
 
-
 	public double getPrice() {
 		return price;
 	}
-
 
 	public void setPrice(double price) {
 		this.price = price;
@@ -738,6 +803,92 @@ public class HomeController extends ActionSupport {
 		this.phone = phone;
 	}
 
+	public List<Cart> getCarts() {
+		return carts;
+	}
+
+	public void setCarts(List<Cart> carts) {
+		this.carts = carts;
+	}
+
+	public List<Payment> getPays() {
+		return pays;
+	}
+
+	public void setPays(List<Payment> pays) {
+		this.pays = pays;
+	}
+
+	public PayManager getPayMng() {
+		return payMng;
+	}
+
+	public void setPayMng(PayManager payMng) {
+		this.payMng = payMng;
+	}
+
+	public double getTotalMoney() {
+		return totalMoney;
+	}
+
+	public void setTotalMoney(double totalMoney) {
+		this.totalMoney = totalMoney;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public int getPayId() {
+		return payId;
+	}
+
+	public void setPayId(int payId) {
+		this.payId = payId;
+	}
+	
+	/**
+	 * @return the stt
+	 */
+	public int getStt() {
+		return stt;
+	}
+
+	/**
+	 * @param stt
+	 *            the stt to set
+	 */
+	public void setStt(int stt) {
+		this.stt = stt;
+	}
+
+	/**
+	 * @return the roleMng
+	 */
+	public RolesManager getRoleMng() {
+		return roleMng;
+	}
+
+	/**
+	 * @param roleMng
+	 *            the roleMng to set
+	 */
+	public void setRoleMng(RolesManager roleMng) {
+		this.roleMng = roleMng;
+	}
+
+	public BookingManager getBookingMng() {
+		return bookingMng;
+	}
+
+	public void setBookingMng(BookingManager bookingMng) {
+		this.bookingMng = bookingMng;
+	}
+
 	public Contact getContact() {
 		return contact;
 	}
@@ -761,5 +912,5 @@ public class HomeController extends ActionSupport {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
+
 }

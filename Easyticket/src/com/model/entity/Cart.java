@@ -1,14 +1,21 @@
 package com.model.entity;
 
-public class Cart {
+import java.io.Serializable;
+
+public class Cart implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Seat seat;
 	
 	private Event event;
 	
 	private int number;
 	
-	private int money;
+	private double money;
 	
 	private double price;
 	
@@ -45,14 +52,14 @@ public class Cart {
 	/**
 	 * @return the money
 	 */
-	public int getMoney() {
-		return money;
+	public double getMoney() {
+		return getPriceDiscount()*number;
 	}
 
 	/**
 	 * @param money the money to set
 	 */
-	public void setMoney(int money) {
+	public void setMoney(double money) {
 		this.money = money;
 	}
 

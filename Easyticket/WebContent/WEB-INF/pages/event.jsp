@@ -80,13 +80,13 @@ Filter By
 			<div class="span3">
 				<!--boxproduct3-->
 					<div class="box-product3">
-						<div class="img-product"> <img src="${ctx}/images/product2.png" alt="" /> <span class="saletab"><s:property value="discount" />%</span> </div>
+						<div class="img-product"> <img src="<s:url value="%{imgSrc}" /> " alt="" /> <span class="saletab"><s:property value="discount" />%</span> </div>
 							<div class="box-product3-content">
 							<h3><s:property value="title" /></h3>
 						</div>
 						<p style="color:#333;margin-left: 10px">Artist : <s:property value="artist" /> </p>
 						<p style="color:#333;margin-left: 10px">Start time: <s:property value="startTimeBuild" /></p>
-						<span class="view"><a href="details/<s:property value='id' />" >View Detail</a></span><span class="buy"><a href="booking">Booking</a></span>
+						<span class="view"><a href="details/<s:property value='id' />" >View Detail</a></span><span class="buy"><a href="booking?eventId=<s:property value="id" />">Booking</a></span>
 					</div>              
 				<!--end boxproduct3--> 
 			</div>
