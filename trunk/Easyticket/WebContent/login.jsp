@@ -29,7 +29,7 @@
             <div class="control-group">
               <label class="control-label">User Name</label>
               <div class="controls">
-                <input type="text" placeholder="UserName" class="span4" name="userName">
+                <input type="text" placeholder="UserName" class="span4" name="username">
               </div>
             </div>
             
