@@ -48,5 +48,24 @@
          <to type="forward">details.action?eventId=$1</to>
     </rule>
     
+    <rule>
+         <from>/news.html</from>
+         <to type="forward">news.action</to>
+    </rule>
+    
+    <rule>
+         <from>/news/([1-9]+)</from>
+         <to type="forward">news.action?cateId=$1</to>
+    </rule>
+    
+    <rule>
+         <from>/new-detail/([1-9]+)</from>
+         <to type="forward">newDetail.action?newId=$1</to>
+    </rule>
+    
+    <rule>
+         <from>/history.html</from>
+         <to type="forward">history.action</to>
+    </rule>
     
 </urlrewrite>

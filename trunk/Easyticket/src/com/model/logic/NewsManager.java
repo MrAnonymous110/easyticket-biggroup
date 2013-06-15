@@ -15,4 +15,5 @@ public interface NewsManager {
 
 	public boolean delete(int id);
 
+	public List<News> find(int cateId,int start, int count);
 }

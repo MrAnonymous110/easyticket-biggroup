@@ -73,6 +73,7 @@ e.stopPropagation();
           <!--/menu top-->
           <ul class="menu-top">
             <li><a href="${ctx}/index.html">Home</a></li>
+            <li><a href="${ctx}/news.html">News</a></li>
             <li><a href="${ctx}/about.html">About</a></li>
             <li><a href="${ctx}/contact.html">Contact</a></li>
             <c:if test="${sessionScope.user == null }">

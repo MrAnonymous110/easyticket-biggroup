@@ -9,7 +9,7 @@
          <li><a href="event/<s:property value='id' /> " ><s:property value="name" /></a></li>
     </s:iterator>
 	<li><a href="contact.html">Contact</a></li>
-	<li><a href="new.html">News</a></li>
+	<li><a href="news.html">News</a></li>
 	<li><a href="login.html">Login</a></li>
   </ul>
-  Copyright © 2007 - 2013 Bản quyền thuộc về easyticket<br /></div>
+  Copyright © Easyticket 2007 - 2013  <br /></div>

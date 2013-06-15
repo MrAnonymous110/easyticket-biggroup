@@ -1,7 +1,9 @@
 package com.model.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -96,6 +98,28 @@ public class NewsDaoImpl implements NewsDao {
 				transaction.rollback();
 			}
 			return false;
+		}
+	}
+
+	@Override
+	public List<News> find(int cateId, int start, int count) {
+		try {
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			session.beginTransaction();
+			List<News> list  = new ArrayList<News>();
+			String sql = "from News n";
+			if(cateId > 0){
+			    sql += "  where n.category.id="+cateId;
+			}
+			sql+= " order by n.id desc";
+			Query query = session.createQuery(sql);
+			query.setFirstResult(start);
+			query.setMaxResults(count);
+			list = query.list();
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
 		}
 	}
 

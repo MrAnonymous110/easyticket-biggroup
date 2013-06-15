@@ -14,6 +14,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
 import com.model.entity.*;
+import com.model.logic.BookingManager;
 import com.model.logic.CityManager;
 import com.model.logic.ContactManager;
 import com.model.logic.EventManager;
@@ -21,6 +22,7 @@ import com.model.logic.EventTypeManager;
 import com.model.logic.FAQManager;
 import com.model.logic.PayManager;
 import com.model.logic.UsersManager;
+import com.model.logic.impl.BookingManagerImpl;
 import com.model.logic.impl.CityManagerImpl;
 import com.model.logic.impl.ContactManagerImpl;
 import com.model.logic.impl.EventManagerImpl;
@@ -48,6 +50,7 @@ public class AdminController extends ActionSupport implements
 	private PayManager payMng;
 	private ContactManager contactMng;
 	private FAQManager faqMng;
+	private BookingManager bookingMng;
 
 	// login property
 	private String username;
@@ -121,6 +124,10 @@ public class AdminController extends ActionSupport implements
 	private String faqQuestion;
 	private String faqAnswer;
 	
+	//Booking property
+	private int bookingId;
+	
+	
 	public AdminController() {
 		userMng = new UsersManagerImpl();
 		eventMng = new EventManagerImpl();
@@ -129,6 +136,7 @@ public class AdminController extends ActionSupport implements
 		payMng = new PayManagerImpl();
 		contactMng = new ContactManagerImpl();
 		faqMng = new FAQManagerImpl();
+		bookingMng = new BookingManagerImpl();
 
 		events = eventMng.findRange("", "", 0, "", 0, 5);
 		cities = cityMng.getCities();
@@ -513,6 +521,26 @@ public class AdminController extends ActionSupport implements
 		if(isAuthorize())
 		{
 			faqMng.delete(faqId);
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String booking()
+	{
+		if(isAuthorize())
+		{
+			bookings = bookingMng.getBookings();
+			return "success";
+		}
+		return "login";
+	}
+	
+	public String deleteBooking()
+	{
+		if(isAuthorize())
+		{
+			bookingMng.delete(bookingId);
 			return "success";
 		}
 		return "login";
@@ -950,6 +978,22 @@ public class AdminController extends ActionSupport implements
 
 	public void setFaqs(List<FAQ> faqs) {
 		this.faqs = faqs;
+	}
+
+	public BookingManager getBookingMng() {
+		return bookingMng;
+	}
+
+	public void setBookingMng(BookingManager bookingMng) {
+		this.bookingMng = bookingMng;
+	}
+
+	public int getBookingId() {
+		return bookingId;
+	}
+
+	public void setBookingId(int bookingId) {
+		this.bookingId = bookingId;
 	}
 
 	

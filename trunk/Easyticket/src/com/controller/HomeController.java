@@ -11,19 +11,23 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.model.entity.Users;
 import com.model.logic.BookingManager;
+import com.model.logic.CategoryManager;
 import com.model.logic.CityManager;
 import com.model.logic.ContactManager;
 import com.model.logic.EventManager;
 import com.model.logic.EventTypeManager;
+import com.model.logic.NewsManager;
 import com.model.logic.PayManager;
 import com.model.logic.RolesManager;
 import com.model.logic.SeatsManager;
 import com.model.logic.UsersManager;
 import com.model.logic.impl.BookingManagerImpl;
+import com.model.logic.impl.CategoryManagerImpl;
 import com.model.logic.impl.CityManagerImpl;
 import com.model.logic.impl.ContactManagerImpl;
 import com.model.logic.impl.EventManagerImpl;
 import com.model.logic.impl.EventTypeManagerImpl;
+import com.model.logic.impl.NewsManagerImpl;
 import com.model.logic.impl.PayManagerImpl;
 import com.model.logic.impl.RolesManagerImpl;
 import com.model.logic.impl.SeatManagerImpl;
@@ -33,10 +37,12 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.process.StringFormat;
 import com.model.entity.Booking;
 import com.model.entity.Cart;
+import com.model.entity.Category;
 import com.model.entity.Contact;
 import com.model.entity.Event;
 import com.model.entity.EventType;
 import com.model.entity.City;
+import com.model.entity.News;
 import com.model.entity.Payment;
 import com.model.entity.Roles;
 import com.model.entity.Seat;
@@ -54,7 +60,7 @@ public class HomeController extends ActionSupport {
 	private String username;
 	private String password;
 	private String message;
-	
+
 	private int eventId;
 	private Event event;
 	private int seatId;
@@ -64,6 +70,8 @@ public class HomeController extends ActionSupport {
 	private int stt;
 	private int number;
 	private int payId;
+	private int cateId;
+	private int newId;
 
 	private String email;
 	private String address;
@@ -74,6 +82,7 @@ public class HomeController extends ActionSupport {
 
 	private Contact contact;
 	private Users user;
+	private News newsItem;
 
 	// manager
 	private UsersManager userMng;
@@ -85,6 +94,8 @@ public class HomeController extends ActionSupport {
 	private PayManager payMng;
 	private BookingManager bookingMng;
 	private ContactManager contMng;
+	private NewsManager newMng;
+	private CategoryManager cateMng;
 	// search property
 	private int type;
 	private String search;
@@ -103,8 +114,10 @@ public class HomeController extends ActionSupport {
 	private List<City> cities;
 	private List<Seat> seats;
 	private List<Cart> carts;
+	private List<Category> categories;
+	private List<News> news;
+	private List<Booking> bookings;
 
-	
 	private List<Payment> pays;
 	// site map
 	private String actionName;
@@ -124,6 +137,8 @@ public class HomeController extends ActionSupport {
 		payMng = new PayManagerImpl();
 		setBookingMng(new BookingManagerImpl());
 		contMng = new ContactManagerImpl();
+		newMng = new NewsManagerImpl();
+		cateMng = new CategoryManagerImpl();
 	}
 
 	public String Login() {
@@ -213,26 +228,62 @@ public class HomeController extends ActionSupport {
 			o = 1;
 			orderBy = "event.createTime desc";
 		}
-		events = eventMng.findRange(search, cityId, type, orderBy, (p - 1) * 9,
-				itemCount);
+		events = eventMng.findRange(search, cityId, type, orderBy, (p - 1)
+				* itemCount, itemCount);
 		events = buildData(events);
 		setCities(cityMng.getCities());
 
 		List<Event> list = eventMng.getEvents();
-		itemCount = list.size();
-		pcount = itemCount / 9;
-		if (pcount % 2 != 0)
+		eventCount = list.size();
+		if (eventCount > 0) {
+			pcount = eventCount / itemCount;
+			if (pcount % 2 != 0)
+				pcount++;
 			pcount++;
-		pcount++;
+		} else
+			pcount = 2;
+
 		return "success";
+	}
+
+	public String news() {
+		if (p == 0)
+			p = 1;
+		itemCount = 10;
+		categories = cateMng.getCategories();
+
+		news = newMng.find(cateId, (p - 1) * itemCount, itemCount);
+
+		itemCount = newMng.getNews().size();
+		if (itemCount > 0) {
+			pcount = eventCount / itemCount;
+			if (pcount % 2 != 0)
+				pcount++;
+			pcount++;
+		} else
+			pcount = 1;
+
+		return "success";
+	}
+
+	public String newDetail() {
+		categories = cateMng.getCategories();
+		if (newId > 0) {
+			newsItem = newMng.getNew(newId);
+			news = newMng.find(cateId, 0, 5);
+		}
+		return "success";
+
 	}
 
 	public String about() {
 		actionName = "About";
 		actionUrl = "about.html";
 
+		categories = cateMng.getCategories();
 		return "success";
 	}
+
 	public String contact() {
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		Users u = (Users) session.get("user");
@@ -240,10 +291,11 @@ public class HomeController extends ActionSupport {
 		session = ActionContext.getContext().getSession();
 		if (session != null && session.get("user") != null) {
 			return "success";
-		} else { 
+		} else {
 			return "input";
 		}
 	}
+
 	public String sendMessage() {
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		Users u = (Users) session.get("user");
@@ -259,17 +311,20 @@ public class HomeController extends ActionSupport {
 			return "input";
 		}
 	}
+
 	public String setProfile() {
 		Map<String, Object> session = ActionContext.getContext().getSession();
 		user = (Users) session.get("user");
-		if(user != null)
+		if (user != null)
 			return "success";
-		else 
+		else
 			return "input";
 	}
+
 	public String updateProfile() {
 		try {
-			Map<String, Object> session = ActionContext.getContext().getSession();
+			Map<String, Object> session = ActionContext.getContext()
+					.getSession();
 			Users profile = (Users) session.get("user");
 			user.setId(profile.getId());
 			user.setUserName(profile.getUserName());
@@ -284,22 +339,22 @@ public class HomeController extends ActionSupport {
 			return "input";
 		}
 	}
-	private List<Event> buildData(List<Event> list)
-	{
-		for(Event item : list)
-		{
-	        String starttime = new SimpleDateFormat("dd/MM/yyyy hh:mm").format(item.getStartTime());
-	        String endtime = new SimpleDateFormat("dd/MM/yyyy hh:mm").format(item.getEndTime());
-	        item.setStartTimeBuild(starttime);
-	        item.setEndTimeBuild(endtime);
-	        List<Seat>  seats =   seatMng.getSeatsByEvent(item.getId());
-	        if(seats.size() > 0 )
-	             item.setDiscount(seats.get(0).getDiscount());
-	        else
-	        {
-	        	 item.setDiscount(0);
-	        }
-	        item.setDiscount(0);
+
+	private List<Event> buildData(List<Event> list) {
+		for (Event item : list) {
+			String starttime = new SimpleDateFormat("dd/MM/yyyy hh:mm")
+					.format(item.getStartTime());
+			String endtime = new SimpleDateFormat("dd/MM/yyyy hh:mm")
+					.format(item.getEndTime());
+			item.setStartTimeBuild(starttime);
+			item.setEndTimeBuild(endtime);
+			List<Seat> seats = seatMng.getSeatsByEvent(item.getId());
+			if (seats.size() > 0)
+				item.setDiscount(seats.get(0).getDiscount());
+			else {
+				item.setDiscount(0);
+			}
+			item.setDiscount(0);
 		}
 		return list;
 	}
@@ -321,12 +376,11 @@ public class HomeController extends ActionSupport {
 
 		return e;
 	}
-	
-    public String event()
-    {
-    	Map<String, Object> session = ActionContext.getContext().getSession();
-		if(session != null && session.get("count") == null)
-		    session.put("count", 0);
+
+	public String event() {
+		Map<String, Object> session = ActionContext.getContext().getSession();
+		if (session != null && session.get("count") == null)
+			session.put("count", 0);
 		itemCount = 9;
 		if (cityId == null)
 			cityId = "";
@@ -412,12 +466,12 @@ public class HomeController extends ActionSupport {
 			session = ActionContext.getContext().getSession();
 			if (session != null && session.get("cart") != null) {
 				carts = (List<Cart>) session.get("cart");
-                Cart c  =  carts.get(stt - 1);
-                c.setNumber(number);
-                carts.remove(stt -1 );
-                carts.add(c);
+				Cart c = carts.get(stt - 1);
+				c.setNumber(number);
+				carts.remove(stt - 1);
+				carts.add(c);
 				session.put("cart", carts);
-                
+
 			}
 			return "success";
 		} catch (Exception e) {
@@ -425,28 +479,28 @@ public class HomeController extends ActionSupport {
 		}
 	}
 
-	public String pay()
-	{
-		// input data booking table
-		Payment p = payMng.getPayment(payId);
-		
-		session = ActionContext.getContext().getSession();
-		Users u = (Users) session.get("user");
-		List<Cart> carts = (List<Cart>) session.get("cart");
-		for(Cart c: carts)
-		{
-			Booking b = new Booking();
-			b.setUsers(u);
-			b.setSeat(c.getSeat());
-			b.setPayment(p);
-			b.setPrice(c.getMoney());
-			b.setCount(c.getNumber());
-			bookingMng.insert(b);
+	public String pay() {
+		if (isAuthorize()) {
+			Payment p = payMng.getPayment(payId);
+
+			session = ActionContext.getContext().getSession();
+			Users u = (Users) session.get("user");
+			List<Cart> carts = (List<Cart>) session.get("cart");
+			for (Cart c : carts) {
+				Booking b = new Booking();
+				b.setUsers(u);
+				b.setSeat(c.getSeat());
+				b.setPayment(p);
+				b.setPrice(c.getMoney());
+				b.setCount(c.getNumber());
+				bookingMng.insert(b);
+			}
+			return "success";
 		}
-	
-		return "success";
+		return "login";
+		
 	}
-	
+
 	public String booking() {
 		if (isAuthorize()) {
 			Cart cart = new Cart();
@@ -485,19 +539,26 @@ public class HomeController extends ActionSupport {
 		return "login";
 	}
 
+	public String history()
+	{
+		if(isAuthorize())
+		{
+			session = ActionContext.getContext().getSession();
+			Users u =(Users) session.get("user");
+			setBookings(bookingMng.getBookingByUser(u.getId())); 
+			return "success";
+		}
+		return "login";
+	}
+	
 	private boolean isAuthorize() {
 		session = ActionContext.getContext().getSession();
 		if (session != null && session.get("user") != null) {
-			Users user = (Users) session.get("user");
-			if (userMng.getRolesForUser(user.getUserName()).equals("admin")) {
-
-				return true;
-			}
+			return true;
 		}
 		return false;
 	}
-    
-    
+
 	public String getUsername() {
 		return username;
 	}
@@ -709,8 +770,6 @@ public class HomeController extends ActionSupport {
 	public void setO(int o) {
 		this.o = o;
 	}
-    
-    
 
 	/**
 	 * @return the eventId
@@ -719,59 +778,49 @@ public class HomeController extends ActionSupport {
 		return eventId;
 	}
 
-
 	/**
-	 * @param eventId the eventId to set
+	 * @param eventId
+	 *            the eventId to set
 	 */
 	public void setEventId(int eventId) {
 		this.eventId = eventId;
 	}
 
-
 	public Event getEvent() {
 		return event;
 	}
- 
 
 	public void setEvent(Event event) {
 		this.event = event;
 	}
 
-
 	public List<Seat> getSeats() {
 		return seats;
 	}
-
 
 	public void setSeats(List<Seat> seats) {
 		this.seats = seats;
 	}
 
-
 	public int getSeatId() {
 		return seatId;
 	}
-
 
 	public void setSeatId(int seatId) {
 		this.seatId = seatId;
 	}
 
-
 	public double getDiscount() {
 		return discount;
 	}
-
 
 	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
 
-
 	public double getPrice() {
 		return price;
 	}
-
 
 	public void setPrice(double price) {
 		this.price = price;
@@ -888,7 +937,7 @@ public class HomeController extends ActionSupport {
 	public void setPayId(int payId) {
 		this.payId = payId;
 	}
-	
+
 	/**
 	 * @return the stt
 	 */
@@ -958,5 +1007,45 @@ public class HomeController extends ActionSupport {
 	public void setUser(Users user) {
 		this.user = user;
 	}
-	
+
+	public List<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
+	}
+
+	public List<News> getNews() {
+		return news;
+	}
+
+	public void setNews(List<News> news) {
+		this.news = news;
+	}
+
+	public int getNewId() {
+		return newId;
+	}
+
+	public void setNewId(int newId) {
+		this.newId = newId;
+	}
+
+	public News getNewsItem() {
+		return newsItem;
+	}
+
+	public void setNewsItem(News newsItem) {
+		this.newsItem = newsItem;
+	}
+
+	public List<Booking> getBookings() {
+		return bookings;
+	}
+
+	public void setBookings(List<Booking> bookings) {
+		this.bookings = bookings;
+	}
+
 }

@@ -74,7 +74,9 @@ public class News {
 	 * @return the subContent
 	 */
 	public String getSubContent() {
-		return subContent;
+		if(content.length() > 50 )
+		    return content.substring(0, 50)+"...";
+		return content;
 	}
 
 	/**

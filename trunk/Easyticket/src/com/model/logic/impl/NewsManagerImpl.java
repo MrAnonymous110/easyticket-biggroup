@@ -40,4 +40,10 @@ public class NewsManagerImpl implements NewsManager {
 		return dao.delete(id);
 	}
 
+	@Override
+	public List<News> find(int cateId, int start, int count) {
+		// TODO Auto-generated method stub
+		return dao.find(cateId, start, count);
+	}
+
 }

@@ -95,13 +95,25 @@
 			<result name="success" type="redirectAction">cart</result>
 			<result name="login" type="redirectAction">login</result>
 		</action>
-
-		<action name="pay" class="com.controller.HomeController"
-			method="pay">
-			<result name="success" type="redirectAction">cart</result>
-			<result name="login" type="redirectAction">login</result>
+		
+		<action name="pay" class="com.controller.HomeController" method="pay">
+		    <result name="success" type="redirect">history.html</result>
+		    <result name="login" type="redirectAction">login</result>
 		</action>
 
+		<action name="news" class="com.controller.HomeController" method="news">
+		    <result name="success" >/WEB-INF/pages/news.jsp</result>
+		</action>
+		
+		<action name="newDetail" class="com.controller.HomeController" method="newDetail">
+		    <result name="success" >/WEB-INF/pages/new_detail.jsp</result>
+		</action> 
+		
+		<action name="history" class="com.controller.HomeController" method="history">
+		    <result name="success" >/WEB-INF/pages/history.jsp</result>
+		    <result name="login" type="redirectAction">login</result>
+		</action>
+		
 	</package>
 
 	<package name="admin" extends="struts-default" namespace="/admin" >
@@ -450,5 +462,16 @@
 			<result name="login" type="redirectAction">login</result>
 		</action>
 
+        <action name="booking" class="com.controller.AdminController"
+			method="booking">
+			<result name="success">/WEB-INF/pages/admin/booking.jsp</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
+		
+		<action name="deleteBooking" class="com.controller.AdminController"
+			method="deleteBooking">
+			<result name="success" type="redirectAction">booking</result>
+			<result name="login" type="redirectAction">login</result>
+		</action>
 	</package>
 </struts>
