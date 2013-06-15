@@ -41,6 +41,11 @@
 			<result name="success" type="redirect">/index.html</result>
 		</action>
 
+		<action name="register" class="com.controller.HomeController"
+			method="register">
+			<result name="input">/login.jsp</result>
+		</action>
+
 		<action name="logout" class="com.controller.AdminController"
 			method="Logout">
 			<result name="success" type="redirect">/login.html</result>
