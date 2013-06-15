@@ -2,10 +2,12 @@ package com.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import com.model.entity.Users;
 import com.model.logic.CityManager;
@@ -23,6 +25,7 @@ import com.model.logic.impl.UsersManagerImpl;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.process.StringFormat;
+import com.model.entity.Cart;
 import com.model.entity.Event;
 import com.model.entity.EventType;
 import com.model.entity.City;
@@ -55,53 +58,7 @@ public class HomeController extends ActionSupport {
 	private String phone;
 	private String confirmPassword;
 
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
-	}
-
-	public String getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getFullName() {
-		return fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+	
 
 	// manager
 	private UsersManager userMng;
@@ -131,10 +88,10 @@ public class HomeController extends ActionSupport {
 	// site map
 	private String actionName;
 	private String actionUrl;
-	
-	//json data
-    LinkedHashMap<String, Double> data;
 
+	private HttpServletRequest servletRequest;
+	private Map<String, Object> session;
+	
 	public HomeController() {
 		userMng = new UsersManagerImpl();
 		eventMng = new EventManagerImpl();
@@ -351,6 +308,58 @@ public class HomeController extends ActionSupport {
     	 discount =price- price*s.getDiscount()/100;
     	 return "success";
     }
+    
+    public String cart()
+    {
+         return "success";
+    }
+    
+    public String booking()
+    {
+    	if(isAuthorize())
+    	{
+    		  Cart cart = new Cart();  	
+    		  if(seatId > 0){
+                  Seat s = seatMng.getById(seatId);
+                  cart.setSeat(s); 
+                  cart.setEvent(s.getEvent());
+                  cart.setPrice(s.getPrice());
+    		  }
+    		  else if(eventId > 0){
+                 Event e = eventMng.getEvent(eventId);
+                 cart.setEvent(e);
+                 cart.setSeat(seatMng.getSeatsByEvent(e.getId()).get(0));
+                 cart.setPrice(cart.getSeat().getPrice());
+    		  }
+    		  cart.setNumber(1);
+    		  
+              session = ActionContext.getContext().getSession();
+              if (session != null && session.get("cart") != null) {
+                  
+              }
+              else
+              {
+            	   List<Cart> list = new ArrayList<Cart>();
+            	   
+            	   session.put("cart", list);
+              }
+              
+    	}
+    	return "login";
+    }
+    
+	private boolean isAuthorize() {
+		session = ActionContext.getContext().getSession();
+		if (session != null && session.get("user") != null) {
+			Users user = (Users) session.get("user");
+			if (userMng.getRolesForUser(user.getUserName()).equals("admin")) {
+
+				return true;
+			}
+		}
+		return false;
+	}
+    
     
 	public String getUsername() {
 		return username;
@@ -586,23 +595,6 @@ public class HomeController extends ActionSupport {
 		return event;
 	}
  
-	
-
-	/**
-	 * @return the data
-	 */
-	public LinkedHashMap<String, Double> getData() {
-		return data;
-	}
-
-
-	/**
-	 * @param data the data to set
-	 */
-	public void setData(LinkedHashMap<String, Double> data) {
-		this.data = data;
-	}
-
 
 	public void setEvent(Event event) {
 		this.event = event;
@@ -662,6 +654,54 @@ public class HomeController extends ActionSupport {
 
 	public void setSuccess(String success) {
 		this.success = success;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
+	public String getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 }
