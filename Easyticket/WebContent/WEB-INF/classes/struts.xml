@@ -43,16 +43,18 @@
 			<result>/WEB-INF/pages/event.jsp</result>
 		</action>
 
-		<action name="profile" class="com.controller.HomeController" method="setProfile">
-		    <result name="success">/WEB-INF/pages/profile.jsp</result>
-		    <result name="input" type="redirect">/login.html</result>
+		<action name="profile" class="com.controller.HomeController"
+			method="setProfile">
+			<result name="success">/WEB-INF/pages/profile.jsp</result>
+			<result name="input" type="redirect">/login.html</result>
 		</action>
-		
-		<action name="updateProfile" class="com.controller.HomeController" method="updateProfile">
-		    <result name="success">/WEB-INF/pages/profile.jsp</result>
-		    <result name="input" type="redirect">/login.html</result>
+
+		<action name="updateProfile" class="com.controller.HomeController"
+			method="updateProfile">
+			<result name="success">/WEB-INF/pages/profile.jsp</result>
+			<result name="input" type="redirect">/login.html</result>
 		</action>
-		
+
 		<action name="login" class="com.controller.HomeController"
 			method="Login">
 			<result name="input">/login.jsp</result>
@@ -82,24 +84,27 @@
 			<result name="login" type="redirectAction">login</result>
 		</action>
 
-		<action name="deleteCart" class="com.controller.HomeController" method="deleteCart">
-		    <result name="success" type="redirectAction">cart</result>
-		    <result name="login" type="redirectAction">login</result>
+		<action name="deleteCart" class="com.controller.HomeController"
+			method="deleteCart">
+			<result name="success" type="redirectAction">cart</result>
+			<result name="login" type="redirectAction">login</result>
 		</action>
-		
-		<action name="updateCart" class="com.controller.HomeController" method="updateCart">
-		    <result name="success" type="redirectAction">cart</result>
-		    <result name="login" type="redirectAction">login</result>
+
+		<action name="updateCart" class="com.controller.HomeController"
+			method="updateCart">
+			<result name="success" type="redirectAction">cart</result>
+			<result name="login" type="redirectAction">login</result>
 		</action>
-		
-		<action name="pay" class="com.controller.HomeController" method="pay">
-		    <result name="success" type="redirectAction">cart</result>
-		    <result name="login" type="redirectAction">login</result>
+
+		<action name="pay" class="com.controller.HomeController"
+			method="pay">
+			<result name="success" type="redirectAction">cart</result>
+			<result name="login" type="redirectAction">login</result>
 		</action>
-		
+
 	</package>
 
-	<package name="admin" extends="struts-default" namespace="/admin">
+	<package name="admin" extends="struts-default" namespace="/admin" >
 
 		<action name="index" class="com.controller.AdminController"
 			method="Index">
@@ -324,6 +329,30 @@
 		<action name="deleteCat" class="com.controller.NewsController"
 			method="deleteCategory">
 			<result name="success" type="redirectAction">category</result>
+		</action>
+		
+		<action name="new" class="com.controller.NewsController"
+			method="getNewList">
+			<result name="success">/WEB-INF/pages/admin/new.jsp</result>
+		</action>
+
+		<action name="insertNew" class="com.controller.NewsController"
+			method="createNew">
+			<result name="input">/WEB-INF/pages/admin/new.jsp</result>
+			<result name="success" type="redirectAction">new
+			</result>
+		</action>
+
+		<action name="updateNew" class="com.controller.NewsController"
+			method="updateNew">
+			<result name="input">/WEB-INF/pages/admin/new.jsp</result>
+			<result name="success" type="redirectAction">new
+			</result>
+		</action>
+
+		<action name="deleteNew" class="com.controller.NewsController"
+			method="deleteNew">
+			<result name="success" type="redirectAction">new</result>
 		</action>
 
 
