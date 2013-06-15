@@ -13,7 +13,6 @@
    					<th></th> 
     				<th>Title</th> 
     				<th>Artist</th>
-    				<th>Content</th> 
     				<th>City</th>
     				<th>Address</th> 
     				<th>Start time</th>
@@ -28,13 +27,12 @@
    					<td><input type="checkbox" name="eventIds"></td> 
     				<td><s:property value="title"/> </td> 
     				<td><s:property value="artist"/></td> 
-    				<td><s:property value="content"/></td>
     				<td><s:property value="city.name"/></td>
     				<td><s:property value="address"/></td>
     				<td><s:property value="startTime"/></td>
     				<td><s:property value="endTime"/></td>
     				<td>
-    				    <img src="<s:url value="%{imgSrc}" />"  style="height: 50px"   />
+    				    <img src="<s:url value="%{imgSrc}" />" style="width: 50px" />
     				</td>
     				<td>
     				   <a href="editEvent?eventId=<s:property value="id"/>"><input type="image" src="<s:url value="/images/icn_edit.png" /> " title="Edit"></a>

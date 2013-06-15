@@ -15,7 +15,6 @@
 							<th>ID</th>
 							<th>Title</th>
 							<th>Content</th>
-							<th>Sub content</th>
 							<th>Category</th>
 							<th>Action</th>
 						</tr>
@@ -26,8 +25,7 @@
 								<td><s:property value="id" /></td>
 								<td><s:property value="title" /></td>
 								<td><s:property value="content" /></td>
-								<td><s:property value="subContent" /></td>
-								<td><s:property value="category.id" /></td>
+								<td><s:property value="category.name" /></td>
 								<td><input type="image"
 									src="<s:url value="/images/icn_edit.png" /> " title="Edit"
 									name="editNew"> <a
@@ -56,13 +54,6 @@
 				<fieldset style="width: 48%; float: left; margin-right: 3%;">
 					<label>Title</label> <input type="text" style="width: 92%;"
 						name="title" value='<s:property value="title"/>'>
-				</fieldset>
-				<div class="clear"></div>
-				<fieldset>
-					<label>Sub Content</label>
-					<textarea rows="4" name="subContent">
-						<s:property value="subContent" />
-					</textarea>
 				</fieldset>
 				<div class="clear"></div>
 				<fieldset>
@@ -111,13 +102,10 @@
 				$("input[name='id']").val($(this).text());
 			} else if (item == 1) {
 				$("input[name='title']").val($(this).text());
-			} else if (item == 5) {
-				$("input[name='subContent']").val($(this).text());
-			} else if (item == 6) {
-				$("input[name='content']").val($(this).text());
-			} else if (item == 7) {
-				$("input[name='categoryId']").val($(this).text());
-			}
+			} else if (item == 2) {
+				$("textarea[name='content']").val($(this).text());
+			} 
+
 		});
 
 		$('form').attr('action', "updateNew");

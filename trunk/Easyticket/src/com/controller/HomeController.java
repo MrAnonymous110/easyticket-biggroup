@@ -237,11 +237,12 @@ public class HomeController extends ActionSupport {
 		eventCount = list.size();
 		if (eventCount > 0) {
 			pcount = eventCount / itemCount;
-			if (pcount % 2 != 0)
+			if(pcount ==0)
+				 pcount = 1;
+			else if (pcount % 2 != 0)
 				pcount++;
-			pcount++;
 		} else
-			pcount = 2;
+			pcount = 1;
 
 		return "success";
 	}
@@ -257,9 +258,10 @@ public class HomeController extends ActionSupport {
 		itemCount = newMng.getNews().size();
 		if (itemCount > 0) {
 			pcount = eventCount / itemCount;
-			if (pcount % 2 != 0)
+			if(pcount == 0)
+				pcount =1;
+			else if (pcount % 2 != 0)
 				pcount++;
-			pcount++;
 		} else
 			pcount = 1;
 

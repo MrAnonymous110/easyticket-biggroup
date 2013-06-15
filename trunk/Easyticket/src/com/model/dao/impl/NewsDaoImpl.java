@@ -49,7 +49,7 @@ public class NewsDaoImpl implements NewsDao {
 		try {
 			Session session = HibernateUtil.getSessionFactory().openSession();
 			transaction = session.beginTransaction();
-			session.save(n);
+			session.update(n);
 			transaction.commit();
 			session.close();
 			return true;
@@ -68,7 +68,7 @@ public class NewsDaoImpl implements NewsDao {
 		try {
 			Session session = HibernateUtil.getSessionFactory().openSession();
 			transaction = session.beginTransaction();
-			session.update(n);
+			session.save(n);
 			transaction.commit();
 			session.close();
 			return true;

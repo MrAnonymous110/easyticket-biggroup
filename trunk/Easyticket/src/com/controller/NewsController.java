@@ -117,7 +117,7 @@ public class NewsController extends ActionSupport implements
 		if (categoryName != null) {
 			c.setName(categoryName);
 			if (!CategoryMng.insert(c)) {
-				error = "category name can not empty";
+				setError("category name can not empty");
 				return "input";
 			}
 		}
@@ -130,7 +130,7 @@ public class NewsController extends ActionSupport implements
 			c.setId(categoryId);
 			c.setName(categoryName);
 			if (!CategoryMng.update(c)) {
-				error = "category name can not empty";
+				setError("category name can not empty");
 				return "input";
 			}
 		}
@@ -152,16 +152,15 @@ public class NewsController extends ActionSupport implements
 
 	public String createNew() {
 		News n = new News();
-		if (content != null && subContent != null && title != null
+		if (content != null && title != null
 				&& categoryId > 0) {
 			n.setContent(content);
-			n.setSubContent(subContent);
 			n.setTitle(title);
 			category = CategoryMng.getCategory(categoryId);
 			n.setCategory(category);
 			NewsMng.insert(n);
 		} else {
-			error = "You must fill in all of the fields.";
+			setError("You must fill in all of the fields.");
 			return "input";
 		}
 		return "success";
@@ -169,16 +168,18 @@ public class NewsController extends ActionSupport implements
 
 	public String updateNew() {
 		News n = new News();
-		if (content != null && subContent != null && title != null
+		if (content != null && title != null
 				&& categoryId > 0) {
+			n.setId(id);
 			n.setContent(content);
-			n.setSubContent(subContent);
 			n.setTitle(title);
 			category = CategoryMng.getCategory(categoryId);
 			n.setCategory(category);
 			NewsMng.update(n);
 		} else {
-			error = "You must fill in all of the fields.";
+			setError("You must fill in all of the fields.");
+			NewsList = NewsMng.getNews();
+			CatList = CategoryMng.getCategories();
 			return "input";
 		}
 		return "success";
@@ -195,7 +196,7 @@ public class NewsController extends ActionSupport implements
 	public String deleteNew() {
 		if (id > 0) {
 			if (!NewsMng.delete(id)) {
-				error = "delete fail";
+				setError("delete fail");
 				return "input";
 			}
 		}
@@ -204,6 +205,14 @@ public class NewsController extends ActionSupport implements
 
 	@Override
 	public void setServletRequest(HttpServletRequest arg0) {
+	}
+
+	public String getError() {
+		return error;
+	}
+
+	public void setError(String error) {
+		this.error = error;
 	}
 
 }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 02, 2013 at 12:44 PM
+-- Generation Time: Jun 15, 2013 at 06:47 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.4.3
 
@@ -37,7 +37,27 @@ CREATE TABLE IF NOT EXISTS `booking` (
   KEY `FK6713A039A3AE5CBE` (`SeatId`),
   KEY `FK6713A0392B17BA75` (`UserId`),
   KEY `FK6713A039A8A48C2E` (`PaymentId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`Id`, `Name`) VALUES
+(1, 'Jobs'),
+(2, 'Information');
 
 -- --------------------------------------------------------
 
@@ -77,7 +97,14 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `UserId` int(11) DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `FK9BEFBC002B17BA75` (`UserId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`Id`, `Answer`, `Content`, `SendTime`, `Title`, `UserId`) VALUES
+(1, NULL, 'aaa', '2013-06-15 18:36:35', 'aaa', 1);
 
 -- --------------------------------------------------------
 
@@ -97,10 +124,24 @@ CREATE TABLE IF NOT EXISTS `event` (
   `Title` varchar(100) DEFAULT NULL,
   `CityId` int(11) DEFAULT NULL,
   `EventTypeId` int(11) DEFAULT NULL,
+  `discount` double NOT NULL,
+  `startTimeBuild` varchar(255) DEFAULT NULL,
+  `endTimeBuild` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `FK403827AB37964AA` (`EventTypeId`),
   KEY `FK403827A889AB20A` (`CityId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `event`
+--
+
+INSERT INTO `event` (`Id`, `ImgSrc`, `Address`, `Artist`, `Content`, `CreateTime`, `EndTime`, `StartTime`, `Title`, `CityId`, `EventTypeId`, `discount`, `startTimeBuild`, `endTimeBuild`) VALUES
+(5, '/images/vkoolnet01062013.jpg', 'Dan Chu Cinema', 'Ewan McGregor, Nicholas Hoult,...', 'His peaceful life suddenly turned upside down Jack farmers in the moment when he accidentally let the magic beans sprout. The giant trees serve as a bridge between the human world with the world of the scary giant monster - creatures almost unparalleled power exists only in legend. Jack volunteered to fight to the end to defend their kingdom and rescue the princess Isabelle that he has loved from first sight ...', '2013-06-16 01:00:11', '2013-10-12 18:00:00', '2013-10-10 14:00:00', 'Jack The Giant Slayer', 4, 2, 0, NULL, NULL),
+(6, '/images/vkoolnet28052013.jpg', 'Dan Chu Cinema', ' Dwayne Johnson, Vin Diesel,...', 'Fast & Furious 6 have orchestrated the participation of famous action star. Actor and producer Vin Diesel plays Dominic Toretto, a professional criminal "watch for" this is to invite employees to cooperate with U.S. diplomatic security bureau Luke Hobbs (Dwayne Johnson) to deal with a gang transnational crime.', '2013-06-16 01:02:02', '2013-10-12 18:00:00', '2013-10-10 14:00:00', 'Fast & Furious 6', 4, 2, 0, NULL, NULL),
+(7, '/images/vkoolnet01062013.jpg', 'Dan Chu Cinema', 'Ewan McGregor, Nicholas Hoult,...', 'His peaceful life suddenly turned upside down Jack farmers in the moment when he accidentally let the magic beans sprout. The giant trees serve as a bridge between the human world with the world of the scary giant monster - creatures almost unparalleled power exists only in legend. Jack volunteered to fight to the end to defend their kingdom and rescue the princess Isabelle that he has loved from first sight ...', '2013-06-16 01:18:57', '2013-10-12 18:00:00', '2013-10-10 14:00:00', 'Jack The Giant Slayer', 1, 2, 0, NULL, NULL),
+(8, '/images/5.jpg', 'test', 'test', 'test', '2013-06-16 01:20:37', '2013-10-10 15:30:00', '2013-10-10 14:00:00', 'test', 1, 1, 0, NULL, NULL),
+(9, '/images/12.jpg', 'aaaaaaa', 'aaaaaa', 'aaaaaaaa', '2013-06-16 01:23:05', '2013-10-10 15:30:00', '2013-10-10 14:00:00', 'aaaaa', 5, 4, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -136,7 +177,38 @@ CREATE TABLE IF NOT EXISTS `faq` (
   `CreateTime` datetime DEFAULT NULL,
   `Question` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `faq`
+--
+
+INSERT INTO `faq` (`Id`, `Answer`, `CreateTime`, `Question`) VALUES
+(4, 'You click button booking', '2013-06-16 01:09:14', 'how to booking event?'),
+(5, 'You click button detail on event', '2013-06-16 01:10:30', 'How to view information event?');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE IF NOT EXISTS `news` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Content` varchar(255) DEFAULT NULL,
+  `subContent` varchar(255) DEFAULT NULL,
+  `Title` varchar(255) DEFAULT NULL,
+  `cateId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `FK24FEF36ADFBA01` (`cateId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`Id`, `Content`, `subContent`, `Title`, `cateId`) VALUES
+(4, '						\r\nThis is content news	', NULL, 'Recruit some employees for company EasyTicket', 1);
 
 -- --------------------------------------------------------
 
@@ -196,7 +268,15 @@ CREATE TABLE IF NOT EXISTS `seat` (
   `Discount` double DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `FK274225A00AE16` (`EventId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `seat`
+--
+
+INSERT INTO `seat` (`Id`, `AmountTicket`, `Description`, `Price`, `Seat`, `EventId`, `Discount`) VALUES
+(4, 20, 'VIP', 200, 'VIP', 5, 1),
+(5, 12, 'Hot ', 250, 'HOT', 6, 2);
 
 -- --------------------------------------------------------
 
@@ -217,7 +297,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `RoleId` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK4E39DE82597D115` (`RoleId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `users`
@@ -251,6 +331,12 @@ ALTER TABLE `contact`
 ALTER TABLE `event`
   ADD CONSTRAINT `FK403827A889AB20A` FOREIGN KEY (`CityId`) REFERENCES `city` (`Id`),
   ADD CONSTRAINT `FK403827AB37964AA` FOREIGN KEY (`EventTypeId`) REFERENCES `eventtype` (`Id`);
+
+--
+-- Constraints for table `news`
+--
+ALTER TABLE `news`
+  ADD CONSTRAINT `FK24FEF36ADFBA01` FOREIGN KEY (`cateId`) REFERENCES `category` (`Id`);
 
 --
 -- Constraints for table `seat`
