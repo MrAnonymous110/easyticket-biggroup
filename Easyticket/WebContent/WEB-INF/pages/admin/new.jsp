@@ -27,7 +27,7 @@
 								<td><s:property value="title" /></td>
 								<td><s:property value="content" /></td>
 								<td><s:property value="subContent" /></td>
-								<td><s:property value="categoryName" /></td>
+								<td><s:property value="category.id" /></td>
 								<td><input type="image"
 									src="<s:url value="/images/icn_edit.png" /> " title="Edit"
 									name="editNew"> <a
@@ -111,11 +111,11 @@
 				$("input[name='id']").val($(this).text());
 			} else if (item == 1) {
 				$("input[name='title']").val($(this).text());
-			} else if (item == 2) {
+			} else if (item == 5) {
 				$("input[name='subContent']").val($(this).text());
-			} else if (item == 3) {
+			} else if (item == 6) {
 				$("input[name='content']").val($(this).text());
-			} else if (item == 4) {
+			} else if (item == 7) {
 				$("input[name='categoryId']").val($(this).text());
 			}
 		});
