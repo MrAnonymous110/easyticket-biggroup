@@ -19,14 +19,18 @@
 			<result name="login" type="redirectAction">login</result>
 		</action>
 
-		<action name="contact">
-			<result>/WEB-INF/pages/contact.jsp</result>
+		<action name="contact" class="com.controller.HomeController" method="contact">
+			<result name="success">/WEB-INF/pages/contact.jsp</result>
+			<result name="input" type="redirectAction">login</result>
 		</action>
 
 		<action name="details" class="com.controller.HomeController" method="detail">
 			<result>/WEB-INF/pages/details.jsp</result>
 		</action>
-
+		<action name="sendMessage" class="com.controller.HomeController" method="sendMessage">
+			<result name="input">/WEB-INF/pages/contact.jsp</result>
+		    <result name="success">/WEB-INF/pages/contact.jsp</result>
+		</action>
 		<action name="event" class="com.controller.HomeController" method="event">
 			<result>/WEB-INF/pages/event.jsp</result>
 		</action>
