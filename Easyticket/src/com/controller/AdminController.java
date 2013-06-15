@@ -264,7 +264,12 @@ public class AdminController extends ActionSupport implements
 	public String listEvent() {
 		if (isAuthorize()) {
 			events = eventMng.getEvents();
-
+            
+			for(Event e : events)
+			{
+				e.setContent(e.getContent().substring(0, 50)+"...");
+			}
+			
 			return "success";
 		}
 		return "login";
