@@ -10,9 +10,7 @@
       <div class="user-heading">
         <h2>Your account</h2>
         <ul>
-          <li class="active"><a href="#info" data-toggle="tab">Information</a></li>
-          <li><a href="#history" data-toggle="tab">Trading History</a></li>
-          <!--<li><a href="#favorite" data-toggle="tab">Sản phẩm yêu thích</a></li>-->
+          <li class="active"><a href="#info" data-toggle="tab">Information</a></li>   
         </ul>
       </div>
       <div class="tab-content">
@@ -57,83 +55,7 @@
           </form>
           
         </div>
-        <div class="tab-pane" id="history">
-          <table class="table table-bordered user-table">
-            
-              <th>STT</th>
-              <th>Thông tin sản phẩm</th>
-              <th>Số lượng</th>
-              <th>Phương thức thanh toán</th>
-              <th>Trạng thái</th>
-            <tr>
-              <td>01</td>
-              <td><div class="media-body"> <img src="images/thumbs/triumph_thumb1.jpg" alt="" width="80"  class="pull-left"/>
-                  <p><strong>Đệm lò xo dunlopillo Duchess</strong></p>
-                  <span class="gia">Giá: 16.238.000 vnđ</span>
-                  <p>Kích thước: 1,8m x2m</p>
-                </div></td>
-              <td>01</td>
-              <td>Ngân lượng</td>
-              <td><span class="thanhtoan">Đã thanh toán</span></td>
-            </tr>
-            <tr>
-              <td>01</td>
-              <td><div class="media-body"> <img src="images/thumbs/triumph_thumb1.jpg" alt="" width="80"  class="pull-left"/>
-                  <p><strong>Đệm lò xo dunlopillo Duchess</strong></p>
-                  <span class="gia">Giá: 16.238.000 vnđ</span>
-                  <p>Kích thước: 1,8m x2m</p>
-                </div></td>
-              <td>01</td>
-              <td>Ngân lượng</td>
-              <td><span class="cthanhtoan">Chưa thanh toán</span></td>
-            </tr>
-            <tr>
-              <td colspan="5"><ul class="pagenav">
-                  <li><a href="#">Prev</a></li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li><a href="#">Next</a></li>
-                </ul></td>
-            </tr>
-          </table>
-        </div>
-        <!--<div class="tab-pane" id="favorite"><table class="table table-bordered user-table">
-<th>STT</th>
-<th>Thông tin sản phẩm</th>
-<th>Giới thiệu</th>
-<th>Trạng thái</th>
-  <tr>
-<td>01</td>
-<td>
-  <div class="media-body"> 
-  
-  <img src="images/thumbs/triumph_thumb1.jpg" alt="" width="80"  class="pull-left"/>
-  <p><strong>Đệm lò xo dunlopillo Duchess</strong></p>
-<span class="gia">Giá: 16.238.000 vnđ</span>
-<p>Kích thước: 1,8m x2m</p></div>
-  <div class="clearfix"></div>
-</td>
-<td><div class="media-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia sagittis quam eu dignissim. Sed non orci et felis gravida lacinia. Aenean varius eros a quam dictum ullamcorper. Vivamus ultrices elementum cursus. Vestibulum bibendum cursus lacus, ac pellentesque felis viverra ac. Quisque adipiscing neque semper felis scelerisque dapibus tristique nisl vulputate. Vivamus eu lacus sem, ac vestibulum dui</div></td>
-<td width="120"><a href="#" class="btn btn-small btn-block btn-info">Mua sản phẩm</a>
-
-<a href="#" class="btn btn-small btn-block btn-danger">Xóa sản phẩm</a></td>
-</tr>
-<tr>
-<td colspan="5">
-<ul class="pagenav">
-  <li><a href="#">Prev</a></li>
-  <li><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#">Next</a></li>
-</ul></td>
-</tr>
-</table></div>--> 
+     
       </div>
     </div>
   </div>

@@ -10,5 +10,5 @@ public interface BookingManager {
 	public boolean update(Booking booking);
 	public boolean delete(int id);
 	public Booking getBooking(int id);
-	
+	public List<Booking> getBookingByUser(int userId) ;
 }

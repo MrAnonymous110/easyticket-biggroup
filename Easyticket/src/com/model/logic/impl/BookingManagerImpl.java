@@ -46,4 +46,10 @@ public class BookingManagerImpl implements BookingManager{
 		return dao.getBooking(id);
 	}
 
+	@Override
+	public List<Booking> getBookingByUser(int userId) {
+		// TODO Auto-generated method stub
+		return dao.getBookingByUser(userId);
+	}
+
 }

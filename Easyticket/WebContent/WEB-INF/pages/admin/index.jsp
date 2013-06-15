@@ -77,7 +77,7 @@
     				<td><s:property value="startTime"/></td>
     				<td><s:property value="endTime"/></td>
     				<td>
-    				    <img src="<s:url value="%{imgSrc}" />"  style="height: 50px"   />
+    				    <img src="<s:url value="%{imgSrc}" />"  style="width: 50px;"   />
     				</td>
     				<td>
     				   <a href="editEvent?eventId=<s:property value="id"/>"><input type="image" src="<s:url value="/images/icn_edit.png" /> " title="Edit"></a>

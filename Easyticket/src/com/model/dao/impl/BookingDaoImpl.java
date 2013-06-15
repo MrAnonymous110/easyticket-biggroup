@@ -108,4 +108,20 @@ public class BookingDaoImpl implements BookingDao {
 		  }
 	}
 
+	@Override
+	public List<Booking> getBookingByUser(int userId) {
+		try
+		  {
+			  Session session = HibernateUtil.getSessionFactory().openSession();
+			  session.beginTransaction();
+			  String sql = "from Booking b where b.users.id="+userId;
+			  List<Booking> list = session.createQuery(sql).list();
+			  return list;
+		  }
+		  catch(Exception e){
+	           e.printStackTrace();
+	           return null;
+		  }
+	}
+
 }
