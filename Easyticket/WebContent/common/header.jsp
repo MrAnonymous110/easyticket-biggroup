@@ -66,7 +66,7 @@ e.stopPropagation();
         <div class="span12">
 			<div class="row" style="float:left;">
 				<div class="span4">
-				  <h1><a class="logo" href="#">EasyTicket</a></h1>
+				  <h1><a class="logo" href="${ctx}">EasyTicket</a></h1>
 				</div>
 				
 			  </div>

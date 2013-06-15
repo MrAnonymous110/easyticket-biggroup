@@ -3,6 +3,7 @@ package com.controller;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -40,6 +41,13 @@ public class HomeController extends ActionSupport {
 	private String success;
 	private String username;
 	private String password;
+
+	private int eventId;
+	private Event event;
+	private int seatId;
+	private double discount;
+	private double price;
+
 	private String email;
 	private String address;
 	private String birthday;
@@ -119,10 +127,13 @@ public class HomeController extends ActionSupport {
 	private List<Event> events;
 	private List<EventType> types;
 	private List<City> cities;
-
+	private List<Seat> seats;
 	// site map
 	private String actionName;
 	private String actionUrl;
+	
+	//json data
+    LinkedHashMap<String, Double> data;
 
 	public HomeController() {
 		userMng = new UsersManagerImpl();
@@ -181,7 +192,6 @@ public class HomeController extends ActionSupport {
 			}
 			u.setCreateDate(new Date());
 			u.setEmail(email);
-			String test = StringFormat.SimpleFormat(fullName);
 			u.setFullName(StringFormat.SimpleFormat(fullName));
 			u.setPassword(StringFormat.encryptMD5(password));
 			u.setPhone(phone);
@@ -190,7 +200,7 @@ public class HomeController extends ActionSupport {
 			u.setRole(role);
 
 			userMng.insert(u);
-			success = "register success, please login to system";
+			setSuccess("register success, please login to system");
 			return "input";
 		}
 		return "input";
@@ -242,27 +252,50 @@ public class HomeController extends ActionSupport {
 
 		return "success";
 	}
-
-	private List<Event> buildData(List<Event> list) {
-		for (Event item : list) {
-			String starttime = new SimpleDateFormat("dd/MM/yyyy hh:mm")
-					.format(item.getStartTime());
-			item.setStartTimeBuild(starttime);
-			List<Seat> seats = seatMng.getSeatsByEvent(item.getId());
-			if (seats.size() > 0)
-				item.setDiscount(seats.get(0).getDiscount());
-			else {
-				item.setDiscount(0);
-			}
-			item.setDiscount(0);
+	
+	private List<Event> buildData(List<Event> list)
+	{
+		for(Event item : list)
+		{
+	        String starttime = new SimpleDateFormat("dd/MM/yyyy hh:mm").format(item.getStartTime());
+	        String endtime = new SimpleDateFormat("dd/MM/yyyy hh:mm").format(item.getEndTime());
+	        item.setStartTimeBuild(starttime);
+	        item.setEndTimeBuild(endtime);
+	        List<Seat>  seats =   seatMng.getSeatsByEvent(item.getId());
+	        if(seats.size() > 0 )
+	             item.setDiscount(seats.get(0).getDiscount());
+	        else
+	        {
+	        	 item.setDiscount(0);
+	        }
+	        item.setDiscount(0);
 		}
 		return list;
 	}
-
-	public String event() {
-		Map<String, Object> session = ActionContext.getContext().getSession();
-		if (session != null && session.get("count") == null)
-			session.put("count", 0);
+	
+	private Event buildData(Event e)
+	{
+        String starttime = new SimpleDateFormat("dd/MM/yyyy hh:mm").format(e.getStartTime());
+        String endtime = new SimpleDateFormat("dd/MM/yyyy hh:mm").format(e.getEndTime());
+        e.setStartTimeBuild(starttime);
+        e.setEndTimeBuild(endtime);
+        List<Seat> seats =   seatMng.getSeatsByEvent(e.getId());
+        if(seats.size() > 0 )
+             e.setDiscount(seats.get(0).getDiscount());
+        else
+        {
+        	 e.setDiscount(0);
+        }
+        e.setDiscount(0);
+	
+     	return e;
+	}
+	
+    public String event()
+    {
+    	Map<String, Object> session = ActionContext.getContext().getSession();
+		if(session != null && session.get("count") == null)
+		    session.put("count", 0);
 		itemCount = 9;
 		if (cityId == null)
 			cityId = "";
@@ -297,6 +330,28 @@ public class HomeController extends ActionSupport {
 		return "success";
 	}
 
+    public String detail()
+    {
+    	if(eventId > 0){
+    	    event = eventMng.getEvent(eventId);
+    	    seats = seatMng.getSeatsByEvent(eventId);
+    	    event =  buildData(event);
+    	}
+    	return "success";
+    }
+    
+    public String getPriceSeat()
+    {
+//    	 data =  new LinkedHashMap<String, Double>();
+    	 Seat s = seatMng.getById(seatId);
+//    	 data.put("price", s.getPrice());
+//    	 data.put("priceDiscount",s.getPrice() - s.getPrice()*s.getDiscount()/100);
+    	 
+    	 price = s.getPrice();
+    	 discount =price- price*s.getDiscount()/100;
+    	 return "success";
+    }
+    
 	public String getUsername() {
 		return username;
 	}
@@ -508,6 +563,90 @@ public class HomeController extends ActionSupport {
 	public void setO(int o) {
 		this.o = o;
 	}
+    
+    
+
+	/**
+	 * @return the eventId
+	 */
+	public int getEventId() {
+		return eventId;
+	}
+
+
+	/**
+	 * @param eventId the eventId to set
+	 */
+	public void setEventId(int eventId) {
+		this.eventId = eventId;
+	}
+
+
+	public Event getEvent() {
+		return event;
+	}
+ 
+	
+
+	/**
+	 * @return the data
+	 */
+	public LinkedHashMap<String, Double> getData() {
+		return data;
+	}
+
+
+	/**
+	 * @param data the data to set
+	 */
+	public void setData(LinkedHashMap<String, Double> data) {
+		this.data = data;
+	}
+
+
+	public void setEvent(Event event) {
+		this.event = event;
+	}
+
+
+	public List<Seat> getSeats() {
+		return seats;
+	}
+
+
+	public void setSeats(List<Seat> seats) {
+		this.seats = seats;
+	}
+
+
+	public int getSeatId() {
+		return seatId;
+	}
+
+
+	public void setSeatId(int seatId) {
+		this.seatId = seatId;
+	}
+
+
+	public double getDiscount() {
+		return discount;
+	}
+
+
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
+
+
+	public double getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
 
 	public String getEmail() {
 		return email;
@@ -515,6 +654,14 @@ public class HomeController extends ActionSupport {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getSuccess() {
+		return success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
 	}
 
 }

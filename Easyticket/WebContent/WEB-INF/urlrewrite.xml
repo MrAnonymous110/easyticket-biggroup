@@ -40,6 +40,10 @@
          <to type="forward">event.action?type=$1</to>
     </rule> 
     
+    <rule>
+         <from>/details/([1-9]+)</from>
+         <to type="forward">details.action?eventId=$1</to>
+    </rule>
     
     
 </urlrewrite>
