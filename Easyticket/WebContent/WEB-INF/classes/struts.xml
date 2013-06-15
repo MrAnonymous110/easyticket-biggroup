@@ -40,11 +40,16 @@
 			<result>/WEB-INF/pages/event.jsp</result>
 		</action>
 
-		<action name="profile">
-			<result name="success">/WEB-INF/pages/profile.jsp</result>
-			<result name="login" type="redirectAction">login</result>
+		<action name="profile" class="com.controller.HomeController" method="setProfile">
+		    <result name="success">/WEB-INF/pages/profile.jsp</result>
+		    <result name="input" type="redirect">/login.html</result>
 		</action>
-
+		
+		<action name="updateProfile" class="com.controller.HomeController" method="updateProfile">
+		    <result name="success">/WEB-INF/pages/profile.jsp</result>
+		    <result name="input" type="redirect">/login.html</result>
+		</action>
+		
 		<action name="login" class="com.controller.HomeController"
 			method="Login">
 			<result name="input">/login.jsp</result>
