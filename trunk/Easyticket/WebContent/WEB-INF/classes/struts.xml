@@ -73,6 +73,21 @@
 		    <result name="login" type="redirectAction">login</result>
 		</action>
 		
+		<action name="deleteCart" class="com.controller.HomeController" method="deleteCart">
+		    <result name="success" type="redirectAction">cart</result>
+		    <result name="login" type="redirectAction">login</result>
+		</action>
+		
+		<action name="updateCart" class="com.controller.HomeController" method="updateCart">
+		    <result name="success" type="redirectAction">cart</result>
+		    <result name="login" type="redirectAction">login</result>
+		</action>
+		
+		<action name="pay" class="com.controller.HomeController" method="pay">
+		    <result name="success" type="redirectAction">cart</result>
+		    <result name="login" type="redirectAction">login</result>
+		</action>
+		
 	</package>
 
 	<package name="admin" extends="struts-default" namespace="/admin">
