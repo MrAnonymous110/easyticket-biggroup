@@ -267,7 +267,8 @@ public class AdminController extends ActionSupport implements
             
 			for(Event e : events)
 			{
-				e.setContent(e.getContent().substring(0, 50)+"...");
+				if(e.getContent().length() >=50)
+				   e.setContent(e.getContent().substring(0, 50)+"...");
 			}
 			
 			return "success";
