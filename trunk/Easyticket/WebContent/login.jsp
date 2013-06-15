@@ -9,7 +9,7 @@
   <div class="row">
     <div class="border span12 shadow user-content">
       <div class="user-heading">
-        <h2>tài khoản</h2>
+        <h2>Account</h2>
         <ul>
           <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
           <li><a href="#register" data-toggle="tab">Register account</a></li>
@@ -55,7 +55,7 @@
         <h3 class="user-info-heading">Register Information</h3>
 			    <div class="error_show">not ok</div>
 			 	<div class="success_show">ok</div> 
-          <form class="form-horizontal" method="post">
+          <form class="form-horizontal" method="post" action="register">
           
 		  	<div class="control-group">
               <label class="control-label">User Name</label>
