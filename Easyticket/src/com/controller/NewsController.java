@@ -145,9 +145,7 @@ public class NewsController extends ActionSupport implements
 
 	public String deleteCategory() {
 		if (categoryId > 0) {
-			if (!CategoryMng.delete(categoryId)) {
-				return "input";
-			}
+			CategoryMng.delete(categoryId);
 		}
 		return "success";
 	}

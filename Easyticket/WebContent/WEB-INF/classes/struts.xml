@@ -17,12 +17,14 @@
 			<result>/WEB-INF/pages/about.jsp</result>
 		</action>
 
-		<action name="cart" class="com.controller.HomeController" method="cart">
+		<action name="cart" class="com.controller.HomeController"
+			method="cart">
 			<result name="success">/WEB-INF/pages/cart.jsp</result>
 			<result name="login" type="redirectAction">login</result>
 		</action>
 
-		<action name="contact" class="com.controller.HomeController" method="contact">
+		<action name="contact" class="com.controller.HomeController"
+			method="contact">
 			<result name="success">/WEB-INF/pages/contact.jsp</result>
 			<result name="input" type="redirectAction">login</result>
 		</action>
@@ -31,9 +33,10 @@
 			method="detail">
 			<result>/WEB-INF/pages/details.jsp</result>
 		</action>
-		<action name="sendMessage" class="com.controller.HomeController" method="sendMessage">
+		<action name="sendMessage" class="com.controller.HomeController"
+			method="sendMessage">
 			<result name="input">/WEB-INF/pages/contact.jsp</result>
-		    <result name="success">/WEB-INF/pages/contact.jsp</result>
+			<result name="success">/WEB-INF/pages/contact.jsp</result>
 		</action>
 		<action name="event" class="com.controller.HomeController"
 			method="event">
@@ -73,11 +76,12 @@
 			</result>
 		</action>
 
-		<action name="booking" class="com.controller.HomeController" method="booking">
-		    <result name="success" type="redirectAction">cart</result>
-		    <result name="login" type="redirectAction">login</result>
+		<action name="booking" class="com.controller.HomeController"
+			method="booking">
+			<result name="success" type="redirectAction">cart</result>
+			<result name="login" type="redirectAction">login</result>
 		</action>
-		
+
 		<action name="deleteCart" class="com.controller.HomeController" method="deleteCart">
 		    <result name="success" type="redirectAction">cart</result>
 		    <result name="login" type="redirectAction">login</result>
@@ -300,27 +304,26 @@
 
 		<action name="category" class="com.controller.NewsController"
 			method="getCategoryList">
-			<result name="success">/WEB-INF/pages/admin/Category.jsp</result>
+			<result name="success">/WEB-INF/pages/admin/category.jsp</result>
 		</action>
 
-		<action name="insertType" class="com.controller.AdminController"
-			method="insertType">
-			<result name="input">/WEB-INF/pages/admin/eventType.jsp</result>
-			<result name="success" type="redirectAction">types</result>
-			<result name="login" type="redirectAction">login</result>
+		<action name="insertCat" class="com.controller.NewsController"
+			method="createCategory">
+			<result name="input">/WEB-INF/pages/admin/category.jsp</result>
+			<result name="success" type="redirectAction">category
+			</result>
 		</action>
 
-		<action name="updateType" class="com.controller.AdminController"
-			method="updateType">
-			<result name="input">/WEB-INF/pages/admin/eventType.jsp</result>
-			<result name="success" type="redirectAction">types</result>
-			<result name="login" type="redirectAction">login</result>
+		<action name="updateCat" class="com.controller.NewsController"
+			method="updateCategory">
+			<result name="input">/WEB-INF/pages/admin/category.jsp</result>
+			<result name="success" type="redirectAction">category
+			</result>
 		</action>
 
-		<action name="deleteType" class="com.controller.AdminController"
-			method="deleteType">
-			<result name="success" type="redirectAction">types</result>
-			<result name="login" type="redirectAction">login</result>
+		<action name="deleteCat" class="com.controller.NewsController"
+			method="deleteCategory">
+			<result name="success" type="redirectAction">category</result>
 		</action>
 
 

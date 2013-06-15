@@ -11,6 +11,7 @@
 					<tr>
 						<th>ID</th>
 						<th>Name</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -18,12 +19,13 @@
 						<tr>
 							<td><s:property value="id" /></td>
 							<td><s:property value="name" /></td>
-							<td>
-							    <input type="image" src="<s:url value="/images/icn_edit.png" /> " title="Edit" name="editCat">
-							    <a href="deleteCat?id=<s:property value="id" />" >
-								    <input type="image" src="<s:url value="/images/icn_trash.png" /> " title="Trash">
-								</a>
-							</td>
+							<td><input type="image"
+								src="<s:url value="/images/icn_edit.png" /> " title="Edit"
+								name="editCat"> <a
+								href="deleteCat?categoryId=<s:property value="id" />"> <input
+									type="image" src="<s:url value="/images/icn_trash.png" /> "
+									title="Trash">
+							</a></td>
 						</tr>
 					</s:iterator>
 				</tbody>
@@ -37,7 +39,7 @@
 		</header>
 		<form action="insertCat" method="post">
 			<div class="module_content" style="margin: 10px 5px;">
-			    <input type="hidden" name="categoryId" />
+				<input type="hidden" name="categoryId" />
 				<fieldset style="margin: 1%;">
 					<label>Name</label> <input type="text"
 						style="width: 86%; margin-bottom: 5px" name="categoryName"
@@ -61,22 +63,18 @@
 
 </section>
 
-<script type="text/javascript" >
-     $("input[name='editCat']").click(function(){
-    	 var tr = $(this).parent().parent();
-    	 $.each(tr.children("td"),function(item){
-    		 if(item == 0)
-    	     {
-    			 $("input[name='categoryId']").val($(this).text());
-    	     }
-    		 else if(item == 1)
-    	     {
-    			 $("input[name='categoryName']").val($(this).text());		 
-         	 }
-    	 });
-    	 
-    	 $('form').attr('action',"updateCat");
-    	 $("input[name='btnSave']").val("Save");
-     });
-    
+<script type="text/javascript">
+	$("input[name='editCat']").click(function() {
+		var tr = $(this).parent().parent();
+		$.each(tr.children("td"), function(item) {
+			if (item == 0) {
+				$("input[name='categoryId']").val($(this).text());
+			} else if (item == 1) {
+				$("input[name='categoryName']").val($(this).text());
+			}
+		});
+
+		$('form').attr('action', "updateCat");
+		$("input[name='btnSave']").val("Save");
+	});
 </script>

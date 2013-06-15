@@ -35,15 +35,14 @@ public class AccountController extends ActionSupport {
 	private String birthDay;
 
 	private int roleId;
-	//property role
+	// property role
 	private String roleName;
 	private String roleDescription;
-	
+
 	// error message
 	private String error;
 
 	private int count;
-	
 
 	// entity
 	private Users user;
@@ -79,7 +78,7 @@ public class AccountController extends ActionSupport {
 		}
 		return "login";
 	}
-	
+
 	public String editUser() {
 		if (isAuthorize()) {
 			user = userMng.getUser(id);
@@ -89,8 +88,7 @@ public class AccountController extends ActionSupport {
 		return "login";
 	}
 
-	public String register()
-	{
+	public String register() {
 		if (isValid()) {
 			if ("".equals(password)) {
 				error = "password is invalid!";
@@ -101,7 +99,7 @@ public class AccountController extends ActionSupport {
 				return "input";
 			}
 			try {
-			    user = new Users();
+				user = new Users();
 				user.setUserName(userName);
 				user.setPassword(StringFormat.encryptMD5(password));
 				user.setFullName(fullName);
@@ -114,7 +112,7 @@ public class AccountController extends ActionSupport {
 						.parse(birthDay));
 				user.setCreateDate(new Date());
 				userMng.insert(user);
-				
+
 				session = ActionContext.getContext().getSession();
 				session.put("user", user);
 				session.put("viewtime", new Date());
@@ -126,7 +124,7 @@ public class AccountController extends ActionSupport {
 		}
 		return "input";
 	}
-	
+
 	public String createUser() {
 		if (isAuthorize()) {
 			if (isValid()) {
@@ -139,7 +137,7 @@ public class AccountController extends ActionSupport {
 					return "input";
 				}
 				try {
-				    user = new Users();
+					user = new Users();
 					user.setUserName(userName);
 					user.setPassword(StringFormat.encryptMD5(password));
 					user.setFullName(fullName);
@@ -163,23 +161,22 @@ public class AccountController extends ActionSupport {
 		return "login";
 	}
 
-	public String updateUser()
-	{
+	public String updateUser() {
 		if (isAuthorize()) {
 			if (isValid()) {
-				
+
 				try {
-				    user = userMng.getUser(id);
-					
-					if (!"".equals(password)){
-						if(!password.equals(confirmPassword)) {
+					user = userMng.getUser(id);
+
+					if (!"".equals(password)) {
+						if (!password.equals(confirmPassword)) {
 							error = "confirm password is not match!";
 							return "input";
-					    }
-						
+						}
+
 						user.setPassword(StringFormat.encryptMD5(password));
 					}
-				
+
 					user.setUserName(userName);
 					user.setFullName(fullName);
 					user.setAddress(address);
@@ -201,29 +198,25 @@ public class AccountController extends ActionSupport {
 		}
 		return "login";
 	}
-	
-	public String deleteUser()
-	{
+
+	public String deleteUser() {
 		if (isAuthorize()) {
-		   userMng.delete(id);
-		   return "success";
+			userMng.delete(id);
+			return "success";
 		}
 		return "login";
 	}
-	
-	public String roles()
-	{
+
+	public String roles() {
 		if (isAuthorize()) {
-			   roles = roleMng.getRoles();
-			   return "success";
-			}
-			return "login";
+			roles = roleMng.getRoles();
+			return "success";
+		}
+		return "login";
 	}
-	
-	public String createRole()
-	{
-		if(isAuthorize())
-		{
+
+	public String createRole() {
+		if (isAuthorize()) {
 			Roles r = new Roles();
 			r.setName(roleName);
 			r.setDescription(roleDescription);
@@ -231,23 +224,19 @@ public class AccountController extends ActionSupport {
 			return "success";
 		}
 		return "login";
-		
+
 	}
-	
-	public String deleteRole()
-	{
-		if(isAuthorize())
-		{
+
+	public String deleteRole() {
+		if (isAuthorize()) {
 			roleMng.delete(roleId);
 			return "success";
 		}
 		return "login";
 	}
-	
-	public String updateRole()
-	{
-		if(isAuthorize())
-		{
+
+	public String updateRole() {
+		if (isAuthorize()) {
 			Roles r = new Roles();
 			r.setId(roleId);
 			r.setName(roleName);
@@ -257,8 +246,7 @@ public class AccountController extends ActionSupport {
 		}
 		return "login";
 	}
-	
-	
+
 	private boolean isValid() {
 		if ("".equals(userName)) {
 			error = "User Name is invalid!";
@@ -290,35 +278,32 @@ public class AccountController extends ActionSupport {
 
 	}
 
-	public String profile()
-	{
-		if(isAuthorize()){
-		    session = ActionContext.getContext().getSession();
-		    user = (Users)session.get("user");
-		    user = userMng.getUser(user.getId());
-		    return "success";
+	public String profile() {
+		if (isAuthorize()) {
+			session = ActionContext.getContext().getSession();
+			user = (Users) session.get("user");
+			user = userMng.getUser(user.getId());
+			return "success";
 		}
 		return "login";
-		
+
 	}
-	
-	public String saveProfile()
-	{
-		if(isAuthorize())
-		{
-            if (isValid()) {			
+
+	public String saveProfile() {
+		if (isAuthorize()) {
+			if (isValid()) {
 				try {
-				    user = userMng.getUser(id);
-					
-					if (!"".equals(password)){
-						if(!password.equals(confirmPassword)) {
+					user = userMng.getUser(id);
+
+					if (!"".equals(password)) {
+						if (!password.equals(confirmPassword)) {
 							error = "confirm password is not match!";
 							return "input";
-					    }
-						
+						}
+
 						user.setPassword(StringFormat.encryptMD5(password));
 					}
-				
+
 					user.setUserName(userName);
 					user.setFullName(fullName);
 					user.setAddress(address);
@@ -337,11 +322,11 @@ public class AccountController extends ActionSupport {
 
 			}
 			return "input";
-			
+
 		}
 		return "login";
 	}
-	
+
 	private boolean isAuthorize() {
 		session = ActionContext.getContext().getSession();
 		if (session != null && session.get("user") != null) {
@@ -355,7 +340,6 @@ public class AccountController extends ActionSupport {
 
 	}
 
-	
 	public String getPassword() {
 		return password;
 	}

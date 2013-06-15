@@ -99,6 +99,11 @@
 			<li class="icn_categories"><a href="contact">Contact</a></li>
 			<li class="icn_categories"><a href="faq">FAQ</a></li>
 		</ul>
+		<h3>News</h3>
+		<ul class="toggle">
+			<li class="icn_categories"><a href="category">Category</a></li>
+			<li class="icn_categories"><a href="new">News</a></li>
+		</ul>
 		<h3>Orther</h3>
 		<ul class="toggle">
 			<li class="icn_jump_back"><a href="<s:url value="logout" />" >Logout</a></li>
