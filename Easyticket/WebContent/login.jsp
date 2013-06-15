@@ -1,32 +1,124 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@taglib uri="/struts-tags" prefix="s" %>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl">
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>SimpleAdmin</title>
-<link rel="stylesheet" type="text/css" href="<s:url value="/css/login.css" />" media="screen" />
-</head>
-<body>
-<div class="wrap">
-	<div id="content">
-		<div id="main">
-			<div class="full_w">
-				<form action="login" method="post">
-					<label for="login">Username:</label>
-					<input id="login" name="username" class="text" />
-					<label for="pass">Password:</label>
-					<input id="pass" name="password" type="password" class="text" />
-					<div class="sep"></div>
-					<button type="submit" class="ok">Login</button> <a class="button" href="">Forgotten password?</a>
-					
-					<p style="color: red"><s:property value="error" /> </p>
-				</form>
-			</div>
-			<div class="footer">&raquo; <a href="index.jsp">Go to home page</a> | Admin Panel</div>
-		</div>
-	</div>
-</div>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+ <%@include file="/common/header.jsp" %>
+ <%@include file="/common/taglibs.jsp" %>
 
-</body>
+<!--content-->
+<div class="container">
+  <div class="row">
+    <div class="border span12 shadow user-content">
+      <div class="user-heading">
+        <h2>tài khoản</h2>
+        <ul>
+          <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
+          <li><a href="#register" data-toggle="tab">Register account</a></li>
+          
+          <!--<li><a href="#favorite" data-toggle="tab">Sản phẩm yêu thích</a></li>-->
+        </ul>
+      </div>
+      <div class="tab-content">
+         <div class="tab-pane active" id="login">
+          <h3 class="user-info-heading">Login</h3>
+             <s:if test="error != ''">
+                   <div class="error_show"><s:property value='error' /></div>
+             </s:if>
+			 
+          <form class="form-horizontal" method="post" action="login">
+		  	
+            <div class="control-group">
+              <label class="control-label">User Name</label>
+              <div class="controls">
+                <input type="text" placeholder="UserName" class="span4" name="userName">
+              </div>
+            </div>
+            
+			<div class="control-group">
+              <label class="control-label">Password</label>
+              <div class="controls">
+                <input type="password" placeholder="Password" class="span4" name="password">
+              </div>
+            </div>
+			
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input type="checkbox" name="isRemember" value="true">
+                  Remember me?
+				</label>
+                <button type="submit" class="btn" name="btnLogin">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="tab-pane" id="register">
+        <h3 class="user-info-heading">Register Information</h3>
+			    <div class="error_show">not ok</div>
+			 	<div class="success_show">ok</div> 
+          <form class="form-horizontal" method="post">
+          
+		  	<div class="control-group">
+              <label class="control-label">User Name</label>
+              <div class="controls">
+                <input type="text" placeholder="User Name" class="span4" name="email">
+              </div>
+            </div>
+		  	
+            <div class="control-group">
+              <label class="control-label">Email</label>
+              <div class="controls">
+                <input type="text" placeholder="Email" class="span4" name="email">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Password</label>
+              <div class="controls">
+                <input type="password" placeholder="Password" class="span4" name="password">
+              </div>
+            </div>
+			
+			<div class="control-group">
+              <label class="control-label">Confirm Password</label>
+              <div class="controls">
+                <input type="password" placeholder="Password" class="span4" name="confirmPassword">
+              </div>
+            </div>
+			
+			<div class="control-group">
+              <label class="control-label" >Full Name</label>
+              <div class="controls">
+                <input type="text"  placeholder="Full Name"  class="span4" name="fullName">
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">Phone</label>
+              <div class="controls">
+                <input type="text"  placeholder="Phone Number"  class="span4" name="phone" />
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">Address</label>
+              <div class="controls">
+                <textarea cols="3" name="address" class="span6"></textarea>
+              </div>
+            </div>
+			
+			<div class="control-group">
+              <div class="controls">
+                <button type="submit" class="btn" name="btnRegister">Register</button>
+              </div>
+            </div>
+          </form>
+          
+        </div>
+		
+		<!---->
+		
+       
+      </div>
+    </div>
+  </div>
+</div>
+<!--end content--> 
+
+<%@include file="/common/footer.jsp" %>

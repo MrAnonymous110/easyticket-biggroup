@@ -11,11 +11,6 @@
     </rule>  
     
     <rule>
-         <from>/register.html</from>
-         <to type="forward">register.action</to>
-    </rule>  
-    
-    <rule>
          <from>/login.html</from>
          <to type="forward">login.action</to>
     </rule>
