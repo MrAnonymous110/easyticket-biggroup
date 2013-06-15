@@ -202,6 +202,11 @@ public class HomeController extends ActionSupport {
     	return "success";
     }
 	
+    public String login()
+    {
+    	return "success";
+    }
+    
 	public String getUsername() {
 		return username;
 	}
