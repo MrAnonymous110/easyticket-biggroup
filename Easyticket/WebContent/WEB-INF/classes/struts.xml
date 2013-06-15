@@ -14,7 +14,7 @@
 			<result>/WEB-INF/pages/about.jsp</result>
 		</action>
 
-		<action name="cart">
+		<action name="cart" class="com.controller.HomeController" method="cart">
 			<result name="success">/WEB-INF/pages/cart.jsp</result>
 			<result name="login" type="redirectAction">login</result>
 		</action>
@@ -56,6 +56,11 @@
 		    <result name="success" type="json">
 		        <param name="includeProperties">price,discount</param>
 		    </result>
+		</action>
+		
+		<action name="booking" class="com.controller.HomeController" method="booking">
+		    <result name="success" type="redirectAction">cart</result>
+		    <result name="login" type="redirectAction">login</result>
 		</action>
 		
 	</package>

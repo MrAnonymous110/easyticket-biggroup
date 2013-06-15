@@ -86,7 +86,7 @@ Filter By
 						</div>
 						<p style="color:#333;margin-left: 10px">Artist : <s:property value="artist" /> </p>
 						<p style="color:#333;margin-left: 10px">Start time: <s:property value="startTimeBuild" /></p>
-						<span class="view"><a href="details/<s:property value='id' />" >View Detail</a></span><span class="buy"><a href="booking">Booking</a></span>
+						<span class="view"><a href="details/<s:property value='id' />" >View Detail</a></span><span class="buy"><a href="booking?eventId=<s:property value="id" />">Booking</a></span>
 					</div>              
 				<!--end boxproduct3--> 
 			</div>

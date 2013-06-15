@@ -58,7 +58,7 @@ e.stopPropagation();
 
 <body>
 <!--header-->
-<div id="header2"> 
+<div id="header2" style="min-height: 168px;"> 
   <!--/top header-->
   <div class="top-header">
     <div class="container">
@@ -80,6 +80,7 @@ e.stopPropagation();
 			</c:if>
 			<c:if test="${sessionScope.user != null }">
 			    <li><a href="${ctx}/profile.html">Profile</a></li>
+			    <li><a href="${ctx}/logout">Logout</a></li>
 			</c:if>
 			
           </ul> 
@@ -105,7 +106,7 @@ e.stopPropagation();
           <div class="row"> 
             <!--/search-->
             <div class="span7">
-              <form action="index" class="form-inline">
+              <form action="event" class="form-inline">
                 <input class="inputsearch"  type="text" placeholder="Search event" name="search"/>
                 <input class="btn bt-search" type="submit" value="Search" />
               </form>
@@ -128,24 +129,6 @@ e.stopPropagation();
   <li class="active">Data</li>
 </ul>
      
-      <div class="margin" style="display:none;"> <img src="${ctx}/images/banner-sub.png" alt="" /></div>
-	  
-	  <div class="span6">
-		  <div id="main_slide" class="carousel slide">
-			<div class="carousel-inner">
-			  <div class="active item"><img src="${ctx}/images/banner-sub.png" alt="" /></div>
-			  <div class="item"><img src="${ctx}/images/banner-sub.png" alt="" /></div>
-			  <div class="item"><img src="${ctx}/images/banner-sub.png" alt="" /></div>
-			</div>
-			<!-- Carousel items -->
-			<ol class="carousel-indicators">
-			  <li data-target="#main_slide" data-slide-to="0" class="active"></li>
-			  <li data-target="#main_slide" data-slide-to="1"></li>
-			  <li data-target="#main_slide" data-slide-to="2"></li>
-			</ol>
-		  </div>
-		</div>
-	  
       </div>
       </div>
     </div>
