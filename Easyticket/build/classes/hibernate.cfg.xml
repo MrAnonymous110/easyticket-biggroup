@@ -26,5 +26,7 @@
         <mapping class="com.model.entity.Booking" />
         <mapping class="com.model.entity.Contact" />
         <mapping class="com.model.entity.FAQ" />
+        <mapping class="com.model.entity.Category" />
+        <mapping class="com.model.entity.News" />
       </session-factory>
 </hibernate-configuration >

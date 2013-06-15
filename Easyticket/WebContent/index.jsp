@@ -80,7 +80,7 @@ Filter By
 			<div class="span3">
 				<!--boxproduct3-->
 					<div class="box-product3">
-						<div class="img-product"> <img src="<s:property value="imgSrc" /> " alt="" /> <span class="saletab"><s:property value="discount" />%</span> </div>
+						<div class="img-product"> <img src="<s:url value="%{imgSrc}" /> " alt="" /> <span class="saletab"><s:property value="discount" />%</span> </div>
 							<div class="box-product3-content">
 							<h3><s:property value="title" /></h3>
 						</div>
