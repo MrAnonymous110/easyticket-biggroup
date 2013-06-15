@@ -32,12 +32,12 @@ public class SeatsController extends ActionSupport implements
 	private String amountTicket;
 	private String description;
 	private Event event;
-    private int eventId;
+	private int eventId;
 
 	// error message
 	private String error;
-	
-	//seat entity
+
+	// seat entity
 	private Seat s;
 
 	// List model
@@ -54,7 +54,7 @@ public class SeatsController extends ActionSupport implements
 	public SeatsController() {
 		seatMng = new SeatManagerImpl();
 		userMng = new UsersManagerImpl();
-		eventMng= new EventManagerImpl();
+		eventMng = new EventManagerImpl();
 	}
 
 	public String listSeat() {
@@ -65,92 +65,78 @@ public class SeatsController extends ActionSupport implements
 		}
 		return "login";
 	}
-	
-	
-	public String createSeat()
-	{
-		if(isAuthorize())
-		{
-			try{
-				s= new Seat();
-			    s.setAmountTicket(Integer.parseInt(amountTicket));
-			    s.setDiscount(Double.parseDouble(discount));
-			    s.setDescription(description);
-			    s.setPrice(Double.parseDouble(price));
-			    event = eventMng.getEvent(eventId);
-			    s.setEvent(event);
-			    s.setSeat(seat);
-			    boolean isok =  seatMng.insert(s);
-			    if(!isok)
-			    {
-			    	  error = "can not create, has some error while insert data"; 	
-			    	  setSeats(seatMng.getAll());
-					  setEvents(eventMng.getEvents());
-					  return "input";
-			    }
-			    return "success";
-			}
-			catch(Exception e)
-			{
+
+	public String createSeat() {
+		if (isAuthorize()) {
+			try {
+				s = new Seat();
+				s.setAmountTicket(Integer.parseInt(amountTicket));
+				s.setDiscount(Double.parseDouble(discount));
+				s.setDescription(description);
+				s.setPrice(Double.parseDouble(price));
+				event = eventMng.getEvent(eventId);
+				s.setEvent(event);
+				s.setSeat(seat);
+				boolean isok = seatMng.insert(s);
+				if (!isok) {
+					error = "can not create, has some error while insert data";
+					setSeats(seatMng.getAll());
+					setEvents(eventMng.getEvents());
+					return "input";
+				}
+				return "success";
+			} catch (Exception e) {
 				e.printStackTrace();
 				error = "can not create,input data not true";
-			    setSeats(seatMng.getAll());
-			    setEvents(eventMng.getEvents());
+				setSeats(seatMng.getAll());
+				setEvents(eventMng.getEvents());
 				return "input";
 			}
 		}
 		return "login";
-		
+
 	}
-	
-	public String deleteSeat()
-	{
-		if(isAuthorize())
-		{
+
+	public String deleteSeat() {
+		if (isAuthorize()) {
 			seatMng.delete(id);
 			return "success";
 		}
 		return "login";
-		
+
 	}
 
-	public String updateSeat()
-	{
-		if(isAuthorize())
-		{
-			try{
-				s= new Seat();
+	public String updateSeat() {
+		if (isAuthorize()) {
+			try {
+				s = new Seat();
 				s.setId(id);
-			    s.setAmountTicket(Integer.parseInt(amountTicket));
-			    s.setDiscount(Double.parseDouble(discount));
-			    s.setDescription(description);
-			    s.setPrice(Double.parseDouble(price));
-			    event = eventMng.getEvent(eventId);
-			    s.setEvent(event);
-			    s.setSeat(seat);
-			    boolean isok =  seatMng.update(s);
-			    if(!isok)
-			    {
-			    	  error = "can not update, has some error while insert data"; 	
-			    	  setSeats(seatMng.getAll());
-					  setEvents(eventMng.getEvents());
-					  return "input";
-			    }
-			    return "success";
-			}
-			catch(Exception e)
-			{
+				s.setAmountTicket(Integer.parseInt(amountTicket));
+				s.setDiscount(Double.parseDouble(discount));
+				s.setDescription(description);
+				s.setPrice(Double.parseDouble(price));
+				event = eventMng.getEvent(eventId);
+				s.setEvent(event);
+				s.setSeat(seat);
+				boolean isok = seatMng.update(s);
+				if (!isok) {
+					error = "can not update, has some error while insert data";
+					setSeats(seatMng.getAll());
+					setEvents(eventMng.getEvents());
+					return "input";
+				}
+				return "success";
+			} catch (Exception e) {
 				e.printStackTrace();
 				error = "can not update,input data not true";
-			    setSeats(seatMng.getAll());
-			    setEvents(eventMng.getEvents());
+				setSeats(seatMng.getAll());
+				setEvents(eventMng.getEvents());
 				return "input";
 			}
 		}
 		return "login";
 	}
-	
-	
+
 	private boolean isAuthorize() {
 		session = ActionContext.getContext().getSession();
 		if (session != null && session.get("user") != null) {
