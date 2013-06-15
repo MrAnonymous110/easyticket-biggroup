@@ -51,6 +51,7 @@ public class Event {
     private EventType eventType;
     
     private String startTimeBuild;
+    private String endTimeBuild;
     
     private double discount;
 
@@ -162,6 +163,14 @@ public class Event {
 	 */
 	public void setDiscount(double discount) {
 		this.discount = discount;
+	}
+
+	public String getEndTimeBuild() {
+		return endTimeBuild;
+	}
+
+	public void setEndTimeBuild(String endTimeBuild) {
+		this.endTimeBuild = endTimeBuild;
 	}
 
     

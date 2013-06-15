@@ -4,7 +4,8 @@
    "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
 	<constant name="struts.devMode" value="true" />
-	<package name="home" extends="struts-default" namespace="/">
+	<package name="home" extends="struts-default,json-default" namespace="/">
+	
 		<action name="index" class="com.controller.HomeController" method="index">
 			<result>/index.jsp</result>
 		</action>
@@ -22,7 +23,7 @@
 			<result>/WEB-INF/pages/contact.jsp</result>
 		</action>
 
-		<action name="details">
+		<action name="details" class="com.controller.HomeController" method="detail">
 			<result>/WEB-INF/pages/details.jsp</result>
 		</action>
 
@@ -49,6 +50,12 @@
 		<action name="logout" class="com.controller.AdminController"
 			method="Logout">
 			<result name="success" type="redirect">/login.html</result>
+		</action>
+		
+		<action name="getPriceSeat" class="com.controller.HomeController" method="getPriceSeat">
+		    <result name="success" type="json">
+		        <param name="includeProperties">price,discount</param>
+		    </result>
 		</action>
 		
 	</package>
