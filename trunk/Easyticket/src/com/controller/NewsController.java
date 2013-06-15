@@ -187,6 +187,8 @@ public class NewsController extends ActionSupport implements
 	public String getNewList() {
 		NewsList = new ArrayList<>();
 		NewsList = NewsMng.getNews();
+		CatList = new ArrayList<>();
+		CatList = CategoryMng.getCategories();
 		return "success";
 	}
 
