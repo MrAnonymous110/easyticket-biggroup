@@ -11,12 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.model.entity.Users;
 import com.model.logic.CityManager;
+import com.model.logic.ContactManager;
 import com.model.logic.EventManager;
 import com.model.logic.EventTypeManager;
 import com.model.logic.RolesManager;
 import com.model.logic.SeatsManager;
 import com.model.logic.UsersManager;
 import com.model.logic.impl.CityManagerImpl;
+import com.model.logic.impl.ContactManagerImpl;
 import com.model.logic.impl.EventManagerImpl;
 import com.model.logic.impl.EventTypeManagerImpl;
 import com.model.logic.impl.RolesManagerImpl;
@@ -26,6 +28,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.process.StringFormat;
 import com.model.entity.Cart;
+import com.model.entity.Contact;
 import com.model.entity.Event;
 import com.model.entity.EventType;
 import com.model.entity.City;
@@ -44,7 +47,8 @@ public class HomeController extends ActionSupport {
 	private String success;
 	private String username;
 	private String password;
-
+	private String message;
+	
 	private int eventId;
 	private Event event;
 	private int seatId;
@@ -58,6 +62,7 @@ public class HomeController extends ActionSupport {
 	private String phone;
 	private String confirmPassword;
 
+	private Contact contact;
 	
 
 	// manager
@@ -67,7 +72,7 @@ public class HomeController extends ActionSupport {
 	private EventTypeManager typeMng;
 	private SeatsManager seatMng;
 	private RolesManager roleMng;
-
+	private ContactManager contMng;
 	// search property
 	private int type;
 	private String search;
@@ -100,6 +105,7 @@ public class HomeController extends ActionSupport {
 		types = typeMng.getEventTypes();
 		seatMng = new SeatManagerImpl();
 		roleMng = new RolesManagerImpl();
+		contMng = new ContactManagerImpl();
 	}
 
 	public String Login() {
@@ -209,7 +215,35 @@ public class HomeController extends ActionSupport {
 
 		return "success";
 	}
-	
+	public String contact() {
+		Map<String, Object> session = ActionContext.getContext().getSession();
+		Users u = (Users) session.get("user");
+		System.out.println("Go contact pages");
+		session = ActionContext.getContext().getSession();
+		if (session != null && session.get("user") != null) {
+			return "success";
+		} else { 
+			return "input";
+		}
+	}
+	public String sendMessage() {
+		Map<String, Object> session = ActionContext.getContext().getSession();
+		Users u = (Users) session.get("user");
+		Date currentTime = new Date();
+		
+		try {
+			contact.setUser(u);
+			contact.setSendTime(currentTime);
+			contMng.insert(contact);
+			message = "message's sended to admin";
+			return "success";
+		} catch (Exception e) {
+			message = "Send message fail";
+			return "input";
+		}
+		
+		
+	}
 	private List<Event> buildData(List<Event> list)
 	{
 		for(Event item : list)
@@ -704,4 +738,28 @@ public class HomeController extends ActionSupport {
 		this.phone = phone;
 	}
 
+	public Contact getContact() {
+		return contact;
+	}
+
+	public void setContact(Contact contact) {
+		this.contact = contact;
+	}
+
+	public ContactManager getContMng() {
+		return contMng;
+	}
+
+	public void setContMng(ContactManager contMng) {
+		this.contMng = contMng;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
 }
