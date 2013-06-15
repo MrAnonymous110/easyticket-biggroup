@@ -260,9 +260,12 @@ public class AdminController extends ActionSupport implements
 	public String deleteEvent() {
 		if (isAuthorize()) {
 			try {
-				eventMng.delete(eventId);
-				return "success";
+				if(eventMng.delete(eventId))
+				    return "success";
+				error = "Can not delete this event, please delete seat of this event";
+				return "input";
 			} catch (Exception e) {
+				error = "Has error";
 				return "input";
 			}
 		}
