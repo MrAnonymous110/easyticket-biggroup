@@ -278,6 +278,7 @@ public class HomeController extends ActionSupport {
 			user.setCreateDate(profile.getCreateDate());
 			user.setRole(profile.getRole());
 			userMng.update(user);
+			session.put("user", user);
 			return "success";
 		} catch (Exception e) {
 			return "input";
