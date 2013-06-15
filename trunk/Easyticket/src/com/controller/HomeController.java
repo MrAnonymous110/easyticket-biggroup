@@ -201,11 +201,6 @@ public class HomeController extends ActionSupport {
     	pcount ++;
     	return "success";
     }
-	
-    public String login()
-    {
-    	return "success";
-    }
     
 	public String getUsername() {
 		return username;

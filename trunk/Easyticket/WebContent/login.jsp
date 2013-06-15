@@ -21,7 +21,7 @@
          <div class="tab-pane active" id="login">
           <h3 class="user-info-heading">Login</h3>
              <s:if test="error != ''">
-                   <div class="error_show"><s:property value='error' /></div>
+                  <div class="error_show"><s:property value='error' /></div>
              </s:if>
 			 
           <form class="form-horizontal" method="post" action="login">
